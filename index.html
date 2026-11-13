@@ -166,7 +166,7 @@
         position: relative;
         z-index: 2;
         height: calc(40 * var(--u));
-        padding: 0 calc(24 * var(--u));
+        padding: 0 calc(20 * var(--u));
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -210,10 +210,13 @@
         transform: translateY(-1px);
       }
 
-      .btn-arrow {
-        font-size: calc(14.5 * var(--u));
-        line-height: 1;
-        display: inline-block;
+      .btn-arrow-img {
+        width: calc(18 * var(--u));
+        height: calc(18 * var(--u));
+        object-fit: contain;
+        display: block;
+        flex-shrink: 0;
+        pointer-events: none;
       }
 
       /* Left Column: Name Kicker + UI/UX DESIGNER + Dash + Copy + Two Buttons */
@@ -264,21 +267,10 @@
         will-change: transform;
       }
 
-      .hero-divider-dash {
-        position: absolute;
-        left: calc(57 * var(--u));
-        top: calc(406 * var(--u));
-        width: calc(40 * var(--u));
-        height: calc(3.5 * var(--u));
-        background: var(--ink);
-        border-radius: 2px;
-        z-index: 5;
-      }
-
       .hero-tagline-copy {
         position: absolute;
         left: calc(57 * var(--u));
-        top: calc(436 * var(--u));
+        top: calc(404 * var(--u));
         z-index: 5;
         font-size: calc(22 * var(--u));
         line-height: 1.38;
@@ -292,7 +284,7 @@
       .hero-cta-stack {
         position: absolute;
         left: calc(57 * var(--u));
-        top: calc(592 * var(--u));
+        top: calc(548 * var(--u));
         display: flex;
         flex-direction: column;
         gap: calc(12 * var(--u));
@@ -368,11 +360,49 @@
       }
 
       .status-dot-green {
+        position: relative;
         width: calc(10 * var(--u));
         height: calc(10 * var(--u));
         border-radius: 50%;
         background: #58c91c;
         flex-shrink: 0;
+        box-shadow: 0 0 calc(8 * var(--u)) rgba(88, 201, 28, 0.85);
+        animation: statusDotBlink 1.6s ease-in-out infinite;
+      }
+
+      .status-dot-green::after {
+        content: '';
+        position: absolute;
+        inset: calc(-4 * var(--u));
+        border-radius: 50%;
+        background: rgba(88, 201, 28, 0.48);
+        animation: statusDotRipple 1.6s ease-out infinite;
+        pointer-events: none;
+      }
+
+      @keyframes statusDotBlink {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+          box-shadow: 0 0 calc(9 * var(--u)) rgba(88, 201, 28, 0.95);
+        }
+        50% {
+          opacity: 0.32;
+          transform: scale(0.86);
+          box-shadow: 0 0 calc(2 * var(--u)) rgba(88, 201, 28, 0.25);
+        }
+      }
+
+      @keyframes statusDotRipple {
+        0% {
+          transform: scale(0.65);
+          opacity: 0.85;
+        }
+        100% {
+          transform: scale(2.1);
+          opacity: 0;
+        }
       }
 
       /* Right Column: Featured Project Card ("Trái Tim Biết Ơn") */
@@ -443,6 +473,14 @@
         justify-content: center;
         font-size: calc(18 * var(--u));
         transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .featured-arrow-btn .arrow-icon-img {
+        width: calc(22 * var(--u));
+        height: calc(22 * var(--u));
+        object-fit: contain;
+        display: block;
+        pointer-events: none;
       }
 
       .featured-project-card:hover .featured-arrow-btn {
@@ -571,7 +609,18 @@
       }
 
       .about-pill {
-        margin-bottom: calc(32 * var(--u));
+        margin-bottom: calc(22 * var(--u));
+      }
+
+      .about-title {
+        margin: 0 0 calc(36 * var(--u));
+        font-family: var(--font-sans);
+        font-size: calc(56 * var(--u));
+        font-weight: 700;
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+        color: #ffffff;
+        text-align: center;
       }
 
       .statement-text {
@@ -682,6 +731,16 @@
       /* ==========================================================================
          SECTION 3: EDUCATION & EXPERIENCE TIMELINE
          ========================================================================== */
+      /* Offset anchor scrolling so fixed header never covers section badges */
+      #about,
+      #experience,
+      #works,
+      #approach,
+      #tools,
+      #contact {
+        scroll-margin-top: calc(68 * var(--u));
+      }
+
       .edu-exp-section {
         position: relative;
         background: var(--black);
@@ -824,7 +883,7 @@
       .timeline-items {
         display: flex;
         flex-direction: column;
-        padding-left: calc(48 * var(--u));
+        padding-left: 0;
       }
 
       .timeline-row {
@@ -929,8 +988,8 @@
       .timeline-badge {
         margin-left: calc(24 * var(--u));
         margin-right: calc(22 * var(--u));
-        width: calc(52 * var(--u));
-        height: calc(52 * var(--u));
+        width: calc(54 * var(--u));
+        height: calc(54 * var(--u));
         border-radius: calc(13 * var(--u));
         background: #1a1a1a;
         border: 1px solid rgba(255, 255, 255, 0.08);
@@ -939,6 +998,7 @@
         justify-content: center;
         flex-shrink: 0;
         color: #f4f4f4;
+        overflow: hidden;
       }
 
       .timeline-badge svg {
@@ -946,28 +1006,35 @@
         height: calc(25 * var(--u));
       }
 
-      .timeline-badge.is-edu-logo {
-        width: calc(78 * var(--u));
-        height: calc(62 * var(--u));
-        border-radius: calc(14 * var(--u));
+      .timeline-badge img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
       }
 
-      .logo-mindx {
-        font-size: calc(15.5 * var(--u));
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        color: #ffffff;
+      .timeline-badge.is-logo-white {
+        background: #ffffff;
+        padding: calc(2.5 * var(--u));
       }
 
-      .logo-mindx-x {
-        color: #e5252a;
+      .timeline-badge.is-logo-mindx {
+        background: #e32028;
+        padding: 0;
       }
 
-      .logo-iuh {
-        font-size: calc(19.5 * var(--u));
-        font-weight: 800;
-        letter-spacing: -0.01em;
-        color: #ffffff;
+      .timeline-badge.is-logo-mindx img {
+        transform: scale(1.24);
+      }
+
+      .timeline-badge.is-logo-traitim {
+        background: #f5b316;
+        padding: 0;
+      }
+
+      .timeline-badge.is-logo-traitim img {
+        object-fit: cover;
+        transform: scale(1.06);
       }
 
       .timeline-content {
@@ -1091,15 +1158,28 @@
         height: calc(18 * var(--u));
       }
 
-      /* 3-Column Works Cards Grid */
+      /* Horizontal Scrollable Works Carousel (3 visible cards, smooth scroll to 4th) */
       .works-grid {
         margin-top: calc(42 * var(--u));
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        display: flex;
+        flex-wrap: nowrap;
         gap: calc(22 * var(--u));
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding: calc(4 * var(--u)) 0;
+      }
+
+      .works-grid::-webkit-scrollbar {
+        display: none;
       }
 
       .work-card {
+        flex: 0 0 calc((100% - calc(44 * var(--u))) / 3);
+        min-width: calc((100% - calc(44 * var(--u))) / 3);
+        scroll-snap-align: start;
         background: #0a0a0a;
         border: 1px solid rgba(255, 255, 255, 0.16);
         border-radius: calc(18 * var(--u));
@@ -1111,8 +1191,7 @@
       }
 
       .work-card:hover,
-      .work-card:focus-visible,
-      .work-card.is-highlighted {
+      .work-card:focus-visible {
         border-color: rgba(255, 255, 255, 0.34);
         transform: translateY(-2px);
       }
@@ -1120,7 +1199,8 @@
       .work-card-media {
         position: relative;
         width: 100%;
-        height: calc(291 * var(--u));
+        aspect-ratio: 848 / 530;
+        height: auto;
         overflow: hidden;
         border-radius: calc(16 * var(--u));
         background: #181818;
@@ -1136,6 +1216,119 @@
         clip: rect(0, 0, 0, 0);
         white-space: nowrap;
         border: 0;
+      }
+
+      .work-card-thumb {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        pointer-events: none;
+        user-select: none;
+        display: block;
+      }
+
+      /* Seamless full-width presentation for Lumina (848x487 inside 848x530) */
+      .work-card-media.is-lumina-ui {
+        background: #d6eef8;
+      }
+
+      .work-card-media.is-lumina-ui::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4.6%;
+        background-image: url('/assets/aistudio/image_673_1942a103.png');
+        background-size: 100% 3200%;
+        background-position: center top;
+        background-repeat: no-repeat;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .work-card-media.is-lumina-ui .work-card-thumb {
+        position: absolute;
+        top: 4.05%;
+        left: 0;
+        width: 100%;
+        height: 91.9%;
+        object-fit: contain;
+        z-index: 2;
+      }
+
+      .work-card-media.is-lumina-ui::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4.6%;
+        background-image: url('/assets/aistudio/image_673_1942a103.png');
+        background-size: 100% 540%;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        transform: scaleY(-1);
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      /* Seamless full-width presentation for Hilo Van (848x384 inside 848x530) */
+      .work-card-media.is-wide-ui {
+        background: linear-gradient(
+          90deg,
+          #ffffff 0%,
+          #ffffff 18.15%,
+          #eef0f4 18.15%,
+          #eef0f4 18.28%,
+          #f8fafc 18.28%,
+          #f8fafc 100%
+        );
+      }
+
+      .work-card-media.is-wide-ui::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4%;
+        background: #ffffff;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .work-card-media.is-wide-ui .work-card-thumb {
+        position: absolute;
+        top: 3.6%;
+        left: 0;
+        width: 100%;
+        height: 72.46%;
+        object-fit: contain;
+        z-index: 2;
+      }
+
+      .work-card-media.is-wide-ui::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 18.28%;
+        width: 81.72%;
+        height: 32%;
+        background: linear-gradient(
+          180deg,
+          rgba(248, 250, 252, 0) 0%,
+          rgba(248, 250, 252, 0.92) 24%,
+          #f8fafc 34%,
+          #f8fafc 100%
+        );
+        z-index: 3;
+        pointer-events: none;
+      }
+
+      .work-card[data-work-index="2"] .work-card-thumb {
+        object-position: center 42%;
       }
 
       .work-card-crop {
@@ -1206,12 +1399,26 @@
           transform 0.2s ease;
       }
 
+      .work-card-arrow .arrow-icon-img {
+        width: calc(22 * var(--u));
+        height: calc(22 * var(--u));
+        object-fit: contain;
+        display: block;
+        pointer-events: none;
+        transition: filter 0.2s ease, transform 0.2s ease;
+      }
+
       .work-card:hover .work-card-arrow,
       .work-card-arrow:hover {
         background: #ffffff;
         color: #0b0b0b;
         border-color: #ffffff;
         transform: translate(1px, -1px);
+      }
+
+      .work-card:hover .work-card-arrow .arrow-icon-img,
+      .work-card-arrow:hover .arrow-icon-img {
+        filter: invert(1);
       }
 
       /* ==========================================================================
@@ -1483,14 +1690,13 @@
       }
 
       .tools-pill {
-        margin-bottom: calc(24 * var(--u));
-        padding: 0 calc(20 * var(--u));
+        margin-bottom: calc(22 * var(--u));
       }
 
       .tools-title {
         margin: 0 0 calc(84 * var(--u));
         font-family: var(--font-sans);
-        font-size: calc(60 * var(--u));
+        font-size: calc(56 * var(--u));
         font-weight: 700;
         line-height: 1.08;
         letter-spacing: -0.03em;
@@ -1671,36 +1877,32 @@
       }
 
       .contact-pill {
-        position: relative;
         display: inline-flex;
         align-items: center;
         gap: calc(10 * var(--u));
-        height: calc(44 * var(--u));
-        padding: 0 calc(22 * var(--u));
+        height: calc(40 * var(--u));
+        padding: 0 calc(18 * var(--u));
         border-radius: calc(999 * var(--u));
-        background: linear-gradient(180deg, #171717 0%, #0b0b0b 100%);
-        border: 1px solid rgba(255, 255, 255, 0.36);
-        box-shadow:
-          0 0 calc(18 * var(--u)) rgba(255, 255, 255, 0.12),
-          inset 0 1px 0 rgba(255, 255, 255, 0.25);
-        font-size: calc(12 * var(--u));
+        background: #171717;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: calc(12.5 * var(--u));
         font-weight: 600;
-        letter-spacing: 0.16em;
+        letter-spacing: 0.03em;
         color: #f4f4f4;
         text-transform: uppercase;
       }
 
       .contact-pill svg {
-        width: calc(17 * var(--u));
-        height: calc(17 * var(--u));
+        width: calc(16 * var(--u));
+        height: calc(16 * var(--u));
         flex-shrink: 0;
       }
 
       .contact-title {
-        margin-top: calc(24 * var(--u));
+        margin-top: calc(22 * var(--u));
         font-family: var(--font-sans);
-        font-size: calc(64 * var(--u));
-        font-weight: 600;
+        font-size: calc(56 * var(--u));
+        font-weight: 700;
         line-height: 1.08;
         letter-spacing: -0.03em;
         color: #ffffff;
@@ -1803,6 +2005,30 @@
       .contact-input::placeholder,
       .contact-textarea::placeholder {
         color: #b4b4b4;
+      }
+
+      /* Prevent browser autofill from painting a white/blue background on dark inputs */
+      .contact-input:-webkit-autofill,
+      .contact-input:-webkit-autofill:hover,
+      .contact-input:-webkit-autofill:focus,
+      .contact-input:-webkit-autofill:active,
+      .contact-textarea:-webkit-autofill,
+      .contact-textarea:-webkit-autofill:hover,
+      .contact-textarea:-webkit-autofill:focus,
+      .contact-textarea:-webkit-autofill:active,
+      .dialog-input:-webkit-autofill,
+      .dialog-input:-webkit-autofill:hover,
+      .dialog-input:-webkit-autofill:focus,
+      .dialog-input:-webkit-autofill:active {
+        -webkit-text-fill-color: #f4f4f4 !important;
+        caret-color: #f4f4f4 !important;
+        -webkit-box-shadow: 0 0 0 1000px #1d1d1d inset !important;
+        box-shadow: 0 0 0 1000px #1d1d1d inset !important;
+        background-color: transparent !important;
+        background-clip: content-box !important;
+        transition:
+          background-color 600000s ease-in-out 0s,
+          color 600000s ease-in-out 0s !important;
       }
 
       .contact-textarea {
@@ -2212,7 +2438,8 @@
       .project-modal-stage {
         position: relative;
         width: 100%;
-        height: calc(446 * var(--u));
+        aspect-ratio: 848 / 530;
+        height: auto;
         border-radius: calc(18 * var(--u));
         overflow: hidden;
         background: #14141a;
@@ -2223,9 +2450,172 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center top;
         display: block;
         user-select: none;
         transition: opacity 0.2s ease;
+      }
+
+      .project-modal-stage.is-traitim-ui .project-modal-main-img {
+        object-position: center 42%;
+      }
+
+      .project-modal-stage.is-traitim-screen .project-modal-main-img {
+        width: 100%;
+        height: 108%;
+        margin-top: -2%;
+        object-fit: fill;
+      }
+
+      .project-modal-stage.is-lumina-ui {
+        background: #d6eef8;
+      }
+
+      .project-modal-stage.is-lumina-ui::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4.6%;
+        background-image: url('/assets/aistudio/image_673_1942a103.png');
+        background-size: 100% 3200%;
+        background-position: center top;
+        background-repeat: no-repeat;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .project-modal-stage.is-lumina-ui .project-modal-main-img {
+        position: absolute;
+        top: 4.05%;
+        left: 0;
+        width: 100%;
+        height: 91.9%;
+        object-fit: contain;
+        z-index: 2;
+      }
+
+      .project-modal-stage.is-lumina-ui::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4.6%;
+        background-image: url('/assets/aistudio/image_673_1942a103.png');
+        background-size: 100% 540%;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        transform: scaleY(-1);
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .project-modal-stage.is-lumina-section .project-modal-main-img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+
+      .project-modal-stage.is-wide-ui {
+        background: linear-gradient(
+          90deg,
+          #ffffff 0%,
+          #ffffff 18.15%,
+          #eef0f4 18.15%,
+          #eef0f4 18.28%,
+          #f8fafc 18.28%,
+          #f8fafc 100%
+        );
+      }
+
+      .project-modal-stage.is-wide-ui::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4%;
+        background: #ffffff;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .project-modal-stage.is-wide-ui .project-modal-main-img,
+      .project-modal-stage.is-wide-modal-ui .project-modal-main-img {
+        position: absolute;
+        top: 3.6%;
+        left: 0;
+        width: 100%;
+        height: 72.46%;
+        object-fit: contain;
+        z-index: 2;
+      }
+
+      .project-modal-stage.is-wide-ui::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 18.28%;
+        width: 81.72%;
+        height: 25.5%;
+        background: linear-gradient(
+          180deg,
+          rgba(248, 250, 252, 0) 0%,
+          rgba(248, 250, 252, 0.92) 8%,
+          #f8fafc 16%,
+          #f8fafc 100%
+        );
+        z-index: 3;
+        pointer-events: none;
+      }
+
+      .project-modal-stage.is-wide-modal-ui {
+        background: linear-gradient(
+          90deg,
+          #909294 0%,
+          #909294 18.15%,
+          #888a8d 18.15%,
+          #888a8d 18.28%,
+          #97999c 18.28%,
+          #97999c 100%
+        );
+      }
+
+      .project-modal-stage.is-wide-modal-ui::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4%;
+        background: #999999;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .project-modal-stage.is-wide-modal-ui::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 18.28%;
+        width: 81.72%;
+        height: 25.5%;
+        background: linear-gradient(
+          180deg,
+          rgba(151, 153, 156, 0) 0%,
+          rgba(151, 153, 156, 0.92) 8%,
+          #97999c 16%,
+          #97999c 100%
+        );
+        z-index: 3;
+        pointer-events: none;
+      }
+
+      .project-modal-counter,
+      .project-modal-stage-nav {
+        z-index: 5;
       }
 
       .project-modal-counter {
@@ -2447,7 +2837,9 @@
         line-height: 1.42;
         color: #d4d4dc;
         font-weight: 400;
-        white-space: nowrap;
+        white-space: normal;
+        overflow-wrap: break-word;
+        min-width: 0;
       }
 
       .pm-tools-list {
@@ -2522,6 +2914,10 @@
         transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
       }
 
+      .pm-btn-primary .btn-arrow-img {
+        filter: invert(1);
+      }
+
       .pm-btn-secondary:hover {
         transform: translateY(-1px);
         border-color: rgba(255, 255, 255, 0.36);
@@ -2556,8 +2952,8 @@
 
         .nav-link {
           height: calc(32 * var(--u));
-          padding: 0 calc(12 * var(--u));
-          font-size: calc(12 * var(--u));
+          padding: 0 calc(9 * var(--u));
+          font-size: calc(11.5 * var(--u));
         }
 
         .btn-connect {
@@ -2585,7 +2981,6 @@
 
         .hero-name-kicker,
         .hero-title,
-        .hero-divider-dash,
         .hero-tagline-copy,
         .hero-cta-stack {
           position: relative;
@@ -2803,12 +3198,17 @@
         }
 
         .works-grid {
-          grid-template-columns: 1fr;
-          gap: calc(18 * var(--u));
+          gap: calc(16 * var(--u));
+        }
+
+        .work-card {
+          flex: 0 0 86%;
+          min-width: 86%;
         }
 
         .work-card-media {
-          height: calc(238 * var(--u));
+          aspect-ratio: 848 / 530;
+          height: auto;
         }
 
         .work-card-crop {
@@ -2969,45 +3369,198 @@
 
         .project-modal {
           width: 100%;
-          padding: calc(24 * var(--u)) calc(18 * var(--u));
+          max-width: 94vw;
+          max-height: 90vh;
+          overflow-x: hidden;
+          padding: calc(14 * var(--u)) calc(16 * var(--u)) calc(22 * var(--u));
+          border-radius: calc(22 * var(--u));
+        }
+
+        .project-modal-close {
+          position: sticky;
+          top: 0;
+          right: auto;
+          left: auto;
+          margin-left: auto;
+          margin-bottom: calc(10 * var(--u));
+          width: calc(36 * var(--u));
+          height: calc(36 * var(--u));
+          display: flex;
+          z-index: 30;
+          background: rgba(24, 24, 32, 0.9);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .project-modal-close svg {
+          width: calc(16 * var(--u));
+          height: calc(16 * var(--u));
         }
 
         .project-modal-grid {
           grid-template-columns: 1fr;
-          gap: calc(24 * var(--u));
+          gap: calc(20 * var(--u));
         }
 
         .project-modal-stage {
-          height: calc(236 * var(--u));
+          aspect-ratio: 848 / 530;
+          height: auto;
+          border-radius: calc(14 * var(--u));
+        }
+
+        .project-modal-counter {
+          left: calc(12 * var(--u));
+          bottom: calc(12 * var(--u));
+          height: calc(30 * var(--u));
+          padding: 0 calc(12 * var(--u));
+          font-size: calc(12.5 * var(--u));
+        }
+
+        .project-modal-stage-nav {
+          right: calc(12 * var(--u));
+          bottom: calc(10 * var(--u));
+          gap: calc(8 * var(--u));
+        }
+
+        .pm-stage-btn {
+          width: calc(34 * var(--u));
+          height: calc(34 * var(--u));
+        }
+
+        .pm-stage-btn svg {
+          width: calc(14 * var(--u));
+          height: calc(14 * var(--u));
+        }
+
+        .project-modal-thumbs {
+          margin-top: calc(12 * var(--u));
+          gap: calc(8 * var(--u));
         }
 
         .project-modal-thumb {
-          height: calc(48 * var(--u));
+          height: calc(46 * var(--u));
+          border-radius: calc(8 * var(--u));
+        }
+
+        .pm-category-pill {
+          height: calc(32 * var(--u));
+          padding: 0 calc(14 * var(--u));
+          font-size: calc(12.5 * var(--u));
         }
 
         .pm-title {
-          font-size: calc(30 * var(--u));
+          margin-top: calc(12 * var(--u));
+          font-size: calc(28 * var(--u));
+        }
+
+        .pm-desc {
+          margin-top: calc(10 * var(--u));
+          max-width: 100%;
+          font-size: calc(14.5 * var(--u));
+          line-height: 1.5;
         }
 
         .pm-highlights-box {
+          margin-top: calc(18 * var(--u));
+          padding: calc(14 * var(--u));
           grid-template-columns: 1fr;
-          gap: calc(10 * var(--u));
+          gap: calc(12 * var(--u));
+          border-radius: calc(14 * var(--u));
+        }
+
+        .pm-highlight-item {
+          padding: 0;
+          gap: calc(12 * var(--u));
         }
 
         .pm-highlight-item + .pm-highlight-item {
           border-left: none;
           border-top: 1px solid rgba(255, 255, 255, 0.1);
-          padding-top: calc(10 * var(--u));
+          padding-top: calc(12 * var(--u));
+        }
+
+        .pm-highlight-icon {
+          width: calc(22 * var(--u));
+          height: calc(22 * var(--u));
+        }
+
+        .pm-highlight-text {
+          font-size: calc(14 * var(--u));
+          line-height: 1.4;
+        }
+
+        .pm-highlight-text br {
+          display: none;
+        }
+
+        .pm-meta-table {
+          margin-top: calc(16 * var(--u));
+        }
+
+        .pm-meta-row {
+          grid-template-columns: calc(100 * var(--u)) minmax(0, 1fr);
+          align-items: start;
+          gap: calc(8 * var(--u));
+          padding: calc(12 * var(--u)) 0;
+        }
+
+        .pm-meta-label {
+          font-size: calc(13.5 * var(--u));
+          padding-top: calc(1 * var(--u));
+        }
+
+        .pm-meta-label svg {
+          width: calc(16 * var(--u));
+          height: calc(16 * var(--u));
+        }
+
+        .pm-meta-value {
+          font-size: calc(13.5 * var(--u));
+          line-height: 1.45;
+          white-space: normal;
+          overflow-wrap: break-word;
+          word-break: break-word;
+          min-width: 0;
+        }
+
+        .pm-tools-list {
+          gap: calc(10 * var(--u));
+          flex-wrap: wrap;
+        }
+
+        .pm-tool-circle {
+          width: calc(32 * var(--u));
+          height: calc(32 * var(--u));
+        }
+
+        .pm-tool-circle svg,
+        .pm-tool-circle img {
+          width: calc(18 * var(--u));
+          height: calc(18 * var(--u));
         }
 
         .pm-actions-row {
+          margin-top: calc(22 * var(--u));
           flex-direction: column;
+          gap: calc(12 * var(--u));
         }
 
         .pm-btn-primary,
         .pm-btn-secondary {
+          flex: none;
           width: 100%;
-          height: calc(46 * var(--u));
+          height: calc(50 * var(--u));
+          min-height: calc(50 * var(--u));
+          font-size: calc(15.5 * var(--u));
+          border-radius: calc(999 * var(--u));
+          gap: calc(8 * var(--u));
+        }
+
+        .pm-btn-primary .btn-arrow-img,
+        .pm-btn-secondary .btn-arrow-img {
+          width: calc(16 * var(--u));
+          height: calc(16 * var(--u));
         }
       }
 
@@ -3035,8 +3588,9 @@
             <div class="nav-slider" id="nav-slider" aria-hidden="true"></div>
             <a href="#home" class="nav-link is-active is-pill-target" data-nav-index="0">Home</a>
             <a href="#about" class="nav-link" data-nav-index="1">About</a>
-            <a href="#works" class="nav-link" data-nav-index="2">Works</a>
-            <a href="#contact" class="nav-link" data-nav-index="3">Contact</a>
+            <a href="#experience" class="nav-link" data-nav-index="2">Experience</a>
+            <a href="#works" class="nav-link" data-nav-index="3">Works</a>
+            <a href="#contact" class="nav-link" data-nav-index="4">Contact</a>
           </nav>
 
           <!-- Top-Right "Let's Connect ↗" Button -->
@@ -3047,10 +3601,15 @@
             aria-label="Let's Connect"
           >
             <span class="btn-connect-label">Let’s Connect</span>
-            <span class="btn-arrow" aria-hidden="true">↗</span>
+            <img
+              src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
+              alt=""
+              class="btn-arrow-img"
+              aria-hidden="true"
+            />
           </button>
 
-          <!-- Left Column: Name, UI/UX DESIGNER, Dash, Tagline, Action Buttons -->
+          <!-- Left Column: Name, UI/UX DESIGNER, Tagline, Action Button -->
           <div class="hero-intro-mobile">
             <div class="hero-name-kicker hero-rise">NGUYEN VIET PHONG</div>
 
@@ -3061,8 +3620,6 @@
               >
             </h1>
 
-            <div class="hero-divider-dash hero-rise" aria-hidden="true"></div>
-
             <p class="hero-tagline-copy hero-rise">
               Designing intuitive experiences<br />
               for complex digital products.
@@ -3071,32 +3628,13 @@
             <div class="hero-cta-stack hero-rise">
               <a href="#works" class="btn-work-primary">
                 <span>View Selected Work</span>
-                <span class="btn-arrow" aria-hidden="true">↗</span>
-              </a>
-
-              <button
-                type="button"
-                class="btn-resume-secondary"
-                id="btn-download-resume"
-                aria-label="Download Resume"
-              >
-                <span>Download Resume</span>
-                <svg
-                  class="resume-icon-svg"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                <img
+                  src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
+                  alt=""
+                  class="btn-arrow-img"
                   aria-hidden="true"
-                >
-                  <path
-                    d="M9 2.75V11.75M9 11.75L5.75 8.5M9 11.75L12.25 8.5M3.25 13.25V14.25C3.25 14.8023 3.69772 15.25 4.25 15.25H13.75C14.3023 15.25 14.75 14.8023 14.75 14.25V13.25"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
+                />
+              </a>
             </div>
           </div>
 
@@ -3122,7 +3660,7 @@
           <article
             class="featured-project-card hero-rise"
             id="featured-project"
-            data-open-project="0"
+            data-open-project="2"
             aria-label="Featured Project: Trái Tim Biết Ơn"
           >
             <div class="featured-card-header">
@@ -3132,10 +3670,15 @@
               <a
                 href="#works"
                 class="featured-arrow-btn"
-                data-open-project="0"
+                data-open-project="2"
                 aria-label="View Trái Tim Biết Ơn Case Study"
               >
-                <span aria-hidden="true">↗</span>
+                <img
+                  src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
+                  alt=""
+                  class="arrow-icon-img"
+                  aria-hidden="true"
+                />
               </a>
             </div>
 
@@ -3151,49 +3694,8 @@
       </section>
 
       <!-- ====================================================================
-           SECTION 2: LOCATION BAR & DESIGN PHILOSOPHY STATEMENT
+           SECTION 2: DESIGN PHILOSOPHY STATEMENT
            ==================================================================== -->
-      <div class="bar-section" role="region" aria-label="Location and Discipline Bar">
-        <div class="bar-inner">
-          <div class="bar-location">
-            <svg
-              class="pin-icon-svg"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M10 10.625C11.3807 10.625 12.5 9.50571 12.5 8.125C12.5 6.74429 11.3807 5.625 10 5.625C8.61929 5.625 7.5 6.74429 7.5 8.125C7.5 9.50571 8.61929 10.625 10 10.625Z"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M16.25 8.125C16.25 13.75 10 18.125 10 18.125C10 18.125 3.75 13.75 3.75 8.125C3.75 6.4674 4.40848 4.87769 5.58058 3.70558C6.75269 2.53348 8.3424 1.875 10 1.875C11.6576 1.875 13.2473 2.53348 14.4194 3.70558C15.5915 4.87769 16.25 6.4674 16.25 8.125Z"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <span>HO CHI MINH CITY, VIETNAM</span>
-          </div>
-
-          <button type="button" class="bar-scroll-btn" id="scroll-down-btn">
-            <span>SCROLL TO EXPLORE</span>
-            <span class="scroll-disc" aria-hidden="true">↓</span>
-          </button>
-
-          <div class="bar-right">
-            <span>DESIGN</span>
-            <span class="bar-multiply" aria-hidden="true">×</span>
-            <span>TECHNOLOGY</span>
-          </div>
-        </div>
-      </div>
-
       <section class="statement-section" id="about" aria-label="Design Philosophy">
         <div class="statement-inner">
           <div class="edu-exp-pill about-pill">
@@ -3208,6 +3710,7 @@
             </svg>
             <span>ABOUT ME</span>
           </div>
+          <h2 class="about-title">About Me</h2>
           <p class="statement-text" id="statement-text">
             <span class="stmt-word">My</span>
             <span class="stmt-word">background</span>
@@ -3304,12 +3807,12 @@
       </section>
 
       <!-- ====================================================================
-           SECTION 3: EDUCATION & EXPERIENCE TIMELINE
+           SECTION 3: EXPERIENCE & EDUCATION TIMELINE
            ==================================================================== -->
       <section
         class="edu-exp-section"
         id="experience"
-        aria-label="Education and Experience"
+        aria-label="Experience and Education"
       >
         <!-- Seamless golden planet rim glow bridging into Selected Works -->
         <div class="horizon-glow-wrap" aria-hidden="true">
@@ -3381,12 +3884,12 @@
                 />
                 <path d="M2.5 9.25H15.5" stroke="currentColor" stroke-width="1.3" />
               </svg>
-              <span>EDUCATION &amp; EXPERIENCE</span>
+              <span>EXPERIENCE &amp; EDUCATION</span>
             </div>
 
             <h2 class="edu-exp-title">
-              Education &amp;<br />
-              Experience
+              Experience &amp;<br />
+              Education
             </h2>
 
             <p class="edu-exp-desc">
@@ -3489,23 +3992,8 @@
                   <div class="timeline-axis" aria-hidden="true">
                     <span class="timeline-dot"></span>
                   </div>
-                  <div class="timeline-badge" aria-hidden="true">
-                    <!-- Drafting Compass Icon -->
-                    <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="13" cy="6" r="2" stroke="currentColor" stroke-width="1.5" />
-                      <path
-                        d="M13 3V4M11.6 7.6L6.5 21.5M14.4 7.6L19.5 21.5"
-                        stroke="currentColor"
-                        stroke-width="1.6"
-                        stroke-linecap="round"
-                      />
-                      <path
-                        d="M7.5 15.5C9.2 17 11 17.6 13 17.6C15 17.6 16.8 17 18.5 15.5"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                      />
-                    </svg>
+                  <div class="timeline-badge is-logo-white" aria-label="Hilo Logo">
+                    <img src="/assets/aistudio/image_7788c9be.png" alt="Hilo Group Logo" loading="eager" />
                   </div>
                   <div class="timeline-content">
                     <h4 class="timeline-role">UI/UX Designer</h4>
@@ -3522,24 +4010,8 @@
                   <div class="timeline-axis" aria-hidden="true">
                     <span class="timeline-dot"></span>
                   </div>
-                  <div class="timeline-badge" aria-hidden="true">
-                    <!-- Gamepad Controller Icon -->
-                    <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M6.5 9.5H19.5C21.2 9.5 22.5 10.9 22.2 12.6L21.3 18.2C21 19.8 19.3 20.6 17.9 19.7L15.3 18H10.7L8.1 19.7C6.7 20.6 5 19.8 4.7 18.2L3.8 12.6C3.5 10.9 4.8 9.5 6.5 9.5Z"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M9 12.5V15.5M7.5 14H10.5"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                      />
-                      <circle cx="16.5" cy="13.2" r="1" fill="currentColor" />
-                      <circle cx="18.5" cy="14.8" r="1" fill="currentColor" />
-                    </svg>
+                  <div class="timeline-badge is-logo-traitim" aria-label="Trái Tim Biết Ơn Logo">
+                    <img src="/assets/aistudio/image_672_692cd219.png" alt="Trái Tim Biết Ơn Logo" loading="eager" />
                   </div>
                   <div class="timeline-content">
                     <h4 class="timeline-role">UI/UX Designer</h4>
@@ -3588,8 +4060,8 @@
                   <div class="timeline-axis" aria-hidden="true">
                     <span class="timeline-dot"></span>
                   </div>
-                  <div class="timeline-badge is-edu-logo" aria-label="MindX Logo">
-                    <span class="logo-mindx">Mind<span class="logo-mindx-x">X</span></span>
+                  <div class="timeline-badge is-logo-mindx" aria-label="MindX Logo">
+                    <img src="/assets/aistudio/image_edb08f22.png" alt="MindX Technology School Logo" loading="eager" />
                   </div>
                   <div class="timeline-content">
                     <h4 class="timeline-role">MindX Technology School</h4>
@@ -3603,8 +4075,8 @@
                   <div class="timeline-axis" aria-hidden="true">
                     <span class="timeline-dot"></span>
                   </div>
-                  <div class="timeline-badge is-edu-logo" aria-label="IUH Logo">
-                    <span class="logo-iuh">iUH</span>
+                  <div class="timeline-badge is-logo-white" aria-label="IUH Logo">
+                    <img src="/assets/aistudio/image_3d7ed252.png" alt="Industrial University of Ho Chi Minh City Logo" loading="eager" />
                   </div>
                   <div class="timeline-content">
                     <h4 class="timeline-role">Industrial University of Ho Chi Minh City</h4>
@@ -3695,72 +4167,14 @@
           </div>
 
           <div class="works-grid" id="works-grid">
-            <!-- Work Card 1: Trái Tim Biết Ơn -->
+            <!-- Work Card 1: Eggoria -->
             <article class="work-card" data-work-index="0" data-open-project="0" tabindex="0">
-              <div class="work-card-media">
-                <span class="work-card-tag">Product Design</span>
-                <img
-                  src="/assets/aistudio/image_a6395138.png"
-                  alt="Trái Tim Biết Ơn mobile app screens showing 3D character and daily tasks"
-                  class="work-card-crop crop-1"
-                />
-              </div>
-              <div class="work-card-body">
-                <div class="work-card-info">
-                  <h3 class="work-card-title">Trái Tim Biết Ơn</h3>
-                  <p class="work-card-desc">
-                    Gamified education experience for<br />
-                    mobile app and admin platform.
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  class="work-card-arrow"
-                  data-open-project="0"
-                  aria-label="Open Trái Tim Biết Ơn Case Study"
-                >
-                  <span aria-hidden="true">↗</span>
-                </button>
-              </div>
-            </article>
-
-            <!-- Work Card 2: Hilo Van Services -->
-            <article class="work-card" data-work-index="1" data-open-project="1" tabindex="0">
-              <div class="work-card-media">
-                <span class="work-card-tag">Enterprise UX/UI</span>
-                <img
-                  src="/assets/aistudio/image_a6395138.png"
-                  alt="Hilo Van Services enterprise ERP and CRM web dashboard interface on laptop"
-                  class="work-card-crop crop-2"
-                />
-              </div>
-              <div class="work-card-body">
-                <div class="work-card-info">
-                  <h3 class="work-card-title">Hilo Van Services</h3>
-                  <p class="work-card-desc">
-                    ERP/CRM interface and design system<br />
-                    for enterprise operations.
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  class="work-card-arrow"
-                  data-open-project="1"
-                  aria-label="Open Hilo Van Services Case Study"
-                >
-                  <span aria-hidden="true">↗</span>
-                </button>
-              </div>
-            </article>
-
-            <!-- Work Card 3: Eggoria -->
-            <article class="work-card" data-work-index="2" data-open-project="2" tabindex="0">
               <div class="work-card-media">
                 <span class="work-card-tag">Web3 Product</span>
                 <img
-                  src="/assets/aistudio/image_a6395138.png"
-                  alt="Eggoria gamified Web3 learning platform 3D pilot character with map and floating castles"
-                  class="work-card-crop crop-3"
+                  src="/assets/aistudio/Desktop___Section_01___STATUS__NOT_DESIGNED_92d7dcd3.png"
+                  alt="Eggoria gamified Web3 learning platform — Learn Web3 and Hatch Your Own Bird"
+                  class="work-card-thumb"
                 />
               </div>
               <div class="work-card-body">
@@ -3774,10 +4188,117 @@
                 <button
                   type="button"
                   class="work-card-arrow"
-                  data-open-project="2"
+                  data-open-project="0"
                   aria-label="Open Eggoria Case Study"
                 >
-                  <span aria-hidden="true">↗</span>
+                  <img
+                    src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
+                    alt=""
+                    class="arrow-icon-img"
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+            </article>
+
+            <!-- Work Card 2: Hilo TVan -->
+            <article class="work-card" data-work-index="1" data-open-project="1" tabindex="0">
+              <div class="work-card-media is-wide-ui">
+                <span class="work-card-tag">Enterprise UX/UI</span>
+                <img
+                  src="/assets/aistudio/Screenshot_2026-11-12_200747_1_508ff03b.png"
+                  alt="Hilo TVan enterprise ERP and CRM portal interface"
+                  class="work-card-thumb"
+                />
+              </div>
+              <div class="work-card-body">
+                <div class="work-card-info">
+                  <h3 class="work-card-title">Hilo TVan</h3>
+                  <p class="work-card-desc">
+                    ERP/CRM interface and design system<br />
+                    for enterprise operations.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="work-card-arrow"
+                  data-open-project="1"
+                  aria-label="Open Hilo TVan Case Study"
+                >
+                  <img
+                    src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
+                    alt=""
+                    class="arrow-icon-img"
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+            </article>
+
+            <!-- Work Card 3: Trái Tim Biết Ơn -->
+            <article class="work-card" data-work-index="2" data-open-project="2" tabindex="0">
+              <div class="work-card-media">
+                <span class="work-card-tag">Product Design</span>
+                <img
+                  src="/assets/aistudio/3241c499-4332-46b8-a454-fe7703fa0a03_1_9a912b45.png"
+                  alt="Trái Tim Biết Ơn mobile app screens showing Hạt Giống Biết Ơn and Phần Thưởng"
+                  class="work-card-thumb"
+                />
+              </div>
+              <div class="work-card-body">
+                <div class="work-card-info">
+                  <h3 class="work-card-title">Trái Tim Biết Ơn</h3>
+                  <p class="work-card-desc">
+                    Gamified education experience for<br />
+                    mobile app and admin platform.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="work-card-arrow"
+                  data-open-project="2"
+                  aria-label="Open Trái Tim Biết Ơn Case Study"
+                >
+                  <img
+                    src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
+                    alt=""
+                    class="arrow-icon-img"
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+            </article>
+
+            <!-- Work Card 4: Lumina -->
+            <article class="work-card" data-work-index="3" data-open-project="3" tabindex="0">
+              <div class="work-card-media is-lumina-ui">
+                <span class="work-card-tag">Real Estate UX/UI</span>
+                <img
+                  src="/assets/aistudio/image_673_1942a103.png"
+                  alt="Lumina Premium Real Estate web interface — Where luxury is crafted to last forever"
+                  class="work-card-thumb"
+                />
+              </div>
+              <div class="work-card-body">
+                <div class="work-card-info">
+                  <h3 class="work-card-title">Lumina</h3>
+                  <p class="work-card-desc">
+                    Premium real estate web experience for<br />
+                    luxury residences and virtual tours.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="work-card-arrow"
+                  data-open-project="3"
+                  aria-label="Open Lumina Case Study"
+                >
+                  <img
+                    src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
+                    alt=""
+                    class="arrow-icon-img"
+                    aria-hidden="true"
+                  />
                 </button>
               </div>
             </article>
@@ -3810,27 +4331,6 @@
           </div>
 
           <div class="approach-heading-row">
-            <svg
-              class="approach-heading-icon"
-              viewBox="0 0 44 44"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M22 7L6 15.8L22 24.6L38 15.8L22 7Z"
-                stroke="currentColor"
-                stroke-width="2.4"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M6 25.5L22 34.3L38 25.5"
-                stroke="currentColor"
-                stroke-width="2.4"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
             <h2 class="approach-title">My Design Approach</h2>
           </div>
 
@@ -3988,7 +4488,7 @@
                 <!-- 2. OpenAI Codex -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon" aria-hidden="true">
-                    <img src="/assets/aistudio/image_6d6032a2.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/image_942931ef.png" alt="" loading="eager" />
                   </span>
                   <span class="tool-badge-name">OpenAI Codex</span>
                 </div>
@@ -4065,17 +4565,7 @@
                 <!-- 8. Rive -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon" aria-hidden="true">
-                    <svg viewBox="0 0 44 44" fill="none">
-                      <g transform="translate(22 22) scale(1.32) translate(-22.5 -23.25)">
-                        <path
-                          d="M10 10H26C31.52 10 35 13.28 35 18C35 22.72 31.52 26 26 26H17M25 26L33.5 36.5"
-                          stroke="#FFFFFF"
-                          stroke-width="3.2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </g>
-                    </svg>
+                    <img src="/assets/aistudio/image_3e553417.png" alt="" loading="eager" />
                   </span>
                   <span class="tool-badge-name">Rive</span>
                 </div>
@@ -4094,7 +4584,7 @@
                 <!-- 2. OpenAI Codex -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon">
-                    <img src="/assets/aistudio/image_6d6032a2.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/image_942931ef.png" alt="" loading="eager" />
                   </span>
                   <span class="tool-badge-name">OpenAI Codex</span>
                 </div>
@@ -4171,17 +4661,7 @@
                 <!-- 8. Rive -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon">
-                    <svg viewBox="0 0 44 44" fill="none">
-                      <g transform="translate(22 22) scale(1.32) translate(-22.5 -23.25)">
-                        <path
-                          d="M10 10H26C31.52 10 35 13.28 35 18C35 22.72 31.52 26 26 26H17M25 26L33.5 36.5"
-                          stroke="#FFFFFF"
-                          stroke-width="3.2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </g>
-                    </svg>
+                    <img src="/assets/aistudio/image_3e553417.png" alt="" loading="eager" />
                   </span>
                   <span class="tool-badge-name">Rive</span>
                 </div>
@@ -4310,7 +4790,9 @@
 
           <div class="contact-direct">
             <p class="contact-direct-label">Or reach me directly at</p>
-            <a href="mailto:your@email.com" class="contact-direct-email">your@email.com</a>
+            <a href="mailto:nguyenvietphong13012000@gmail.com" class="contact-direct-email"
+              >nguyenvietphong13012000@gmail.com</a
+            >
           </div>
         </div>
       </section>
@@ -4322,13 +4804,6 @@
     <footer class="site-footer" aria-label="Site Footer">
       <div class="footer-inner">
         <a href="#home" class="footer-brand-row" aria-label="Nguyen Viet Phong — Back to top">
-          <img
-            src="/assets/aistudio/nvp_monogram.png"
-            alt=""
-            class="footer-monogram"
-            loading="eager"
-          />
-          <span class="footer-brand-divider" aria-hidden="true"></span>
           <span class="footer-brand-name">Nguyen Viet Phong</span>
         </a>
 
@@ -4340,7 +4815,7 @@
         <div class="footer-socials" aria-label="Social and Contact Links">
           <!-- 1. LinkedIn -->
           <a
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/in/nguy%E1%BB%85n-vi%E1%BA%BFt-phong-b9b082253/"
             target="_blank"
             rel="noopener noreferrer"
             class="footer-social-btn"
@@ -4356,17 +4831,17 @@
             </svg>
           </a>
 
-          <!-- 2. Behance -->
+          <!-- 2. X (Twitter) -->
           <a
-            href="https://www.behance.net"
+            href="https://x.com/Chuheobd1Phong"
             target="_blank"
             rel="noopener noreferrer"
             class="footer-social-btn"
-            aria-label="Behance"
+            aria-label="X"
           >
-            <svg viewBox="0 0 22 20" fill="none" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <path
-                d="M7.15 4.6C8.78 4.6 9.88 5.42 9.88 6.92C9.88 7.88 9.38 8.54 8.64 8.86C9.66 9.18 10.28 10.02 10.28 11.24C10.28 13.06 8.92 14.0 6.98 14.0H2.2V4.6H7.15ZM4.28 8.36H6.62C7.42 8.36 7.9 7.96 7.9 7.22C7.9 6.48 7.42 6.14 6.62 6.14H4.28V8.36ZM4.28 12.42H6.78C7.68 12.42 8.22 11.98 8.22 11.12C8.22 10.26 7.66 9.84 6.74 9.84H4.28V12.42ZM13.35 5.15H17.85V6.4H13.35V5.15ZM15.65 7.05C17.82 7.05 19.22 8.52 19.22 10.82V11.25H13.68C13.8 12.22 14.48 12.78 15.68 12.78C16.58 12.78 17.18 12.4 17.46 11.88L19.08 12.42C18.54 13.52 17.36 14.2 15.62 14.2C13.32 14.2 11.82 12.76 11.82 10.62C11.82 8.48 13.34 7.05 15.65 7.05ZM13.72 9.95H17.34C17.22 9.02 16.6 8.42 15.6 8.42C14.54 8.42 13.88 9.0 13.72 9.95Z"
+                d="M14.773 2.5H17.38L11.685 9.009L18.385 17.866H13.139L9.03 12.494L4.329 17.866H1.72L7.812 10.903L1.385 2.5H6.764L10.478 7.41L14.773 2.5ZM13.858 16.305H15.303L5.978 3.979H4.428L13.858 16.305Z"
                 fill="currentColor"
               />
             </svg>
@@ -4374,7 +4849,7 @@
 
           <!-- 3. Direct Email -->
           <a
-            href="mailto:your@email.com"
+            href="mailto:nguyenvietphong13012000@gmail.com"
             class="footer-social-btn"
             aria-label="Send Email"
           >
@@ -4441,12 +4916,12 @@
           <div class="project-modal-gallery">
             <div class="project-modal-stage">
               <img
-                src="/assets/aistudio/eggoria_slide_1.png"
+                src="/assets/aistudio/Desktop___Section_01___STATUS__NOT_DESIGNED_92d7dcd3.png"
                 alt="Eggoria project preview"
                 class="project-modal-main-img"
                 id="pm-main-img"
               />
-              <div class="project-modal-counter" id="pm-counter">1 / 6</div>
+              <div class="project-modal-counter" id="pm-counter">1 / 5</div>
               <div class="project-modal-stage-nav">
                 <button
                   type="button"
@@ -4614,11 +5089,21 @@
             <div class="pm-actions-row">
               <a href="#contact" class="pm-btn-primary" id="pm-case-study-btn">
                 <span>View Full Case Study</span>
-                <span aria-hidden="true">↗</span>
+                <img
+                  src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
+                  alt=""
+                  class="btn-arrow-img"
+                  aria-hidden="true"
+                />
               </a>
               <a href="#contact" class="pm-btn-secondary" id="pm-live-demo-btn">
                 <span>Live Demo</span>
-                <span aria-hidden="true">↗</span>
+                <img
+                  src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
+                  alt=""
+                  class="btn-arrow-img"
+                  aria-hidden="true"
+                />
               </a>
             </div>
           </div>
@@ -4668,7 +5153,16 @@
             required
           />
         </label>
-        <button type="submit" class="dialog-submit">Send Message ↗</button>
+        <button type="submit" class="dialog-submit">
+          <span>Send Message</span>
+          <img
+            src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
+            alt=""
+            class="btn-arrow-img"
+            style="filter: invert(1); display: inline-block; vertical-align: middle; margin-left: 6px;"
+            aria-hidden="true"
+          />
+        </button>
         <div class="dialog-status" id="dialog-status" role="status" aria-live="polite"></div>
       </form>
     </dialog>
@@ -4683,17 +5177,35 @@
         const navSlider = document.getElementById('nav-slider');
         const navLinks = Array.from(document.querySelectorAll('.nav-link'));
         let activeLink = navLinks[0];
+        let isNavClickScrolling = false;
+        let navScrollUnlockTimer = null;
 
         function positionNavSlider(targetEl) {
           if (!nav || !navSlider || !targetEl) return;
           const navRect = nav.getBoundingClientRect();
           const linkRect = targetEl.getBoundingClientRect();
-          const offsetLeft = linkRect.left - navRect.left - 5;
+          const padLeft = parseFloat(window.getComputedStyle(nav).paddingLeft) || 5;
+          const offsetLeft = linkRect.left - navRect.left - padLeft;
           navSlider.style.width = linkRect.width + 'px';
           navSlider.style.transform = 'translate3d(' + offsetLeft + 'px, 0, 0)';
           navLinks.forEach(function (link) {
             link.classList.toggle('is-pill-target', link === targetEl);
           });
+        }
+
+        function setActiveNavLink(targetEl) {
+          if (!targetEl) return;
+          activeLink = targetEl;
+          navLinks.forEach(function (link) {
+            const isCurrent = link === activeLink;
+            link.classList.toggle('is-active', isCurrent);
+            if (isCurrent) {
+              link.setAttribute('aria-current', 'page');
+            } else {
+              link.removeAttribute('aria-current');
+            }
+          });
+          positionNavSlider(activeLink);
         }
 
         navLinks.forEach(function (link) {
@@ -4703,9 +5215,24 @@
           link.addEventListener('focus', function () {
             positionNavSlider(link);
           });
-          link.addEventListener('click', function () {
-            activeLink = link;
-            positionNavSlider(activeLink);
+          link.addEventListener('click', function (e) {
+            const href = link.getAttribute('href') || '';
+            if (href.startsWith('#')) {
+              const targetSection = document.querySelector(href);
+              if (targetSection) {
+                e.preventDefault();
+                setActiveNavLink(link);
+                isNavClickScrolling = true;
+                if (navScrollUnlockTimer) clearTimeout(navScrollUnlockTimer);
+                targetSection.scrollIntoView({
+                  behavior: prefersReducedMotion ? 'auto' : 'smooth',
+                  block: 'start',
+                });
+                navScrollUnlockTimer = setTimeout(function () {
+                  isNavClickScrolling = false;
+                }, 750);
+              }
+            }
           });
         });
 
@@ -4715,11 +5242,40 @@
           });
         }
 
+        // Scroll-spy to keep active header link synced with current section in view
+        const navSections = navLinks
+          .map(function (link) {
+            const href = link.getAttribute('href') || '';
+            return {
+              link: link,
+              section: href.startsWith('#') ? document.querySelector(href) : null,
+            };
+          })
+          .filter(function (item) {
+            return Boolean(item.section);
+          });
+
+        function syncNavOnScroll() {
+          if (isNavClickScrolling || !navSections.length) return;
+          const triggerY = window.innerHeight * 0.34;
+          let matchedLink = navSections[0].link;
+          for (let i = 0; i < navSections.length; i++) {
+            const rect = navSections[i].section.getBoundingClientRect();
+            if (rect.top <= triggerY) {
+              matchedLink = navSections[i].link;
+            }
+          }
+          if (matchedLink !== activeLink) {
+            setActiveNavLink(matchedLink);
+          }
+        }
+
+        window.addEventListener('scroll', syncNavOnScroll, { passive: true });
         window.addEventListener('resize', function () {
           positionNavSlider(activeLink);
         });
         requestAnimationFrame(function () {
-          positionNavSlider(activeLink);
+          setActiveNavLink(activeLink);
         });
 
         // Scroll To Explore Bar Button
@@ -4731,31 +5287,56 @@
           });
         }
 
-        // Selected Works Prev / Next Navigation
+        // Selected Works Horizontal Carousel Scroll (Prev / Next Buttons)
+        const worksGrid = document.getElementById('works-grid');
         const worksPrevBtn = document.getElementById('works-prev');
         const worksNextBtn = document.getElementById('works-next');
-        const workCards = Array.from(document.querySelectorAll('.work-card'));
-        let activeWorkIndex = -1;
 
-        function highlightWorkCard(index) {
-          if (!workCards.length) return;
-          activeWorkIndex = ((index % workCards.length) + workCards.length) % workCards.length;
-          workCards.forEach(function (card, idx) {
-            card.classList.toggle('is-highlighted', idx === activeWorkIndex);
-          });
+        function getWorksScrollStep() {
+          if (!worksGrid) return 440;
+          const firstCard = worksGrid.querySelector('.work-card');
+          if (!firstCard) return 440;
+          const gridStyle = window.getComputedStyle(worksGrid);
+          const gap = parseFloat(gridStyle.columnGap || gridStyle.gap || '22') || 22;
+          return firstCard.getBoundingClientRect().width + gap;
         }
 
-        if (worksPrevBtn && worksNextBtn) {
+        function updateWorksNavButtons() {
+          if (!worksGrid || !worksPrevBtn || !worksNextBtn) return;
+          const maxScroll = Math.max(0, worksGrid.scrollWidth - worksGrid.clientWidth);
+          const atEnd = worksGrid.scrollLeft >= maxScroll - 6;
+          worksPrevBtn.classList.toggle('is-primary', atEnd);
+          worksNextBtn.classList.toggle('is-primary', !atEnd);
+        }
+
+        if (worksGrid && worksPrevBtn && worksNextBtn) {
           worksPrevBtn.addEventListener('click', function () {
-            worksPrevBtn.classList.add('is-primary');
-            worksNextBtn.classList.remove('is-primary');
-            highlightWorkCard(activeWorkIndex <= 0 ? workCards.length - 1 : activeWorkIndex - 1);
+            const step = getWorksScrollStep();
+            worksGrid.scrollBy({
+              left: -step,
+              behavior: prefersReducedMotion ? 'auto' : 'smooth',
+            });
           });
+
           worksNextBtn.addEventListener('click', function () {
-            worksNextBtn.classList.add('is-primary');
-            worksPrevBtn.classList.remove('is-primary');
-            highlightWorkCard(activeWorkIndex + 1);
+            const step = getWorksScrollStep();
+            const maxScroll = Math.max(0, worksGrid.scrollWidth - worksGrid.clientWidth);
+            if (worksGrid.scrollLeft >= maxScroll - 6) {
+              worksGrid.scrollTo({
+                left: 0,
+                behavior: prefersReducedMotion ? 'auto' : 'smooth',
+              });
+            } else {
+              worksGrid.scrollBy({
+                left: step,
+                behavior: prefersReducedMotion ? 'auto' : 'smooth',
+              });
+            }
           });
+
+          worksGrid.addEventListener('scroll', updateWorksNavButtons, { passive: true });
+          window.addEventListener('resize', updateWorksNavButtons);
+          requestAnimationFrame(updateWorksNavButtons);
         }
 
         // Download Resume Button Action
@@ -4822,7 +5403,7 @@
           photoshop:
             '<svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="2.5" width="19" height="19" rx="4.2" fill="#001E36" stroke="#31A8FF" stroke-width="1.2"/><text x="12" y="15.5" text-anchor="middle" fill="#31A8FF" font-family="Inter, sans-serif" font-weight="700" font-size="10.2">Ps</text></svg>',
           rive:
-            '<svg viewBox="0 0 24 24" fill="none"><path d="M6.5 6.5H14.5C17.2 6.5 19 8.1 19 10.5C19 12.9 17.2 14.5 14.5 14.5H10M14 14.5L18.2 19.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+            '<img src="/assets/aistudio/image_3e553417.png" alt="Rive" loading="eager" />',
         };
 
         const HIGHLIGHT_ICONS = {
@@ -4835,50 +5416,6 @@
         };
 
         const PROJECTS_DATA = [
-          {
-            category: 'Product Design',
-            title: 'Trái Tim Biết Ơn',
-            desc: 'A gamified edutainment platform across mobile apps and admin dashboards that helps children build daily gratitude habits through interactive quests.',
-            highlights: [
-              { icon: 'users', line1: 'Daily Habit', line2: 'for Kids & Parents' },
-              { icon: 'layers', line1: 'Mobile App', line2: '+ Admin CMS' },
-              { icon: 'gamepad', line1: '3D Mascot', line2: '& Gamified Quests' },
-            ],
-            role: 'Product Designer (UI/UX, Gamification, Design System)',
-            team: 'Cross-functional Team',
-            duration: 'Nov 2025 – Jan 2026',
-            tools: ['figma', 'aiTriangle', 'photoshop', 'rive'],
-            slides: [
-              '/assets/aistudio/traitim_slide_1.png',
-              '/assets/aistudio/traitim_slide_2.png',
-              '/assets/aistudio/traitim_slide_3.png',
-              '/assets/aistudio/traitim_slide_4.png',
-              '/assets/aistudio/traitim_slide_5.png',
-              '/assets/aistudio/traitim_slide_6.png',
-            ],
-          },
-          {
-            category: 'Enterprise UX/UI',
-            title: 'Hilo Van Services',
-            desc: 'An enterprise ERP/CRM web platform and scalable design system engineered to streamline logistics, billing, and multi-branch operations.',
-            highlights: [
-              { icon: 'users', line1: 'Multi-Role', line2: 'ERP & CRM' },
-              { icon: 'layers', line1: 'Scalable', line2: 'Design System' },
-              { icon: 'gamepad', line1: 'Real-time', line2: 'Data Workflows' },
-            ],
-            role: 'UI/UX Designer (Enterprise UX, Design System)',
-            team: 'Product & Engineering Squad',
-            duration: 'Oct 2025 – Jul 2026',
-            tools: ['figma', 'aiTriangle', 'photoshop', 'rive'],
-            slides: [
-              '/assets/aistudio/hilo_slide_1.png',
-              '/assets/aistudio/hilo_slide_2.png',
-              '/assets/aistudio/hilo_slide_3.png',
-              '/assets/aistudio/hilo_slide_4.png',
-              '/assets/aistudio/hilo_slide_5.png',
-              '/assets/aistudio/hilo_slide_6.png',
-            ],
-          },
           {
             category: 'Web3 Product',
             title: 'Eggoria',
@@ -4893,12 +5430,75 @@
             duration: 'Aug 2026 – Oct 2026',
             tools: ['figma', 'aiTriangle', 'photoshop', 'rive'],
             slides: [
-              '/assets/aistudio/eggoria_slide_1.png',
-              '/assets/aistudio/eggoria_slide_2.png',
-              '/assets/aistudio/eggoria_slide_3.png',
-              '/assets/aistudio/eggoria_slide_4.png',
-              '/assets/aistudio/eggoria_slide_5.png',
-              '/assets/aistudio/eggoria_slide_6.png',
+              '/assets/aistudio/Desktop___Section_01___STATUS__NOT_DESIGNED_92d7dcd3.png',
+              '/assets/aistudio/Desktop___Section_02___STATUS__NOT_DESIGNED_1f1cd266.png',
+              '/assets/aistudio/Desktop___Section_03___STATUS__NOT_DESIGNED_3faed091.png',
+              '/assets/aistudio/Desktop___Section_04___STATUS__NOT_DESIGNED_ec8d4dbf.png',
+              '/assets/aistudio/Desktop___Section_05___STATUS__NOT_DESIGNED_6edb8c75.png',
+            ],
+          },
+          {
+            category: 'Enterprise UX/UI',
+            title: 'Hilo TVan',
+            desc: 'An enterprise ERP/CRM web platform and scalable design system engineered to streamline logistics, billing, and multi-branch operations.',
+            highlights: [
+              { icon: 'users', line1: 'Multi-Role', line2: 'ERP & CRM' },
+              { icon: 'layers', line1: 'Scalable', line2: 'Design System' },
+              { icon: 'gamepad', line1: 'Real-time', line2: 'Data Workflows' },
+            ],
+            role: 'UI/UX Designer (Enterprise UX, Design System)',
+            team: 'Product & Engineering Squad',
+            duration: 'Oct 2025 – Jul 2026',
+            tools: ['figma', 'aiTriangle', 'photoshop', 'rive'],
+            slides: [
+              '/assets/aistudio/Screenshot_2026-11-12_200747_1_508ff03b.png',
+              '/assets/aistudio/Screenshot_2026-11-12_200800_1_c6280fbe.png',
+              '/assets/aistudio/Screenshot_2026-11-12_200813_1_448b4366.png',
+              '/assets/aistudio/Screenshot_2026-11-12_200841_1_c06cacd5.png',
+              '/assets/aistudio/Screenshot_2026-11-12_200924_1_8cf4d1ac.png',
+            ],
+          },
+          {
+            category: 'Product Design',
+            title: 'Trái Tim Biết Ơn',
+            desc: 'A gamified edutainment platform across mobile apps and admin dashboards that helps children build daily gratitude habits through interactive quests.',
+            highlights: [
+              { icon: 'users', line1: 'Daily Habit', line2: 'for Kids & Parents' },
+              { icon: 'layers', line1: 'Mobile App', line2: '+ Admin CMS' },
+              { icon: 'gamepad', line1: '3D Mascot', line2: '& Gamified Quests' },
+            ],
+            role: 'Product Designer (UI/UX, Gamification, Design System)',
+            team: 'Cross-functional Team',
+            duration: 'Nov 2025 – Jan 2026',
+            tools: ['figma', 'aiTriangle', 'photoshop', 'rive'],
+            slides: [
+              '/assets/aistudio/3241c499-4332-46b8-a454-fe7703fa0a03_1_9a912b45.png',
+              '/assets/aistudio/1c42613a-80b4-4f8c-b898-85b632c3b28a_889a6e88.png',
+              '/assets/aistudio/H_c_sinsh_1_c1ed5d0a.png',
+              '/assets/aistudio/T_i_Phas_c_1_a2881f45.png',
+              '/assets/aistudio/Thanh_to_as_1_33f6a298.png',
+            ],
+          },
+          {
+            category: 'Real Estate UX/UI',
+            title: 'Lumina',
+            desc: 'A luxury real estate web experience designed to showcase premium residences with transparent legal status, interactive floor plans, and private tour booking.',
+            highlights: [
+              { icon: 'users', line1: 'Luxury Buyers', line2: 'Experience' },
+              { icon: 'layers', line1: 'Interactive', line2: 'Floor Plans' },
+              { icon: 'gamepad', line1: 'Seamless', line2: 'Tour Booking' },
+            ],
+            role: 'UI/UX Designer (Web Design, Interaction, Visual System)',
+            team: 'Solo Project',
+            duration: '2025',
+            tools: ['figma', 'aiTriangle', 'photoshop', 'rive'],
+            slides: [
+              '/assets/aistudio/image_673_1942a103.png',
+              '/assets/aistudio/image_674_2bac1d3e.png',
+              '/assets/aistudio/image_675_0fd9d487.png',
+              '/assets/aistudio/image_676_952cae71.png',
+              '/assets/aistudio/image_677_0ade24ed.png',
+              '/assets/aistudio/image_678_765a41f0.png',
             ],
           },
         ];
@@ -4929,9 +5529,47 @@
           if (!project) return;
           const total = project.slides.length;
           currentSlideIdx = ((slideIdx % total) + total) % total;
+          const slideSrc = project.slides[currentSlideIdx];
           if (pmMainImg) {
-            pmMainImg.src = project.slides[currentSlideIdx];
+            pmMainImg.src = slideSrc;
             pmMainImg.alt = project.title + ' preview ' + (currentSlideIdx + 1);
+            const stageEl = pmMainImg.parentElement;
+            if (stageEl) {
+              stageEl.classList.toggle(
+                'is-lumina-ui',
+                slideSrc.indexOf('image_673_1942a103') !== -1 ||
+                  slideSrc.indexOf('asdasd_05b4e25b') !== -1
+              );
+              stageEl.classList.toggle(
+                'is-lumina-section',
+                slideSrc.indexOf('image_674_2bac1d3e') !== -1 ||
+                  slideSrc.indexOf('image_675_0fd9d487') !== -1 ||
+                  slideSrc.indexOf('image_676_952cae71') !== -1 ||
+                  slideSrc.indexOf('image_677_0ade24ed') !== -1 ||
+                  slideSrc.indexOf('image_678_765a41f0') !== -1
+              );
+              stageEl.classList.toggle(
+                'is-wide-ui',
+                slideSrc.indexOf('200747_1_508ff03b') !== -1 ||
+                  slideSrc.indexOf('200800_1_c6280fbe') !== -1 ||
+                  slideSrc.indexOf('200813_1_448b4366') !== -1 ||
+                  slideSrc.indexOf('200924_1_8cf4d1ac') !== -1
+              );
+              stageEl.classList.toggle(
+                'is-wide-modal-ui',
+                slideSrc.indexOf('200841_1_c06cacd5') !== -1
+              );
+              stageEl.classList.toggle(
+                'is-traitim-ui',
+                slideSrc.indexOf('3241c499-4332-46b8-a454-fe7703fa0a03') !== -1
+              );
+              stageEl.classList.toggle(
+                'is-traitim-screen',
+                slideSrc.indexOf('H_c_sinsh_1_c1ed5d0a') !== -1 ||
+                  slideSrc.indexOf('T_i_Phas_c_1_a2881f45') !== -1 ||
+                  slideSrc.indexOf('Thanh_to_as_1_33f6a298') !== -1
+              );
+            }
           }
           if (pmCounter) {
             pmCounter.textContent = currentSlideIdx + 1 + ' / ' + total;
@@ -4969,7 +5607,7 @@
                   '</span>' +
                   '<div class="pm-highlight-text">' +
                   h.line1 +
-                  '<br />' +
+                  ' <br />' +
                   h.line2 +
                   '</div>' +
                   '</div>'
@@ -4991,8 +5629,9 @@
           }
 
           if (pmThumbs) {
-            // Render the 5 thumbnail cards as shown in the reference screenshot
-            const visibleThumbs = project.slides.slice(0, 5);
+            const visibleThumbs = project.slides;
+            pmThumbs.style.gridTemplateColumns =
+              'repeat(' + visibleThumbs.length + ', minmax(0, 1fr))';
             pmThumbs.innerHTML = visibleThumbs
               .map(function (src, sIdx) {
                 return (
