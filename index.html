@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Form service URL, filled in from VITE_FORM_ENDPOINT (see .env.example). Empty means "use the visitor's email app". -->
     <meta name="form-endpoint" content="%VITE_FORM_ENDPOINT%" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <title>Nguyen Viet Phong | UI/UX Designer Portfolio</title>
     <meta
       name="description"
@@ -407,7 +408,7 @@
         }
       }
 
-      /* Right Column: Featured Project Card ("Trái Tim Biết Ơn") */
+      /* Right Column: Featured Project Card ("Eggoria") */
       .featured-project-card {
         position: absolute;
         left: calc(972 * var(--u));
@@ -2100,6 +2101,15 @@
         transition: opacity 0.2s ease;
       }
 
+      .contact-direct-email {
+        display: inline-block;
+        padding: 3px 0;
+      }
+
+      .footer-brand-row {
+        min-height: 24px;
+      }
+
       .contact-direct-email:hover {
         opacity: 0.82;
       }
@@ -2339,6 +2349,12 @@
         font-size: 14px;
         line-height: 1.5;
         color: #b5b5b5;
+      }
+
+      /* An empty status line must not leave a gap under the button (cancels the form's 12px gap) */
+      .dialog-status:empty {
+        min-height: 0;
+        margin-top: -12px;
       }
 
       .dialog-status {
@@ -3770,22 +3786,22 @@
             </div>
           </div>
 
-          <!-- Right Column: Featured Project Card ("Trái Tim Biết Ơn") -->
+          <!-- Right Column: Featured Project Card ("Eggoria") -->
           <article
             class="featured-project-card hero-rise"
             id="featured-project"
-            data-open-project="2"
-            aria-label="Featured Project: Trái Tim Biết Ơn"
+            data-open-project="0"
+            aria-label="Featured Project: Eggoria"
           >
             <div class="featured-card-header">
               <span class="featured-kicker">FEATURED PROJECT</span>
-              <h2 class="featured-title">Trái Tim Biết Ơn</h2>
-              <p class="featured-subtitle">Edutainment · Mobile &amp; Admin UX</p>
+              <h2 class="featured-title">Eggoria</h2>
+              <p class="featured-subtitle">Web3 Product · Gamified Learning</p>
               <a
                 href="#works"
                 class="featured-arrow-btn"
-                data-open-project="2"
-                aria-label="See details for Trái Tim Biết Ơn"
+                data-open-project="0"
+                aria-label="See details for Eggoria"
               >
                 <img
                   src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
@@ -3798,8 +3814,8 @@
 
             <div class="featured-phones-stage">
               <img
-                src="/assets/aistudio/3241c499-4332-46b8-a454-fe7703fa0a03_1_9a912b45.png"
-                alt="Trái Tim Biết Ơn mobile app screens showing Hạt Giống Biết Ơn and Phần Thưởng"
+                src="/assets/aistudio/Desktop___Section_01___STATUS__NOT_DESIGNED_92d7dcd3.png"
+                alt="Eggoria landing page: Learn Web3 and Hatch Your Own Bird"
                 class="featured-phones-crop"
               />
             </div>
@@ -4106,7 +4122,7 @@
                     <span class="timeline-dot"></span>
                   </div>
                   <div class="timeline-badge is-logo-white" aria-label="Hilo Logo">
-                    <img src="/assets/aistudio/image_7788c9be.png" alt="Hilo Group Logo" loading="eager" />
+                    <img src="/assets/aistudio/image_7788c9be.png" alt="Hilo Group Logo" loading="lazy" decoding="async" />
                   </div>
                   <div class="timeline-content">
                     <h4 class="timeline-role">UI/UX Designer</h4>
@@ -4124,7 +4140,7 @@
                     <span class="timeline-dot"></span>
                   </div>
                   <div class="timeline-badge is-logo-traitim" aria-label="Trái Tim Biết Ơn Logo">
-                    <img src="/assets/aistudio/image_672_692cd219.png" alt="Trái Tim Biết Ơn Logo" loading="eager" />
+                    <img src="/assets/aistudio/image_672_692cd219.png" alt="Trái Tim Biết Ơn Logo" loading="lazy" decoding="async" />
                   </div>
                   <div class="timeline-content">
                     <h4 class="timeline-role">UI/UX Designer</h4>
@@ -4174,7 +4190,7 @@
                     <span class="timeline-dot"></span>
                   </div>
                   <div class="timeline-badge is-logo-mindx" aria-label="MindX Logo">
-                    <img src="/assets/aistudio/image_edb08f22.png" alt="MindX Technology School Logo" loading="eager" />
+                    <img src="/assets/aistudio/image_edb08f22.png" alt="MindX Technology School Logo" loading="lazy" decoding="async" />
                   </div>
                   <div class="timeline-content">
                     <h4 class="timeline-role">MindX Technology School</h4>
@@ -4189,7 +4205,7 @@
                     <span class="timeline-dot"></span>
                   </div>
                   <div class="timeline-badge is-logo-white" aria-label="IUH Logo">
-                    <img src="/assets/aistudio/image_3d7ed252.png" alt="Industrial University of Ho Chi Minh City Logo" loading="eager" />
+                    <img src="/assets/aistudio/image_3d7ed252.png" alt="Industrial University of Ho Chi Minh City Logo" loading="lazy" decoding="async" />
                   </div>
                   <div class="timeline-content">
                     <h4 class="timeline-role">Industrial University of Ho Chi Minh City</h4>
@@ -4281,14 +4297,13 @@
 
           <div class="works-grid" id="works-grid">
             <!-- Work Card 1: Eggoria -->
-            <article class="work-card" data-work-index="0" data-open-project="0" tabindex="0">
+            <article class="work-card" data-work-index="0" data-open-project="0">
               <div class="work-card-media">
                 <span class="work-card-tag">Web3 Product</span>
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/aistudio/Desktop___Section_01___STATUS__NOT_DESIGNED_92d7dcd3.png"
                   alt="Eggoria landing page: Learn Web3 and Hatch Your Own Bird"
-                  class="work-card-thumb"
-                />
+                  class="work-card-thumb" />
               </div>
               <div class="work-card-body">
                 <div class="work-card-info">
@@ -4304,25 +4319,23 @@
                   data-open-project="0"
                   aria-label="See details for Eggoria"
                 >
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
                     alt=""
                     class="arrow-icon-img"
-                    aria-hidden="true"
-                  />
+                    aria-hidden="true" />
                 </button>
               </div>
             </article>
 
             <!-- Work Card 2: Hilo TVan -->
-            <article class="work-card" data-work-index="1" data-open-project="1" tabindex="0">
+            <article class="work-card" data-work-index="1" data-open-project="1">
               <div class="work-card-media is-wide-ui">
                 <span class="work-card-tag">Enterprise UX/UI</span>
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/aistudio/Screenshot_2026-11-12_200747_1_508ff03b.png"
                   alt="Hilo TVan enterprise ERP and CRM portal interface"
-                  class="work-card-thumb"
-                />
+                  class="work-card-thumb" />
               </div>
               <div class="work-card-body">
                 <div class="work-card-info">
@@ -4338,25 +4351,23 @@
                   data-open-project="1"
                   aria-label="See details for Hilo TVan"
                 >
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
                     alt=""
                     class="arrow-icon-img"
-                    aria-hidden="true"
-                  />
+                    aria-hidden="true" />
                 </button>
               </div>
             </article>
 
             <!-- Work Card 3: Trái Tim Biết Ơn -->
-            <article class="work-card" data-work-index="2" data-open-project="2" tabindex="0">
+            <article class="work-card" data-work-index="2" data-open-project="2">
               <div class="work-card-media">
                 <span class="work-card-tag">Product Design</span>
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/aistudio/3241c499-4332-46b8-a454-fe7703fa0a03_1_9a912b45.png"
                   alt="Trái Tim Biết Ơn mobile app screens showing Hạt Giống Biết Ơn and Phần Thưởng"
-                  class="work-card-thumb"
-                />
+                  class="work-card-thumb" />
               </div>
               <div class="work-card-body">
                 <div class="work-card-info">
@@ -4372,25 +4383,23 @@
                   data-open-project="2"
                   aria-label="See details for Trái Tim Biết Ơn"
                 >
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
                     alt=""
                     class="arrow-icon-img"
-                    aria-hidden="true"
-                  />
+                    aria-hidden="true" />
                 </button>
               </div>
             </article>
 
             <!-- Work Card 4: Lumina -->
-            <article class="work-card" data-work-index="3" data-open-project="3" tabindex="0">
+            <article class="work-card" data-work-index="3" data-open-project="3">
               <div class="work-card-media is-lumina-ui">
                 <span class="work-card-tag">Real Estate UX/UI</span>
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/aistudio/image_673_1942a103.png"
                   alt="Lumina real estate website: Where luxury is crafted to last forever"
-                  class="work-card-thumb"
-                />
+                  class="work-card-thumb" />
               </div>
               <div class="work-card-body">
                 <div class="work-card-info">
@@ -4406,12 +4415,11 @@
                   data-open-project="3"
                   aria-label="See details for Lumina"
                 >
-                  <img
+                  <img loading="lazy" decoding="async"
                     src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
                     alt=""
                     class="arrow-icon-img"
-                    aria-hidden="true"
-                  />
+                    aria-hidden="true" />
                 </button>
               </div>
             </article>
@@ -4589,7 +4597,7 @@
                 <!-- 1. Claude -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon" aria-hidden="true">
-                    <img src="/assets/aistudio/image_8da29e83.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/image_8da29e83.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">Claude</span>
                 </div>
@@ -4597,7 +4605,7 @@
                 <!-- 2. OpenAI Codex -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon" aria-hidden="true">
-                    <img src="/assets/aistudio/image_942931ef.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/image_942931ef.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">OpenAI Codex</span>
                 </div>
@@ -4650,7 +4658,7 @@
                 <!-- 5. ChatGPT -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon" aria-hidden="true">
-                    <img src="/assets/aistudio/image_9922d8b3.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/image_9922d8b3.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">ChatGPT</span>
                 </div>
@@ -4658,7 +4666,7 @@
                 <!-- 6. Gemini -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon" aria-hidden="true">
-                    <img src="/assets/aistudio/image_949eef13.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/image_949eef13.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">Gemini</span>
                 </div>
@@ -4666,7 +4674,7 @@
                 <!-- 7. VS Code -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon" aria-hidden="true">
-                    <img src="/assets/aistudio/image_c64fcdbb.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/image_c64fcdbb.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">VS Code</span>
                 </div>
@@ -4674,7 +4682,7 @@
                 <!-- 8. Rive -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon" aria-hidden="true">
-                    <img src="/assets/aistudio/image_3e553417.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/image_3e553417.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">Rive</span>
                 </div>
@@ -4682,7 +4690,7 @@
                 <!-- 9. Affinity -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon" aria-hidden="true">
-                    <img src="/assets/aistudio/tool-affinity.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/tool-affinity.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">Affinity</span>
                 </div>
@@ -4690,7 +4698,7 @@
                 <!-- 10. Notion -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon" aria-hidden="true">
-                    <img src="/assets/aistudio/tool-notion.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/tool-notion.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">Notion</span>
                 </div>
@@ -4698,7 +4706,7 @@
                 <!-- 11. Framer -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon" aria-hidden="true">
-                    <img src="/assets/aistudio/tool-framer.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/tool-framer.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">Framer</span>
                 </div>
@@ -4706,7 +4714,7 @@
                 <!-- 12. GitHub -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon" aria-hidden="true">
-                    <img src="/assets/aistudio/tool-github.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/tool-github.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">GitHub</span>
                 </div>
@@ -4717,7 +4725,7 @@
                 <!-- 1. Claude -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon">
-                    <img src="/assets/aistudio/image_8da29e83.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/image_8da29e83.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">Claude</span>
                 </div>
@@ -4725,7 +4733,7 @@
                 <!-- 2. OpenAI Codex -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon">
-                    <img src="/assets/aistudio/image_942931ef.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/image_942931ef.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">OpenAI Codex</span>
                 </div>
@@ -4778,7 +4786,7 @@
                 <!-- 5. ChatGPT -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon">
-                    <img src="/assets/aistudio/image_9922d8b3.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/image_9922d8b3.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">ChatGPT</span>
                 </div>
@@ -4786,7 +4794,7 @@
                 <!-- 6. Gemini -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon">
-                    <img src="/assets/aistudio/image_949eef13.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/image_949eef13.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">Gemini</span>
                 </div>
@@ -4794,7 +4802,7 @@
                 <!-- 7. VS Code -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon">
-                    <img src="/assets/aistudio/image_c64fcdbb.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/image_c64fcdbb.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">VS Code</span>
                 </div>
@@ -4802,7 +4810,7 @@
                 <!-- 8. Rive -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon">
-                    <img src="/assets/aistudio/image_3e553417.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/image_3e553417.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">Rive</span>
                 </div>
@@ -4810,7 +4818,7 @@
                 <!-- 9. Affinity -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon">
-                    <img src="/assets/aistudio/tool-affinity.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/tool-affinity.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">Affinity</span>
                 </div>
@@ -4818,7 +4826,7 @@
                 <!-- 10. Notion -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon">
-                    <img src="/assets/aistudio/tool-notion.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/tool-notion.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">Notion</span>
                 </div>
@@ -4826,7 +4834,7 @@
                 <!-- 11. Framer -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon">
-                    <img src="/assets/aistudio/tool-framer.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/tool-framer.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">Framer</span>
                 </div>
@@ -4834,7 +4842,7 @@
                 <!-- 12. GitHub -->
                 <div class="tool-badge-item">
                   <span class="tool-badge-icon">
-                    <img src="/assets/aistudio/tool-github.png" alt="" loading="eager" />
+                    <img src="/assets/aistudio/tool-github.png" alt="" loading="lazy" decoding="async" />
                   </span>
                   <span class="tool-badge-name">GitHub</span>
                 </div>
@@ -5024,8 +5032,9 @@
           <!-- 3. Direct Email -->
           <a
             href="mailto:nguyenvietphong13012000@gmail.com"
+            data-open-inquiry="Let’s Connect"
             class="footer-social-btn"
-            aria-label="Send Email"
+            aria-label="Write to me"
           >
             <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <rect
@@ -5090,12 +5099,11 @@
           <!-- Left Column: Interactive Gallery + 5 Thumbnails -->
           <div class="project-modal-gallery">
             <div class="project-modal-stage">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/assets/aistudio/Desktop___Section_01___STATUS__NOT_DESIGNED_92d7dcd3.png"
                 alt="Eggoria project preview"
                 class="project-modal-main-img"
-                id="pm-main-img"
-              />
+                id="pm-main-img" />
               <div class="project-modal-counter" id="pm-counter">1 / 5</div>
               <div class="project-modal-stage-nav">
                 <button
@@ -5264,21 +5272,19 @@
             <div class="pm-actions-row">
               <a href="#contact" class="pm-btn-primary" id="pm-case-study-btn">
                 <span>Read the Case Study</span>
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
                   alt=""
                   class="btn-arrow-img"
-                  aria-hidden="true"
-                />
+                  aria-hidden="true" />
               </a>
               <a href="#contact" class="pm-btn-secondary" id="pm-live-demo-btn">
                 <span>Visit the Live Site</span>
-                <img
+                <img loading="lazy" decoding="async"
                   src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
                   alt=""
                   class="btn-arrow-img"
-                  aria-hidden="true"
-                />
+                  aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -5332,13 +5338,12 @@
         <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <button type="submit" class="dialog-submit">
           <span>Send Message</span>
-          <img
+          <img loading="lazy" decoding="async"
             src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
             alt=""
             class="btn-arrow-img"
             style="filter: invert(1); display: inline-block; vertical-align: middle; margin-left: 6px;"
-            aria-hidden="true"
-          />
+            aria-hidden="true" />
         </button>
         <div class="dialog-status" id="dialog-status" role="status" aria-live="polite"></div>
       </form>
@@ -5535,8 +5540,8 @@
               'Designing intuitive experiences for complex digital products.',
               '',
               'FEATURED PROJECT',
-              'Trai Tim Biet On | Edutainment, Mobile & Admin UX',
-              '- Designed gamified daily learning missions (Nhiem vu hom nay) and admin workflows.',
+              'Eggoria | Web3 Product, Gamified Learning',
+              '- Designed onboarding, six chapters with quizzes, and the design system for a gamified Web3 learning platform.',
             ].join('\n');
             const blob = new Blob([resumeContent], { type: 'text/plain;charset=utf-8' });
             const url = URL.createObjectURL(blob);
@@ -5554,6 +5559,19 @@
         // with the message filled in, and the status text says exactly that instead of claiming it was sent.
         const contactMailLink = document.querySelector('.contact-direct-email');
         const CONTACT_EMAIL = contactMailLink ? contactMailLink.textContent.trim() : '';
+
+        // Clicking the email with no mail app installed used to do nothing, so it also copies the address.
+        if (contactMailLink && navigator.clipboard) {
+          contactMailLink.addEventListener('click', function () {
+            navigator.clipboard.writeText(CONTACT_EMAIL).then(
+              function () {
+                const status = document.getElementById('contact-status');
+                if (status) setStatus(status, 'Email address copied. Paste it anywhere you like.', 'success');
+              },
+              function () {}
+            );
+          });
+        }
 
         function isEmail(value) {
           return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -5862,6 +5880,7 @@
 
         let currentProjectIdx = 2;
         let currentSlideIdx = 0;
+        let modalOpener = null; // where focus goes back to when the project panel closes
 
         function renderProjectSlide(slideIdx) {
           const project = PROJECTS_DATA[currentProjectIdx];
@@ -6031,6 +6050,11 @@
             pmBackdrop.setAttribute('aria-hidden', 'false');
             document.documentElement.classList.add('modal-open');
             if (window.__lenis) window.__lenis.stop();
+            // Keyboard and screen reader users land inside the panel. The panel is still invisible for the first
+            // frame of its fade-in, and an invisible element cannot take focus, so wait a moment.
+            setTimeout(function () {
+              if (pmCloseBtn) pmCloseBtn.focus();
+            }, 60);
           }
         }
 
@@ -6040,6 +6064,10 @@
           pmBackdrop.setAttribute('aria-hidden', 'true');
           document.documentElement.classList.remove('modal-open');
           if (window.__lenis) window.__lenis.start();
+          if (modalOpener && document.contains(modalOpener) && typeof modalOpener.focus === 'function') {
+            modalOpener.focus();
+          }
+          modalOpener = null;
         }
 
         document.querySelectorAll('[data-open-project]').forEach(function (el) {
@@ -6047,16 +6075,9 @@
             e.preventDefault();
             e.stopPropagation();
             const projIdx = el.getAttribute('data-open-project');
+            modalOpener = document.activeElement && document.activeElement !== document.body ? document.activeElement : el;
             openProjectModal(projIdx);
           });
-          if (el.tagName === 'ARTICLE') {
-            el.addEventListener('keydown', function (e) {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                openProjectModal(el.getAttribute('data-open-project'));
-              }
-            });
-          }
         });
 
         if (pmCloseBtn) {
@@ -6099,6 +6120,23 @@
             renderProjectSlide(currentSlideIdx - 1);
           } else if (e.key === 'ArrowRight') {
             renderProjectSlide(currentSlideIdx + 1);
+          } else if (e.key === 'Tab') {
+            // Keep Tab inside the open panel instead of wandering through the page behind it
+            const stops = Array.from(
+              pmBackdrop.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+            ).filter(function (node) {
+              return !node.hidden && node.getClientRects().length > 0;
+            });
+            if (!stops.length) return;
+            const first = stops[0];
+            const last = stops[stops.length - 1];
+            if (e.shiftKey && (document.activeElement === first || !pmBackdrop.contains(document.activeElement))) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && (document.activeElement === last || !pmBackdrop.contains(document.activeElement))) {
+              e.preventDefault();
+              first.focus();
+            }
           }
         });
 
