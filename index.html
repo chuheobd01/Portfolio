@@ -3152,7 +3152,231 @@
         display: block;
       }
 
-      /* 03 My Approach — The Release Decision & Release Scope */
+      /* Case study v2: decisions, status and learnings */
+      .cs-section.is-compact {
+        min-height: 0;
+      }
+
+      .cs-section.is-last {
+        min-height: calc(640 * var(--u));
+      }
+
+      .cs-decisions {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .cs-decision {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+        gap: calc(40 * var(--u));
+        align-items: start;
+        padding: calc(34 * var(--u)) 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .cs-decision-tag {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: calc(12 * var(--u));
+        margin-bottom: calc(14 * var(--u));
+        font-size: calc(12.5 * var(--u));
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #a4a4b0;
+      }
+
+      .cs-decision-status {
+        font-size: calc(13 * var(--u));
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        text-transform: none;
+        padding: calc(4 * var(--u)) calc(12 * var(--u));
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #e8e8ee;
+      }
+
+      .cs-decision-status.is-live {
+        border-color: rgba(107, 208, 138, 0.55);
+        color: #8fe0a8;
+      }
+
+      .cs-decision-status.is-dev {
+        border-color: rgba(240, 205, 110, 0.55);
+        color: #f0cd6e;
+      }
+
+      .cs-decision-title {
+        margin: 0 0 calc(20 * var(--u));
+        font-size: calc(32 * var(--u));
+        font-weight: 700;
+        line-height: 1.14;
+        letter-spacing: -0.025em;
+        color: #ffffff;
+      }
+
+      .cs-decision-facts {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: calc(16 * var(--u));
+      }
+
+      .cs-decision-facts dt {
+        margin: 0 0 calc(4 * var(--u));
+        font-size: calc(12 * var(--u));
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #c48eff;
+      }
+
+      .cs-decision-facts dd {
+        margin: 0;
+        font-size: calc(15.5 * var(--u));
+        line-height: 1.55;
+        color: #b4b4c0;
+      }
+
+      .cs-decision-media {
+        margin: 0;
+        position: relative;
+        border-radius: calc(14 * var(--u));
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #101015;
+      }
+
+      .cs-decision-media img {
+        width: 100%;
+        display: block;
+      }
+
+      .cs-decision-media figcaption {
+        position: absolute;
+        right: calc(12 * var(--u));
+        top: calc(12 * var(--u));
+        padding: calc(5 * var(--u)) calc(12 * var(--u));
+        border-radius: 999px;
+        background: rgba(5, 5, 8, 0.78);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        font-size: calc(12.5 * var(--u));
+        font-weight: 500;
+        color: #e6e6ee;
+      }
+
+      .cs-callout {
+        position: absolute;
+        border: 2px solid #f0cd6e;
+        border-radius: calc(8 * var(--u));
+        box-shadow: 0 0 0 9999px rgba(5, 5, 8, 0.5);
+      }
+
+      .cs-callout-label {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        margin-top: calc(8 * var(--u));
+        white-space: nowrap;
+        padding: calc(5 * var(--u)) calc(12 * var(--u));
+        border-radius: 999px;
+        background: #f0cd6e;
+        color: #0b0b0e;
+        font-size: calc(13 * var(--u));
+        font-weight: 600;
+      }
+
+      .cs-status-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: calc(18 * var(--u));
+        margin-top: calc(30 * var(--u));
+      }
+
+      .cs-status-card h4 {
+        display: flex;
+        align-items: center;
+        gap: calc(10 * var(--u));
+        margin-bottom: calc(14 * var(--u));
+        font-size: calc(18 * var(--u));
+      }
+
+      .cs-status-card ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: calc(10 * var(--u));
+      }
+
+      .cs-status-card li {
+        font-size: calc(14.5 * var(--u));
+        line-height: 1.5;
+        color: #b0b0bc;
+        padding-left: calc(14 * var(--u));
+        position: relative;
+      }
+
+      .cs-status-card li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.62em;
+        width: calc(5 * var(--u));
+        height: calc(5 * var(--u));
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.35);
+      }
+
+      .cs-status-dot {
+        width: calc(10 * var(--u));
+        height: calc(10 * var(--u));
+        border-radius: 50%;
+        background: #6bd08a;
+        box-shadow: 0 0 calc(10 * var(--u)) rgba(107, 208, 138, 0.7);
+      }
+
+      .cs-status-dot.is-dev {
+        background: #f0cd6e;
+        box-shadow: 0 0 calc(10 * var(--u)) rgba(240, 205, 110, 0.7);
+      }
+
+      .cs-status-dot.is-planned {
+        background: #9db8ff;
+        box-shadow: 0 0 calc(10 * var(--u)) rgba(157, 184, 255, 0.6);
+      }
+
+      .cs-craft {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: calc(10 * var(--u));
+        margin-top: calc(26 * var(--u));
+      }
+
+      .cs-craft-label {
+        font-size: calc(12 * var(--u));
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #9c9ca8;
+        margin-right: calc(6 * var(--u));
+      }
+
+      .cs-craft-chip {
+        padding: calc(7 * var(--u)) calc(14 * var(--u));
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.03);
+        font-size: calc(13.5 * var(--u));
+        color: #d2d2dc;
+      }
+
+      /* 03 My Approach — The Release Decision & Release Scope (legacy, no longer used by the markup) */
       .cs-approach-section .cs-sec-kicker {
         color: #d8d8e4;
         margin-bottom: calc(68 * var(--u));
@@ -5140,7 +5364,48 @@
           font-size: calc(14 * var(--u));
         }
 
-        /* 03 My Approach: stack the release scope under the text on phones (it used to overlap the title) */
+        /* Case study v2 on phones */
+        .cs-decision {
+          grid-template-columns: minmax(0, 1fr);
+          gap: calc(20 * var(--u));
+          padding: calc(26 * var(--u)) 0;
+        }
+
+        .cs-decision-title {
+          font-size: calc(26 * var(--u));
+        }
+
+        .cs-decision-facts dd {
+          font-size: calc(15 * var(--u));
+        }
+
+        .cs-decision-tag,
+        .cs-decision-status,
+        .cs-decision-facts dt,
+        .cs-craft-label,
+        .cs-decision-media figcaption,
+        .cs-callout-label {
+          font-size: calc(12.5 * var(--u));
+        }
+
+        .cs-status-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .cs-status-card h4 {
+          font-size: calc(17 * var(--u));
+        }
+
+        .cs-status-card li,
+        .cs-craft-chip {
+          font-size: calc(14 * var(--u));
+        }
+
+        .cs-section.is-last {
+          min-height: 0;
+        }
+
+        /* 03 My Approach (legacy): stack the release scope under the text on phones */
         .cs-approach-section .cs-sec-kicker {
           margin-bottom: calc(24 * var(--u));
         }
@@ -6800,23 +7065,19 @@
               </button>
               <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-02">
                 <span class="cs-nav-num">02</span>
-                <span>The Challenge</span>
+                <span>The Problem</span>
               </button>
               <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-03">
                 <span class="cs-nav-num">03</span>
-                <span>My Approach</span>
+                <span>Design Decisions</span>
               </button>
               <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-04">
                 <span class="cs-nav-num">04</span>
-                <span>The Solution</span>
+                <span>Where It Stands</span>
               </button>
               <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-05">
                 <span class="cs-nav-num">05</span>
-                <span>Design Showcase</span>
-              </button>
-              <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-06">
-                <span class="cs-nav-num">06</span>
-                <span>Outcome &amp; Learnings</span>
+                <span>What I Learned</span>
               </button>
             </nav>
             <img
@@ -6965,14 +7226,14 @@
             </section>
 
             <!-- 02 The Challenge -->
-            <section id="cs-sec-02" class="cs-section">
-              <div class="cs-sec-kicker">02 / THE CHALLENGE</div>
+            <section id="cs-sec-02" class="cs-section is-compact">
+              <div class="cs-sec-kicker">02 / THE PROBLEM</div>
               <h3 class="cs-sec-title">
-                Getting started with Web3<br />can feel overwhelming.
+                Web3 asks beginners to start<br />in the hardest place.
               </h3>
               <p class="cs-sec-lead">
-                For someone new to Web3, unfamiliar terms and early wallet prompts can make it hard
-                to know where to begin.
+                Many Web3 products open with a wallet prompt and a glossary. For someone brand new,
+                that is a lot to take in before the first useful thing.
               </p>
               <div class="cs-numbered-list">
                 <div class="cs-numbered-row">
@@ -7012,155 +7273,142 @@
               </div>
             </section>
 
-            <!-- 03 My Approach -->
-            <section id="cs-sec-03" class="cs-section cs-approach-section">
-              <div class="cs-sec-kicker">03 / MY APPROACH</div>
-              <div class="cs-release-kicker">THE RELEASE DECISION</div>
-              <div class="cs-release-grid">
-                <div class="cs-release-main">
-                  <h3 class="cs-release-title">
-                    Give visitors a way <br />to stay in the loop.
-                  </h3>
-                  <p class="cs-release-desc">
-                    I launched the site before the lessons were ready so I could show beginners what
-                    Eggoria is about and give them a way to hear when lessons open.
-                  </p>
+            <!-- 03 Design Decisions -->
+            <section id="cs-sec-03" class="cs-section is-compact">
+              <div class="cs-sec-kicker">03 / DESIGN DECISIONS</div>
+              <h3 class="cs-sec-title">Three decisions that shaped Eggoria.</h3>
+              <p class="cs-sec-lead">
+                Each one answers a problem above. The first shapes the learning flow, which is in
+                development. The other two are already live.
+              </p>
+              <div class="cs-decisions">
+              <article class="cs-decision">
+                <div class="cs-decision-copy">
+                  <div class="cs-decision-tag">
+                    <span>Decision 1</span>
+                    <span class="cs-decision-status is-dev">In development</span>
+                  </div>
+                  <h4 class="cs-decision-title">Learn first, connect a wallet later.</h4>
+                  <dl class="cs-decision-facts">
+                    <div><dt>Because</dt><dd>A wallet prompt can feel like a roadblock before the first lesson.</dd></div>
+                    <div><dt>What I did</dt><dd>The hero tells visitors up front that they can start now and connect a wallet later. In the flow I am building, learning starts as a guest with no sign-in. A wallet is only asked for at the end, to claim the reward.</dd></div>
+                    <div><dt>Trade-off</dt><dd>Guest progress lives in the visitor&rsquo;s own browser, so it does not follow them to another device until they link an account.</dd></div>
+                  </dl>
                 </div>
+                <figure class="cs-decision-media">
+                  <img src="/assets/aistudio/Desktop___Section_01___STATUS__NOT_DESIGNED_92d7dcd3.png" alt="The Eggoria hero with the line: No wallet yet? That is okay. You can start now and connect one later." loading="lazy" decoding="async" />
+                  <span class="cs-callout" style="left: 4%; top: 63.5%; width: 37%; height: 7%">
+                    <span class="cs-callout-label">Start now. Connect later.</span>
+                  </span>
+                  <figcaption>Live landing page, hero</figcaption>
+                </figure>
+              </article>
+              <article class="cs-decision">
+                <div class="cs-decision-copy">
+                  <div class="cs-decision-tag">
+                    <span>Decision 2</span>
+                    <span class="cs-decision-status is-live">Live on the site</span>
+                  </div>
+                  <h4 class="cs-decision-title">One guide, and a world where ideas become places.</h4>
+                  <dl class="cs-decision-facts">
+                    <div><dt>Because</dt><dd>New concepts are hard to follow without plain-language examples.</dd></div>
+                    <div><dt>What I did</dt><dd>A single guide, Lumi, leads beginners through six short chapters. Each chapter has a place: five floating Lands, and Eggoria Core for the last one, Web3 Safety. The lessons themselves are still in development.</dd></div>
+                    <div><dt>Trade-off</dt><dd>More art to produce and keep consistent. The five Lands and the 25 Birds follow one shared style, so the world feels like one place.</dd></div>
+                  </dl>
+                </div>
+                <figure class="cs-decision-media">
+                  <img src="/assets/aistudio/Desktop___Section_03___STATUS__NOT_DESIGNED_3faed091.png" alt="The Chapters section of the Eggoria site: six chapter cards, each set in a different Land." loading="lazy" decoding="async" />
+                  <figcaption>Live landing page, Chapters</figcaption>
+                </figure>
+              </article>
+              <article class="cs-decision">
+                <div class="cs-decision-copy">
+                  <div class="cs-decision-tag">
+                    <span>Decision 3</span>
+                    <span class="cs-decision-status is-live">Live</span>
+                  </div>
+                  <h4 class="cs-decision-title">Ship the pre-launch site first.</h4>
+                  <dl class="cs-decision-facts">
+                    <div><dt>Because</dt><dd>I wanted to show beginners what Eggoria is about before the lessons were ready, and give them a way to hear when lessons open.</dd></div>
+                    <div><dt>What I did</dt><dd>I launched a landing page and a Coming soon page with an email signup, and I labelled what is live, in development and planned. The Roadmap on the site does the same.</dd></div>
+                    <div><dt>Trade-off</dt><dd>Visitors see a promise before they see the product, so the copy has to stay honest about what exists today.</dd></div>
+                  </dl>
+                </div>
+                <figure class="cs-decision-media">
+                  <img src="/assets/aistudio/eggoria-cs-coming-soon.jpg" alt="The Eggoria Coming soon page: Lumi with a telescope, the title Coming soon, and an email field with a Notify Me button." loading="lazy" decoding="async" />
+                  <figcaption>Live Coming soon page</figcaption>
+                </figure>
+              </article>
+              </div>
+            </section>
 
-                <aside class="cs-release-scope" aria-label="Release Scope">
-                  <div class="cs-scope-kicker">RELEASE SCOPE</div>
-                  <div class="cs-scope-item">
-                    <h4 class="cs-scope-title">Live now</h4>
-                    <p class="cs-scope-desc">
-                      Landing page and<br />email signup
+            <!-- 04 Where It Stands -->
+            <section id="cs-sec-04" class="cs-section is-compact">
+              <div class="cs-sec-kicker">04 / WHERE IT STANDS</div>
+              <h3 class="cs-sec-title">What is live, what I am building, what comes later.</h3>
+              <div class="cs-status-grid">
+                <div class="cs-info-card cs-status-card">
+                  <h4><span class="cs-status-dot is-live" aria-hidden="true"></span>Live now</h4>
+                  <ul><li>Landing page with eight sections</li><li>Coming soon page with email signup</li><li>English and Vietnamese</li><li>Privacy and Terms pages</li></ul>
+                </div>
+                <div class="cs-info-card cs-status-card">
+                  <h4><span class="cs-status-dot is-dev" aria-hidden="true"></span>In development</h4>
+                  <ul><li>Start Adventure flow, with loading, error and resume states</li><li>Six chapters: Learn, Watch, Practice, Knowledge Test</li></ul>
+                </div>
+                <div class="cs-info-card cs-status-card">
+                  <h4><span class="cs-status-dot is-planned" aria-hidden="true"></span>Planned</h4>
+                  <ul><li>A reward: a mystery egg that hatches into one of 25 Birds</li><li>Wallet connection at the claim step</li></ul>
+                </div>
+              </div>
+              <div class="cs-craft">
+                <span class="cs-craft-label">Craft</span>
+                <span class="cs-craft-chip">Design system, from Figma to code</span>
+                <span class="cs-craft-chip">Responsive at 1440, 768 and 390</span>
+                <span class="cs-craft-chip">Reduced-motion support</span>
+                <span class="cs-craft-chip">English and Vietnamese</span>
+              </div>
+            </section>
+
+            <!-- 05 What I Learned -->
+            <section id="cs-sec-05" class="cs-section is-last">
+              <div class="cs-sec-kicker">05 / WHAT I LEARNED</div>
+              <h3 class="cs-sec-title">What I took from it.</h3>
+              <div class="cs-numbered-list">
+                <div class="cs-numbered-row">
+                  <div class="cs-row-num">01</div>
+                  <div class="cs-row-body">
+                    <h4 class="cs-row-title">Say what exists.</h4>
+                    <p class="cs-row-desc">
+                      Labelling work as Live, In development or Planned made the page easier to trust,
+                      and easier to design.
                     </p>
                   </div>
-                  <div class="cs-scope-item">
-                    <h4 class="cs-scope-title">In development</h4>
-                    <p class="cs-scope-desc">
-                      Designing and building<br />the learning experience
+                </div>
+                <div class="cs-numbered-row">
+                  <div class="cs-row-num">02</div>
+                  <div class="cs-row-body">
+                    <h4 class="cs-row-title">Remove the first obstacle before adding delight.</h4>
+                    <p class="cs-row-desc">
+                      The wallet was the biggest early barrier, so the story starts without one.
                     </p>
                   </div>
-                </aside>
-              </div>
-            </section>
-
-            <!-- 04 The Solution -->
-            <section id="cs-sec-04" class="cs-section">
-              <div class="cs-sec-kicker">04 &middot; The Solution</div>
-              <h3 class="cs-sec-title">A Learning Experience Designed for Curiosity</h3>
-              <p class="cs-sec-lead">
-                Eggoria is being designed to bridge education and play, pairing a focused learning
-                interface with warm, storybook-inspired exploration. The learning experience is still
-                in development.
-              </p>
-              <div class="cs-cards-grid">
-                <div class="cs-info-card">
-                  <h4>Guided Chapter Flow</h4>
-                  <p>
-                    In development. Step-by-step progress tracking so learners always know where they
-                    are across the six chapters.
-                  </p>
                 </div>
-                <div class="cs-info-card">
-                  <h4>Chapters, Then a Reward</h4>
-                  <p>
-                    Planned. Finishing all six chapters is meant to unlock a mystery egg that hatches
-                    into one of 25 Birds across 5 themed Lands.
-                  </p>
-                </div>
-                <div class="cs-info-card">
-                  <h4>Learn Before You Connect</h4>
-                  <p>
-                    Designed. Learning starts without a wallet or sign-in, so beginners build confidence
-                    first. A wallet is only needed later, to claim the reward.
-                  </p>
+                <div class="cs-numbered-row">
+                  <div class="cs-row-num">03</div>
+                  <div class="cs-row-body">
+                    <h4 class="cs-row-title">Ship the smallest honest version first.</h4>
+                    <p class="cs-row-desc">
+                      The Coming soon page let me reach beginners while the learning experience was still
+                      being built.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </section>
-
-            <!-- 05 Design Showcase -->
-            <section id="cs-sec-05" class="cs-section">
-              <div class="cs-sec-kicker">05 &middot; Design Showcase</div>
-              <h3 class="cs-sec-title">Key Screens &amp; World Building</h3>
-              <p class="cs-sec-lead">
-                Highlights from the live Eggoria website, from the hero realm and mystery egg to the
-                interactive Lands &amp; Birds explorer.
-              </p>
-              <div class="cs-showcase-grid">
-                <div class="cs-showcase-item is-wide">
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    src="/assets/aistudio/Desktop___Section_01___STATUS__NOT_DESIGNED_92d7dcd3.png"
-                    alt="Eggoria Hero Landing Screen"
-                  />
-                </div>
-                <div class="cs-showcase-item">
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    src="/assets/aistudio/Desktop___Section_02___STATUS__NOT_DESIGNED_1f1cd266.png"
-                    alt="Eggoria How It Works Screen"
-                  />
-                </div>
-                <div class="cs-showcase-item">
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    src="/assets/aistudio/Desktop___Section_03___STATUS__NOT_DESIGNED_3faed091.png"
-                    alt="Eggoria Egg Types Screen"
-                  />
-                </div>
-                <div class="cs-showcase-item">
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    src="/assets/aistudio/Desktop___Section_04___STATUS__NOT_DESIGNED_ec8d4dbf.png"
-                    alt="Eggoria Lands and Birds Screen"
-                  />
-                </div>
-                <div class="cs-showcase-item">
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    src="/assets/aistudio/Desktop___Section_05___STATUS__NOT_DESIGNED_6edb8c75.png"
-                    alt="Eggoria Partners Screen"
-                  />
-                </div>
-              </div>
-            </section>
-
-            <!-- 06 Outcome & Learnings -->
-            <section id="cs-sec-06" class="cs-section">
-              <div class="cs-sec-kicker">06 &middot; Outcome &amp; Learnings</div>
-              <h3 class="cs-sec-title">What I&rsquo;ve Shipped, and What Comes Next</h3>
-              <p class="cs-sec-lead">
-                Building Eggoria end to end so far has reinforced how thoughtful visual metaphors and
-                play loops can turn an intimidating technical domain into an inviting journey.
-              </p>
-              <div class="cs-cards-grid">
-                <div class="cs-info-card">
-                  <h4>6 Chapters Planned</h4>
-                  <p>
-                    A beginner-friendly path from blockchain basics to Web3 safety. The lessons are still
-                    being written.
-                  </p>
-                </div>
-                <div class="cs-info-card">
-                  <h4>25 Bird Designs</h4>
-                  <p>
-                    5 themed Lands with 5 unique Birds each, designed with a cohesive visual style and
-                    shown in an interactive explorer on the live site.
-                  </p>
-                </div>
-                <div class="cs-info-card">
-                  <h4>Design-to-Code Execution</h4>
-                  <p>
-                    Built and deployed live at eggoria.site with responsive layouts, custom
-                    illustrations, and smooth motion.
-                  </p>
-                </div>
+              <div class="cs-sec-footer">
+                <div class="cs-footer-label">NEXT</div>
+                <p class="cs-footer-statement">
+                  Finish the learning flow, then test it with real beginners.
+                </p>
               </div>
             </section>
           </div>
