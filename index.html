@@ -4288,7 +4288,8 @@
       }
 
       .pm-btn-primary {
-        flex: 1.3;
+        flex: 1 1 0;
+        min-width: 0;
         height: calc(50 * var(--u));
         border-radius: calc(999 * var(--u));
         background: #ffffff;
@@ -4317,7 +4318,8 @@
       }
 
       .pm-btn-secondary {
-        flex: 0.95;
+        flex: 1 1 0;
+        min-width: 0;
         height: calc(50 * var(--u));
         border-radius: calc(999 * var(--u));
         background: rgba(255, 255, 255, 0.03);
@@ -5136,6 +5138,36 @@
 
         .cs-row-desc {
           font-size: calc(14 * var(--u));
+        }
+
+        /* 03 My Approach: stack the release scope under the text on phones (it used to overlap the title) */
+        .cs-approach-section .cs-sec-kicker {
+          margin-bottom: calc(24 * var(--u));
+        }
+
+        .cs-release-grid {
+          grid-template-columns: minmax(0, 1fr);
+          gap: calc(28 * var(--u));
+        }
+
+        .cs-release-title {
+          font-size: calc(32 * var(--u));
+          margin-bottom: calc(16 * var(--u));
+        }
+
+        .cs-release-desc {
+          font-size: calc(16 * var(--u));
+        }
+
+        .cs-release-title br {
+          display: none;
+        }
+
+        .cs-release-scope {
+          border-left: 0;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+          padding: calc(20 * var(--u)) 0 0;
+          margin-top: 0;
         }
 
         .cs-footer-statement {
@@ -6733,7 +6765,7 @@
             </div>
 
             <div class="pm-actions-row">
-              <a href="#eggoria-case-study" class="pm-btn-primary" id="pm-case-study-btn">
+              <a href="#eggoria-case-study" class="pm-btn-secondary" id="pm-case-study-btn">
                 <span>View Case Study</span>
                 <img loading="lazy" decoding="async"
                   src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
@@ -6741,7 +6773,7 @@
                   class="btn-arrow-img"
                   aria-hidden="true" />
               </a>
-              <a href="#contact" class="pm-btn-secondary" id="pm-live-demo-btn">
+              <a href="#contact" class="pm-btn-primary" id="pm-live-demo-btn">
                 <span>Visit the Live Site</span>
                 <img loading="lazy" decoding="async"
                   src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
@@ -6987,7 +7019,7 @@
               <div class="cs-release-grid">
                 <div class="cs-release-main">
                   <h3 class="cs-release-title">
-                    Give visitors a way<br />to stay in the loop.
+                    Give visitors a way <br />to stay in the loop.
                   </h3>
                   <p class="cs-release-desc">
                     I launched the site before the lessons were ready so I could show beginners what
@@ -7883,7 +7915,7 @@
 
           renderProjectSlide(0);
 
-          // Buttons only exist when the project has a destination. With no case study, Live Demo is the primary button.
+          // Buttons only exist when the project has a destination. The live site is the primary button; with no live site, the case study is.
           const pmActions = pmCaseStudyBtn ? pmCaseStudyBtn.parentElement : null;
           const setLink = function (btn, url) {
             if (!btn) return;
@@ -7899,10 +7931,14 @@
           };
           setLink(pmCaseStudyBtn, project.caseStudyUrl);
           setLink(pmLiveDemoBtn, project.liveDemoUrl);
+          const liveIsPrimary = Boolean(project.liveDemoUrl);
           if (pmLiveDemoBtn) {
-            const primary = !project.caseStudyUrl;
-            pmLiveDemoBtn.classList.toggle('pm-btn-primary', primary);
-            pmLiveDemoBtn.classList.toggle('pm-btn-secondary', !primary);
+            pmLiveDemoBtn.classList.toggle('pm-btn-primary', liveIsPrimary);
+            pmLiveDemoBtn.classList.toggle('pm-btn-secondary', !liveIsPrimary);
+          }
+          if (pmCaseStudyBtn) {
+            pmCaseStudyBtn.classList.toggle('pm-btn-primary', !liveIsPrimary);
+            pmCaseStudyBtn.classList.toggle('pm-btn-secondary', liveIsPrimary);
           }
           if (pmActions) pmActions.hidden = !project.caseStudyUrl && !project.liveDemoUrl;
 
