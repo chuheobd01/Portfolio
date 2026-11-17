@@ -681,7 +681,8 @@
         overflow: hidden;
         background: transparent;
         padding: calc(24 * var(--u)) 0;
-        margin-bottom: calc(36 * var(--u));
+        /* sits above the glow of the Experience section, so the words stay readable where the arc passes behind them */
+        z-index: 2;
         -webkit-mask-image: linear-gradient(
           90deg,
           transparent 0%,
@@ -763,7 +764,7 @@
         color: var(--text-light);
         width: 100%;
         overflow: visible;
-        padding: calc(44 * var(--u)) 0 calc(72 * var(--u));
+        padding: calc(44 * var(--u)) 0 calc(56 * var(--u));
       }
 
       /* Seamless golden planet horizon rim glow bridging Education & Experience and Selected Works */
@@ -1090,7 +1091,7 @@
         background: var(--black);
         color: var(--text-light);
         width: 100%;
-        padding: calc(64 * var(--u)) 0 calc(70 * var(--u));
+        padding: calc(52 * var(--u)) 0 calc(70 * var(--u));
       }
 
       .works-inner {
@@ -4739,7 +4740,6 @@
 
         .skills-marquee-section {
           padding: calc(16 * var(--u)) 0;
-          margin-bottom: calc(20 * var(--u));
         }
 
         .skills-marquee-group {
@@ -4975,13 +4975,16 @@
 
         /* The rim glow used to cross the Education entries and hurt readability: give it its own band under the timeline. */
         .edu-exp-section {
-          padding-bottom: calc(100 * var(--u));
+          padding-bottom: calc(70 * var(--u));
         }
 
+        /* The arc now ends above the skills strip: it fades out before it reaches the words */
         .horizon-glow-wrap {
-          bottom: calc(-290 * var(--u));
+          bottom: calc(-310 * var(--u));
           transform: scale(0.62);
           transform-origin: left top;
+          -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000000 12%, #000000 36%, transparent 62%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000000 12%, #000000 36%, transparent 62%);
         }
 
         .works-section {
@@ -5642,61 +5645,6 @@
       </section>
 
       <!-- ====================================================================
-           INFINITE SKILLS MARQUEE (RIGHT TO LEFT, SEAMLESS LOOP)
-           ==================================================================== -->
-      <section class="skills-marquee-section" aria-label="Core Design Capabilities">
-        <div class="skills-marquee-track">
-          <!-- Group 1 -->
-          <div class="skills-marquee-group">
-            <span class="marquee-item">UI/UX Design</span>
-            <span class="marquee-star" aria-hidden="true">✦</span>
-            <span class="marquee-item">Product Design</span>
-            <span class="marquee-star" aria-hidden="true">✦</span>
-            <span class="marquee-item">Design Systems</span>
-            <span class="marquee-star" aria-hidden="true">✦</span>
-            <span class="marquee-item">UX Research</span>
-            <span class="marquee-star" aria-hidden="true">✦</span>
-            <span class="marquee-item">Wireframing</span>
-            <span class="marquee-star" aria-hidden="true">✦</span>
-            <span class="marquee-item">Prototyping</span>
-            <span class="marquee-star" aria-hidden="true">✦</span>
-            <span class="marquee-item">Web3 UX</span>
-            <span class="marquee-star" aria-hidden="true">✦</span>
-            <span class="marquee-item">Dashboard Design</span>
-            <span class="marquee-star" aria-hidden="true">✦</span>
-            <span class="marquee-item">Mobile App Design</span>
-            <span class="marquee-star" aria-hidden="true">✦</span>
-            <span class="marquee-item">Interaction Design</span>
-            <span class="marquee-star" aria-hidden="true">✦</span>
-          </div>
-
-          <!-- Group 2 (Identical clone for seamless infinite -50% translation) -->
-          <div class="skills-marquee-group" aria-hidden="true">
-            <span class="marquee-item">UI/UX Design</span>
-            <span class="marquee-star">✦</span>
-            <span class="marquee-item">Product Design</span>
-            <span class="marquee-star">✦</span>
-            <span class="marquee-item">Design Systems</span>
-            <span class="marquee-star">✦</span>
-            <span class="marquee-item">UX Research</span>
-            <span class="marquee-star">✦</span>
-            <span class="marquee-item">Wireframing</span>
-            <span class="marquee-star">✦</span>
-            <span class="marquee-item">Prototyping</span>
-            <span class="marquee-star">✦</span>
-            <span class="marquee-item">Web3 UX</span>
-            <span class="marquee-star">✦</span>
-            <span class="marquee-item">Dashboard Design</span>
-            <span class="marquee-star">✦</span>
-            <span class="marquee-item">Mobile App Design</span>
-            <span class="marquee-star">✦</span>
-            <span class="marquee-item">Interaction Design</span>
-            <span class="marquee-star">✦</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================================
            SECTION 3: EXPERIENCE & EDUCATION TIMELINE
            ==================================================================== -->
       <section
@@ -5974,6 +5922,61 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SKILLS MARQUEE (RIGHT TO LEFT, SEAMLESS LOOP), BETWEEN EXPERIENCE AND SELECTED WORKS
+           ==================================================================== -->
+      <section class="skills-marquee-section" aria-label="Core Design Capabilities">
+        <div class="skills-marquee-track">
+          <!-- Group 1 -->
+          <div class="skills-marquee-group">
+            <span class="marquee-item">UI/UX Design</span>
+            <span class="marquee-star" aria-hidden="true">✦</span>
+            <span class="marquee-item">Product Design</span>
+            <span class="marquee-star" aria-hidden="true">✦</span>
+            <span class="marquee-item">Design Systems</span>
+            <span class="marquee-star" aria-hidden="true">✦</span>
+            <span class="marquee-item">UX Research</span>
+            <span class="marquee-star" aria-hidden="true">✦</span>
+            <span class="marquee-item">Wireframing</span>
+            <span class="marquee-star" aria-hidden="true">✦</span>
+            <span class="marquee-item">Prototyping</span>
+            <span class="marquee-star" aria-hidden="true">✦</span>
+            <span class="marquee-item">Web3 UX</span>
+            <span class="marquee-star" aria-hidden="true">✦</span>
+            <span class="marquee-item">Dashboard Design</span>
+            <span class="marquee-star" aria-hidden="true">✦</span>
+            <span class="marquee-item">Mobile App Design</span>
+            <span class="marquee-star" aria-hidden="true">✦</span>
+            <span class="marquee-item">Interaction Design</span>
+            <span class="marquee-star" aria-hidden="true">✦</span>
+          </div>
+
+          <!-- Group 2 (Identical clone for seamless infinite -50% translation) -->
+          <div class="skills-marquee-group" aria-hidden="true">
+            <span class="marquee-item">UI/UX Design</span>
+            <span class="marquee-star">✦</span>
+            <span class="marquee-item">Product Design</span>
+            <span class="marquee-star">✦</span>
+            <span class="marquee-item">Design Systems</span>
+            <span class="marquee-star">✦</span>
+            <span class="marquee-item">UX Research</span>
+            <span class="marquee-star">✦</span>
+            <span class="marquee-item">Wireframing</span>
+            <span class="marquee-star">✦</span>
+            <span class="marquee-item">Prototyping</span>
+            <span class="marquee-star">✦</span>
+            <span class="marquee-item">Web3 UX</span>
+            <span class="marquee-star">✦</span>
+            <span class="marquee-item">Dashboard Design</span>
+            <span class="marquee-star">✦</span>
+            <span class="marquee-item">Mobile App Design</span>
+            <span class="marquee-star">✦</span>
+            <span class="marquee-item">Interaction Design</span>
+            <span class="marquee-star">✦</span>
           </div>
         </div>
       </section>
