@@ -3251,8 +3251,13 @@
         background: #101015;
       }
 
+      .cs-decision-media picture {
+        display: block;
+      }
+
       .cs-decision-media img {
         width: 100%;
+        height: auto;
         display: block;
       }
 
@@ -3375,6 +3380,551 @@
         background: rgba(255, 255, 255, 0.03);
         font-size: calc(13.5 * var(--u));
         color: #d2d2dc;
+      }
+
+
+      /* Case study v3: research, scope and flow, world and system, final UI */
+      .cs-find-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: calc(18 * var(--u));
+      }
+
+      .cs-find-card {
+        padding: calc(26 * var(--u));
+      }
+
+      .cs-find-num {
+        margin-bottom: calc(12 * var(--u));
+        font-size: calc(46 * var(--u));
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: #f0cd6e;
+      }
+
+      .cs-find-card h4 {
+        font-size: calc(19 * var(--u));
+        margin-bottom: calc(10 * var(--u));
+      }
+
+      .cs-find-card p {
+        font-size: calc(15 * var(--u));
+      }
+
+      .cs-impact {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .cs-impact-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.25fr);
+        align-items: center;
+        gap: calc(22 * var(--u));
+        padding: calc(18 * var(--u)) 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .cs-impact-row p {
+        margin: 0;
+      }
+
+      .cs-impact-from {
+        font-size: calc(17 * var(--u));
+        color: #b4b4c0;
+      }
+
+      .cs-impact-arrow,
+      .cs-flow-sep {
+        color: #c48eff;
+        font-size: calc(18 * var(--u));
+        line-height: 1;
+      }
+
+      .cs-impact-to {
+        font-size: calc(18 * var(--u));
+        font-weight: 600;
+        line-height: 1.35;
+        color: #ffffff;
+      }
+
+      .cs-note {
+        margin: calc(18 * var(--u)) 0 0;
+        font-size: calc(14 * var(--u));
+        line-height: 1.55;
+        color: #8c8c98;
+        max-width: calc(780 * var(--u));
+      }
+
+      .cs-status-grid.is-two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cs-flow-block {
+        margin-top: calc(34 * var(--u));
+      }
+
+      .cs-flow {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: calc(10 * var(--u)) calc(12 * var(--u));
+      }
+
+      .cs-flow-node {
+        display: inline-flex;
+        align-items: center;
+        gap: calc(9 * var(--u));
+        padding: calc(9 * var(--u)) calc(16 * var(--u));
+        border-radius: calc(12 * var(--u));
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.04);
+        font-size: calc(14.5 * var(--u));
+        font-weight: 500;
+        color: #e8e8ee;
+      }
+
+      .cs-flow-node .cs-status-dot {
+        width: calc(8 * var(--u));
+        height: calc(8 * var(--u));
+        flex: none;
+      }
+
+      .cs-branch {
+        margin: calc(16 * var(--u)) 0 calc(26 * var(--u)) calc(14 * var(--u));
+        padding-left: calc(20 * var(--u));
+        border-left: 2px solid rgba(255, 255, 255, 0.14);
+        display: flex;
+        flex-direction: column;
+        gap: calc(10 * var(--u));
+      }
+
+      .cs-branch-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: calc(6 * var(--u)) calc(12 * var(--u));
+        font-size: calc(15 * var(--u));
+        line-height: 1.45;
+        color: #c4c4d0;
+      }
+
+      .cs-branch-if {
+        min-width: calc(128 * var(--u));
+        font-weight: 600;
+        color: #ffffff;
+      }
+
+      .cs-flow-second {
+        margin-top: calc(6 * var(--u));
+        margin-bottom: calc(12 * var(--u));
+      }
+
+      .cs-sys {
+        margin-top: calc(34 * var(--u));
+      }
+
+      .cs-swatches {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: calc(12 * var(--u));
+      }
+
+      .cs-swatch {
+        display: flex;
+        flex-direction: column;
+        border-radius: calc(12 * var(--u));
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .cs-swatch-chip {
+        display: block;
+        height: calc(58 * var(--u));
+      }
+
+      .cs-swatch-meta {
+        display: flex;
+        flex-direction: column;
+        gap: calc(2 * var(--u));
+        padding: calc(10 * var(--u)) calc(12 * var(--u));
+        font-size: calc(12.5 * var(--u));
+        color: #9c9ca8;
+      }
+
+      .cs-swatch-meta b {
+        font-weight: 600;
+        color: #ffffff;
+      }
+
+      .cs-sys-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+        gap: calc(28 * var(--u));
+        align-items: center;
+        margin-top: calc(22 * var(--u));
+      }
+
+      .cs-btn-demo {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: calc(12 * var(--u));
+        padding: calc(24 * var(--u));
+        border-radius: calc(16 * var(--u));
+        background: #102b4e;
+      }
+
+      .cs-btn-demo-primary,
+      .cs-btn-demo-secondary {
+        display: inline-flex;
+        align-items: center;
+        padding: calc(11 * var(--u)) calc(22 * var(--u));
+        border-radius: 999px;
+        font-size: calc(14.5 * var(--u));
+        font-weight: 600;
+      }
+
+      .cs-btn-demo-primary {
+        background: linear-gradient(180deg, #ffe37d 0%, #f2b843 100%);
+        color: #102b4e;
+        box-shadow: 0 calc(3 * var(--u)) calc(10 * var(--u)) rgba(240, 190, 80, 0.35);
+      }
+
+      .cs-btn-demo-secondary {
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .cs-rules {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: calc(9 * var(--u));
+      }
+
+      .cs-rules li {
+        position: relative;
+        padding-left: calc(16 * var(--u));
+        font-size: calc(14.5 * var(--u));
+        line-height: 1.5;
+        color: #b0b0bc;
+      }
+
+      .cs-rules li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.62em;
+        width: calc(5 * var(--u));
+        height: calc(5 * var(--u));
+        border-radius: 50%;
+        background: #f0cd6e;
+      }
+
+      .cs-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: calc(18 * var(--u));
+        align-items: start;
+      }
+
+      .cs-gallery .is-wide {
+        grid-column: 1 / -1;
+      }
+
+      .cs-phone-row {
+        display: grid;
+        grid-template-columns: calc(250 * var(--u)) minmax(0, 1fr);
+        gap: calc(40 * var(--u));
+        align-items: center;
+        margin-top: calc(30 * var(--u));
+      }
+
+      .cs-phone-copy h4 {
+        margin: 0 0 calc(10 * var(--u));
+        font-size: calc(26 * var(--u));
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+      }
+
+      .cs-phone-copy p {
+        margin: 0 0 calc(16 * var(--u));
+        font-size: calc(15.5 * var(--u));
+        line-height: 1.55;
+        color: #b4b4c0;
+      }
+
+
+      /* Case study v4: personas, comparison, user flow, drafts, result */
+      .cs-persona-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: calc(18 * var(--u));
+        margin-bottom: calc(6 * var(--u));
+      }
+
+      .cs-persona h4 {
+        font-size: calc(18 * var(--u));
+        margin-bottom: calc(14 * var(--u));
+      }
+
+      .cs-persona dl {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: calc(12 * var(--u));
+      }
+
+      .cs-persona dt {
+        margin: 0 0 calc(3 * var(--u));
+        font-size: calc(11.5 * var(--u));
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #c48eff;
+      }
+
+      .cs-persona dd {
+        margin: 0;
+        font-size: calc(14.5 * var(--u));
+        line-height: 1.5;
+        color: #b4b4c0;
+      }
+
+      .cs-compare-block {
+        margin-top: calc(38 * var(--u));
+      }
+
+      .cs-compare {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .cs-compare-row {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr) minmax(0, 1.3fr);
+        gap: calc(24 * var(--u));
+        padding: calc(16 * var(--u)) 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: calc(14.5 * var(--u));
+        line-height: 1.5;
+        color: #b0b0bc;
+      }
+
+      .cs-compare-row.is-head {
+        padding: calc(10 * var(--u)) 0;
+        font-size: calc(11.5 * var(--u));
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #9c9ca8;
+      }
+
+      .cs-compare-name {
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .cs-flow-svg-wrap {
+        margin-top: calc(34 * var(--u));
+      }
+
+      .cs-flow-svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-top: calc(14 * var(--u));
+        padding: calc(10 * var(--u));
+        border-radius: calc(16 * var(--u));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.02);
+        box-sizing: border-box;
+      }
+
+      .cs-flow-block.is-mobile {
+        display: none;
+      }
+
+      .cs-stat {
+        display: flex;
+        align-items: center;
+        gap: calc(22 * var(--u));
+        margin-top: calc(26 * var(--u));
+        padding: calc(22 * var(--u)) calc(26 * var(--u));
+        border-radius: calc(16 * var(--u));
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .cs-stat-num {
+        font-size: calc(54 * var(--u));
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: #f0cd6e;
+      }
+
+      .cs-stat-text {
+        font-size: calc(15.5 * var(--u));
+        line-height: 1.5;
+        color: #b4b4c0;
+        max-width: calc(560 * var(--u));
+      }
+
+      .cs-drafts-impact {
+        margin-top: calc(26 * var(--u));
+      }
+
+
+      /* Case study v5: Lumi and the 25 Birds */
+      .cs-lumi {
+        display: grid;
+        grid-template-columns: calc(300 * var(--u)) minmax(0, 1fr);
+        gap: calc(36 * var(--u));
+        align-items: center;
+        padding: calc(26 * var(--u)) calc(30 * var(--u));
+        border-radius: calc(16 * var(--u));
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .cs-lumi-img {
+        border-radius: calc(14 * var(--u));
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .cs-lumi-copy h4 {
+        margin: 0 0 calc(10 * var(--u));
+        font-size: calc(30 * var(--u));
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+      }
+
+      .cs-lumi-copy p {
+        margin: 0 0 calc(12 * var(--u));
+        font-size: calc(15.5 * var(--u));
+        line-height: 1.55;
+        color: #b4b4c0;
+      }
+
+      .cs-birdmap {
+        margin-top: calc(34 * var(--u));
+      }
+
+      .cs-birdmap-note {
+        margin: 0 0 calc(14 * var(--u));
+      }
+
+      .cs-land {
+        display: grid;
+        grid-template-columns: calc(300 * var(--u)) minmax(0, 1fr);
+        gap: calc(24 * var(--u));
+        align-items: center;
+        padding: calc(18 * var(--u)) 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .cs-land-head {
+        display: flex;
+        align-items: center;
+        gap: calc(16 * var(--u));
+      }
+
+      .cs-land-img {
+        width: calc(104 * var(--u));
+        height: auto;
+        flex: none;
+      }
+
+      .cs-land-num {
+        margin-bottom: calc(4 * var(--u));
+        font-size: calc(11.5 * var(--u));
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #c48eff;
+      }
+
+      .cs-land-head h4 {
+        margin: 0 0 calc(3 * var(--u));
+        font-size: calc(20 * var(--u));
+        font-weight: 700;
+        letter-spacing: -0.015em;
+        color: #ffffff;
+      }
+
+      .cs-land-head p {
+        margin: 0;
+        font-size: calc(14 * var(--u));
+        line-height: 1.4;
+        color: #a2a2ae;
+      }
+
+      .cs-birds {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: calc(10 * var(--u));
+      }
+
+      .cs-birds li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: calc(6 * var(--u));
+        padding: calc(10 * var(--u)) calc(6 * var(--u)) calc(9 * var(--u));
+        border-radius: calc(14 * var(--u));
+        background: rgba(255, 255, 255, 0.045);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+      }
+
+      .cs-birds img {
+        width: 100%;
+        height: calc(92 * var(--u));
+        object-fit: contain;
+      }
+
+      .cs-birds span {
+        font-size: calc(12.5 * var(--u));
+        line-height: 1.25;
+        text-align: center;
+        color: #d2d2dc;
+      }
+
+      .cs-land-core {
+        display: flex;
+        align-items: baseline;
+        gap: calc(18 * var(--u));
+        padding: calc(18 * var(--u)) 0 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .cs-land-core p {
+        margin: 0;
+        font-size: calc(14.5 * var(--u));
+        line-height: 1.5;
+        color: #b0b0bc;
+      }
+
+      .cs-land-core p b {
+        color: #ffffff;
+      }
+
+      .cs-land-core .cs-land-num {
+        flex: none;
+        margin: 0;
       }
 
       /* 03 My Approach — The Release Decision & Release Scope (legacy, no longer used by the markup) */
@@ -5442,6 +5992,185 @@
           font-size: calc(18 * var(--u));
           gap: calc(10 * var(--u));
         }
+
+
+        .cs-persona-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .cs-compare-row {
+          grid-template-columns: minmax(0, 1fr);
+          gap: calc(6 * var(--u));
+          font-size: calc(14 * var(--u));
+        }
+
+        .cs-compare-row.is-head {
+          display: none;
+        }
+
+        .cs-compare-row [data-label]::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: calc(2 * var(--u));
+          font-size: calc(11.5 * var(--u));
+          font-weight: 600;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #9c9ca8;
+        }
+
+        .cs-flow-svg-wrap {
+          display: none;
+        }
+
+        .cs-flow-block.is-mobile {
+          display: block;
+        }
+
+        .cs-stat {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: calc(10 * var(--u));
+        }
+
+        .cs-stat-num {
+          font-size: calc(44 * var(--u));
+        }
+
+        .cs-stat-text {
+          font-size: calc(14.5 * var(--u));
+        }
+
+
+        .cs-lumi {
+          grid-template-columns: minmax(0, 1fr);
+          gap: calc(14 * var(--u));
+          padding: calc(22 * var(--u));
+        }
+
+        .cs-lumi-img {
+          width: calc(220 * var(--u));
+          margin: 0 auto;
+        }
+
+        .cs-lumi-copy h4 {
+          font-size: calc(26 * var(--u));
+        }
+
+        .cs-lumi-copy p,
+        .cs-land-core p {
+          font-size: calc(14.5 * var(--u));
+        }
+
+        .cs-land {
+          grid-template-columns: minmax(0, 1fr);
+          gap: calc(14 * var(--u));
+        }
+
+        .cs-land-img {
+          width: calc(96 * var(--u));
+        }
+
+        .cs-birds {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .cs-birds img {
+          height: calc(84 * var(--u));
+        }
+
+        .cs-birds span {
+          font-size: calc(12.5 * var(--u));
+        }
+
+        .cs-land-core {
+          flex-direction: column;
+          gap: calc(6 * var(--u));
+        }
+
+        .cs-find-grid,
+        .cs-status-grid.is-two,
+        .cs-gallery,
+        .cs-sys-row {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .cs-find-num {
+          font-size: calc(40 * var(--u));
+        }
+
+        .cs-find-card p,
+        .cs-phone-copy p {
+          font-size: calc(15 * var(--u));
+        }
+
+        .cs-impact-row {
+          grid-template-columns: minmax(0, 1fr);
+          gap: calc(6 * var(--u));
+        }
+
+        .cs-impact-arrow {
+          transform: rotate(90deg);
+          justify-self: start;
+        }
+
+        .cs-impact-from {
+          font-size: calc(16 * var(--u));
+        }
+
+        .cs-impact-to {
+          font-size: calc(17 * var(--u));
+        }
+
+        .cs-flow-node,
+        .cs-branch-row,
+        .cs-rules li,
+        .cs-note {
+          font-size: calc(14 * var(--u));
+        }
+
+        .cs-flow {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: calc(4 * var(--u));
+        }
+
+        .cs-flow .cs-flow-sep {
+          transform: rotate(90deg);
+          margin-left: calc(14 * var(--u));
+        }
+
+        .cs-branch {
+          margin-left: calc(6 * var(--u));
+          padding-left: calc(14 * var(--u));
+        }
+
+        .cs-branch-if {
+          min-width: 0;
+          flex-basis: 100%;
+        }
+
+        .cs-branch-row .cs-flow-sep {
+          display: none;
+        }
+
+        .cs-swatches {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .cs-phone-row {
+          grid-template-columns: minmax(0, 1fr);
+          gap: calc(22 * var(--u));
+        }
+
+        .cs-phone {
+          max-width: calc(260 * var(--u));
+          margin: 0 auto;
+        }
+
+        .cs-phone-copy h4 {
+          font-size: calc(22 * var(--u));
+        }
       }
 
       /* Scroll reveal (src/scroll-motion.ts): fade and rise, staggered by --i. Plays once per load. */
@@ -5766,7 +6495,7 @@
               <div class="timeline-items">
                 <!-- Item 1: 2021 – Present -->
                 <div class="timeline-row">
-                  <div class="timeline-date">2021 – Present</div>
+                  <div class="timeline-date">2021 - Present</div>
                   <div class="timeline-axis" aria-hidden="true">
                     <span class="timeline-dot"></span>
                   </div>
@@ -5825,7 +6554,7 @@
 
                 <!-- Item 2: Oct 2025 – Jul 2026 -->
                 <div class="timeline-row">
-                  <div class="timeline-date">Oct 2025 – Jul 2026</div>
+                  <div class="timeline-date">Oct 2025 - Jul 2026</div>
                   <div class="timeline-axis" aria-hidden="true">
                     <span class="timeline-dot"></span>
                   </div>
@@ -5843,7 +6572,7 @@
 
                 <!-- Item 3: Nov 2025 – Jan 2026 -->
                 <div class="timeline-row">
-                  <div class="timeline-date">Nov 2025 – Jan 2026</div>
+                  <div class="timeline-date">Nov 2025 - Jan 2026</div>
                   <div class="timeline-axis" aria-hidden="true">
                     <span class="timeline-dot"></span>
                   </div>
@@ -5891,9 +6620,9 @@
               </div>
 
               <div class="timeline-items">
-                <!-- Edu 1: Oct 2024 – Sep 2025 -->
+                <!-- Edu 1: 2024 - 2025 -->
                 <div class="timeline-row">
-                  <div class="timeline-date">Oct 2024 – Sep 2025</div>
+                  <div class="timeline-date">2024 - 2025</div>
                   <div class="timeline-axis" aria-hidden="true">
                     <span class="timeline-dot"></span>
                   </div>
@@ -5908,7 +6637,7 @@
 
                 <!-- Edu 2: 2018 – 2021 -->
                 <div class="timeline-row">
-                  <div class="timeline-date">2018 – 2021</div>
+                  <div class="timeline-date">2018 - 2021</div>
                   <div class="timeline-axis" aria-hidden="true">
                     <span class="timeline-dot"></span>
                   </div>
@@ -6981,7 +7710,7 @@
                   </svg>
                   <span>Duration</span>
                 </div>
-                <div class="pm-meta-value" id="pm-duration">Aug 2026 – Oct 2026</div>
+                <div class="pm-meta-value" id="pm-duration">Aug 2026 - Oct 2026</div>
               </div>
 
               <div class="pm-meta-row">
@@ -7068,18 +7797,38 @@
               </button>
               <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-02">
                 <span class="cs-nav-num">02</span>
-                <span>The Problem</span>
+                <span>Research</span>
               </button>
               <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-03">
                 <span class="cs-nav-num">03</span>
-                <span>Design Decisions</span>
+                <span>The Problem</span>
               </button>
               <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-04">
                 <span class="cs-nav-num">04</span>
-                <span>Where It Stands</span>
+                <span>Scope and Flow</span>
               </button>
               <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-05">
                 <span class="cs-nav-num">05</span>
+                <span>Early Drafts</span>
+              </button>
+              <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-06">
+                <span class="cs-nav-num">06</span>
+                <span>Design Decisions</span>
+              </button>
+              <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-07">
+                <span class="cs-nav-num">07</span>
+                <span>World and System</span>
+              </button>
+              <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-08">
+                <span class="cs-nav-num">08</span>
+                <span>Final UI</span>
+              </button>
+              <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-09">
+                <span class="cs-nav-num">09</span>
+                <span>Where It Stands</span>
+              </button>
+              <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-10">
+                <span class="cs-nav-num">10</span>
                 <span>What I Learned</span>
               </button>
             </nav>
@@ -7184,7 +7933,7 @@
                     </svg>
                   </span>
                   <div class="cs-meta-label">Project Type</div>
-                  <div class="cs-meta-val">Independent Project</div>
+                  <div class="cs-meta-val">Independent Project,<br />Aug to Oct 2026</div>
                 </div>
 
                 <div class="cs-meta-col">
@@ -7228,61 +7977,230 @@
               </div>
             </section>
 
-            <!-- 02 The Challenge -->
+            <!-- 02 Research -->
             <section id="cs-sec-02" class="cs-section is-compact">
-              <div class="cs-sec-kicker">02 / THE PROBLEM</div>
+              <div class="cs-sec-kicker">02 / RESEARCH</div>
+              <h3 class="cs-sec-title">I asked five people what stops them.</h3>
+              <p class="cs-sec-lead">
+                I met five people in person, all between 20 and 30, working in offices, design and
+                business. I asked what they knew about Web3, whether they had tried a wallet, and
+                what they would do if a project asked for their seed phrase or private key.
+              </p>
+              <div class="cs-find-grid">
+                <div class="cs-info-card cs-find-card">
+                  <div class="cs-find-num">3 of 5</div>
+                  <h4>Looked into it, never tried it</h4>
+                  <p>They had watched videos about Web3 on YouTube but never made a wallet. They had heard that having a wallet means having money, so they were afraid of losing it.</p>
+                </div>
+                <div class="cs-info-card cs-find-card">
+                  <div class="cs-find-num">2 of 5</div>
+                  <h4>Used a wallet, skipped the basics</h4>
+                  <p>They had a wallet and had traded tokens. When I asked what they would do if a project asked for their seed phrase or private key, they did not know what either one is.</p>
+                </div>
+              </div>
+              <div class="cs-sec-footer">
+                <div class="cs-footer-label">TWO PATTERNS, NOT TWO INDIVIDUALS</div>
+                <div class="cs-persona-grid">
+                  <div class="cs-info-card cs-persona">
+                    <h4>The cautious watcher</h4>
+                    <dl>
+                      <div><dt>Who</dt><dd>20 to 30, works in an office, design or business.</dd></div>
+                      <div><dt>Where they are</dt><dd>Learns from YouTube. Has not made a wallet. Believes a wallet means holding money.</dd></div>
+                      <div><dt>What they need</dt><dd>A safe place to try, where nothing real is at stake.</dd></div>
+                    </dl>
+                  </div>
+                  <div class="cs-info-card cs-persona">
+                    <h4>The wallet user who never learned the basics</h4>
+                    <dl>
+                      <div><dt>Who</dt><dd>20 to 30, same kinds of jobs.</dd></div>
+                      <div><dt>Where they are</dt><dd>Has used a wallet and traded tokens. Cannot say what a seed phrase or private key is.</dd></div>
+                      <div><dt>What they need</dt><dd>A plain explanation of what protects a wallet, before someone asks for it.</dd></div>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div class="cs-sec-footer">
+                <div class="cs-footer-label">WHAT IT CHANGED</div>
+                <div class="cs-impact">
+                  <div class="cs-impact-row">
+                    <p class="cs-impact-from">Afraid of losing money</p>
+                    <span class="cs-impact-arrow" aria-hidden="true">&rarr;</span>
+                    <p class="cs-impact-to">The reward lives on a testnet. Nothing real is at stake.</p>
+                  </div>
+                  <div class="cs-impact-row">
+                    <p class="cs-impact-from">No idea what a seed phrase is</p>
+                    <span class="cs-impact-arrow" aria-hidden="true">&rarr;</span>
+                    <p class="cs-impact-to">The last chapter, Web3 Safety, teaches it before it matters.</p>
+                  </div>
+                </div>
+                <p class="cs-note">Five people is a small sample, so I treat it as a starting point and not as proof. I plan to test the learning flow with more beginners.</p>
+              </div>
+            </section>
+
+            <!-- 03 The Problem -->
+            <section id="cs-sec-03" class="cs-section is-compact">
+              <div class="cs-sec-kicker">03 / THE PROBLEM</div>
               <h3 class="cs-sec-title">
                 Web3 asks beginners to start<br />in the hardest place.
               </h3>
               <p class="cs-sec-lead">
-                Many Web3 products open with a wallet prompt and a glossary. For someone brand new,
-                that is a lot to take in before the first useful thing.
+                Many Web3 products open with a wallet. For the people I spoke to, that is exactly
+                where the fear and the confusion begin.
               </p>
               <div class="cs-numbered-list">
                 <div class="cs-numbered-row">
                   <div class="cs-row-num">01</div>
                   <div class="cs-row-body">
-                    <h4 class="cs-row-title">Unfamiliar terminology</h4>
+                    <h4 class="cs-row-title">Fear of losing money</h4>
                     <p class="cs-row-desc">
-                      New concepts can be hard to follow without plain-language examples.
+                      Newcomers stay away because a wallet sounds like holding real money.
                     </p>
                   </div>
                 </div>
                 <div class="cs-numbered-row">
                   <div class="cs-row-num">02</div>
                   <div class="cs-row-body">
-                    <h4 class="cs-row-title">Wallet friction</h4>
+                    <h4 class="cs-row-title">Wallets without understanding</h4>
                     <p class="cs-row-desc">
-                      A wallet prompt can feel like a roadblock before the first lesson.
-                    </p>
-                  </div>
-                </div>
-                <div class="cs-numbered-row">
-                  <div class="cs-row-num">03</div>
-                  <div class="cs-row-body">
-                    <h4 class="cs-row-title">No clear next step</h4>
-                    <p class="cs-row-desc">
-                      Scattered resources make it hard to know what to learn or practice next.
+                      People use a wallet without knowing what protects it, so they cannot tell when something asks for too much.
                     </p>
                   </div>
                 </div>
               </div>
+              <div class="cs-compare-block">
+                <div class="cs-footer-label">HOW OTHERS TEACH WEB3 TODAY</div>
+                <div class="cs-compare" role="table" aria-label="Comparison of existing Web3 learning products">
+                  <div class="cs-compare-row is-head" role="row">
+                    <span role="columnheader">Product</span><span role="columnheader">What it offers</span><span role="columnheader">Where a beginner can stall (my read)</span>
+                  </div>
+                  <div class="cs-compare-row" role="row">
+                    <span role="cell" class="cs-compare-name">Coinbase Learning Rewards</span>
+                    <span role="cell" data-label="What it offers">Short videos and a quiz, with a small crypto reward.</span>
+                    <span role="cell" data-label="Where a beginner can stall">Starts inside an exchange account that needs identity verification first.</span>
+                  </div>
+                  <div class="cs-compare-row" role="row">
+                    <span role="cell" class="cs-compare-name">Binance Academy</span>
+                    <span role="cell" data-label="What it offers">Free articles and courses with video lessons, quizzes and certificates.</span>
+                    <span role="cell" data-label="Where a beginner can stall">Reads like a large library. There is a lot to choose from and no single guided path.</span>
+                  </div>
+                  <div class="cs-compare-row" role="row">
+                    <span role="cell" class="cs-compare-name">MetaMask support guides</span>
+                    <span role="cell" data-label="What it offers">Clear articles on the secret recovery phrase and basic safety.</span>
+                    <span role="cell" data-label="Where a beginner can stall">The safety advice comes with the wallet, so it reaches people who already have one.</span>
+                  </div>
+                  <div class="cs-compare-row" role="row">
+                    <span role="cell" class="cs-compare-name">CryptoZombies</span>
+                    <span role="cell" data-label="What it offers">A game that teaches Solidity by building smart contracts.</span>
+                    <span role="cell" data-label="Where a beginner can stall">Teaches how to build, not how to use Web3 safely.</span>
+                  </div>
+                </div>
+                <p class="cs-note">Based on each product&rsquo;s public pages and articles. Terms change, so check the sites for the latest.</p>
+              </div>
               <div class="cs-sec-footer">
-                <div class="cs-footer-label">PRE-LAUNCH DESIGN QUESTION</div>
+                <div class="cs-footer-label">DESIGN QUESTION</div>
                 <p class="cs-footer-statement">
-                  How can I show beginners what they’ll learn and give them a reason to come back
-                  when lessons open?
+                  How can beginners learn Web3 without risking money, and understand what keeps a wallet safe before it matters?
                 </p>
               </div>
             </section>
 
-            <!-- 03 Design Decisions -->
-            <section id="cs-sec-03" class="cs-section is-compact">
-              <div class="cs-sec-kicker">03 / DESIGN DECISIONS</div>
+            <!-- 04 Scope and Flow -->
+            <section id="cs-sec-04" class="cs-section is-compact">
+              <div class="cs-sec-kicker">04 / SCOPE AND FLOW</div>
+              <h3 class="cs-sec-title">Start small, and keep the first minute simple.</h3>
+              <p class="cs-sec-lead">
+                The first milestone is only the way in: a visitor presses Start Adventure and lands
+                in the right place, new or returning, with no wallet and no sign-in.
+              </p>
+              <div class="cs-status-grid is-two">
+                <div class="cs-info-card cs-status-card">
+                  <h4><span class="cs-status-dot is-dev" aria-hidden="true"></span>In scope now</h4>
+                  <ul><li>Landing page and the Start Adventure entry</li><li>A short scene transition, then loading, slow, offline and error states</li><li>Chapter 01 intro with Lumi</li><li>Welcome back for returning visitors</li><li>Progress saved in the visitor&rsquo;s browser</li></ul>
+                </div>
+                <div class="cs-info-card cs-status-card">
+                  <h4><span class="cs-status-dot is-planned" aria-hidden="true"></span>Later</h4>
+                  <ul><li>Lesson content, quizzes and video</li><li>Sign-in and picking up on another device</li><li>Wallet, claim and the Bird reward</li><li>Analytics and consent</li></ul>
+                </div>
+              </div>
+              <div class="cs-flow-svg-wrap">
+                <div class="cs-footer-label">USER FLOW, FROM THE LANDING PAGE TO MY BIRD</div>
+                <svg class="cs-flow-svg" viewBox="0 0 1000 570" role="img" aria-labelledby="cs-flow-title cs-flow-desc" xmlns="http://www.w3.org/2000/svg" font-family="inherit"><title id="cs-flow-title">User flow of Eggoria</title><desc id="cs-flow-desc">From the landing page, Start Adventure reads saved progress. A new visitor goes to the Chapter 01 intro, a returning one to Welcome back, an unopened adventure shows the Coming soon page, and unreadable progress shows an error. Then six chapters, a reward, a wallet connection, Test USDC for the fee, a claim, confirmation, the egg hatching, the Bird reveal and My Bird.</desc><defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8c8c98"/></marker></defs><g><rect x="10" y="24" width="200" height="56" rx="10" fill="rgba(255,255,255,0.045)" stroke="#6bd08a" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="24" cy="52" r="4" fill="#6bd08a"/><text x="38" y="49" fill="#ffffff" font-size="13" font-weight="600">Landing page</text><text x="38" y="66" fill="#a8a8b6" font-size="11.5">Start Adventure button</text></g><g><rect x="260" y="24" width="200" height="56" rx="10" fill="rgba(255,255,255,0.045)" stroke="#f0cd6e" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="274" cy="52" r="4" fill="#f0cd6e"/><text x="288" y="49" fill="#ffffff" font-size="13" font-weight="600">Start Adventure</text><text x="288" y="66" fill="#a8a8b6" font-size="11.5">button loads at once</text></g><g><rect x="510" y="24" width="200" height="56" rx="10" fill="rgba(255,255,255,0.045)" stroke="#f0cd6e" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="524" cy="52" r="4" fill="#f0cd6e"/><text x="538" y="49" fill="#ffffff" font-size="13" font-weight="600">Scene transition</text><text x="538" y="66" fill="#a8a8b6" font-size="11.5">Lumi sets the mood</text></g><g><rect x="760" y="24" width="200" height="56" rx="10" fill="rgba(255,255,255,0.045)" stroke="#f0cd6e" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="774" cy="52" r="4" fill="#f0cd6e"/><text x="788" y="49" fill="#ffffff" font-size="13" font-weight="600">Read saved progress</text><text x="788" y="66" fill="#a8a8b6" font-size="11.5">from the browser</text></g><path d="M210 52 H258" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><path d="M460 52 H508" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><path d="M710 52 H758" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><path d="M860 80 V120" fill="none" stroke="#8c8c98" stroke-width="1.5"/><path d="M110 120 H860" fill="none" stroke="#8c8c98" stroke-width="1.5"/><path d="M110 120 V162" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><path d="M360 120 V162" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><path d="M610 120 V162" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><path d="M860 120 V162" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><g><rect x="10" y="164" width="200" height="60" rx="10" fill="rgba(255,255,255,0.045)" stroke="#f0cd6e" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="24" cy="194" r="4" fill="#f0cd6e"/><text x="38" y="191" fill="#ffffff" font-size="13" font-weight="600">Nothing saved</text><text x="38" y="208" fill="#a8a8b6" font-size="11.5">Chapter 01 intro</text></g><g><rect x="260" y="164" width="200" height="60" rx="10" fill="rgba(255,255,255,0.045)" stroke="#f0cd6e" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="274" cy="194" r="4" fill="#f0cd6e"/><text x="288" y="191" fill="#ffffff" font-size="13" font-weight="600">Progress found</text><text x="288" y="208" fill="#a8a8b6" font-size="11.5">Welcome back, resume</text></g><g><rect x="510" y="164" width="200" height="60" rx="10" fill="rgba(255,255,255,0.045)" stroke="#6bd08a" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="524" cy="194" r="4" fill="#6bd08a"/><text x="538" y="191" fill="#ffffff" font-size="13" font-weight="600">Not open yet</text><text x="538" y="208" fill="#a8a8b6" font-size="11.5">Coming soon page</text></g><g><rect x="760" y="164" width="200" height="60" rx="10" fill="rgba(255,255,255,0.045)" stroke="#ff8f8f" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="774" cy="194" r="4" fill="#ff8f8f"/><text x="788" y="191" fill="#ffffff" font-size="13" font-weight="600">Cannot read it</text><text x="788" y="208" fill="#a8a8b6" font-size="11.5">Error, never a new player</text></g><path d="M360 224 V268" fill="none" stroke="#8c8c98" stroke-width="1.5"/><path d="M110 224 V268 H360" fill="none" stroke="#8c8c98" stroke-width="1.5"/><path d="M110 268 V304" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><g><rect x="10" y="306" width="170" height="56" rx="10" fill="rgba(255,255,255,0.045)" stroke="#f0cd6e" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="24" cy="334" r="4" fill="#f0cd6e"/><text x="38" y="331" fill="#ffffff" font-size="13" font-weight="600">Six chapters</text><text x="38" y="348" fill="#a8a8b6" font-size="11.5">Learn to Knowledge test</text></g><g><rect x="210" y="306" width="170" height="56" rx="10" fill="rgba(255,255,255,0.045)" stroke="#9db8ff" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="224" cy="334" r="4" fill="#9db8ff"/><text x="238" y="331" fill="#ffffff" font-size="13" font-weight="600">Reward unlocked</text><text x="238" y="348" fill="#a8a8b6" font-size="11.5">after chapter six</text></g><g><rect x="410" y="306" width="170" height="56" rx="10" fill="rgba(255,255,255,0.045)" stroke="#9db8ff" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="424" cy="334" r="4" fill="#9db8ff"/><text x="438" y="331" fill="#ffffff" font-size="13" font-weight="600">Connect a wallet</text><text x="438" y="348" fill="#a8a8b6" font-size="11.5">asked only here</text></g><g><rect x="610" y="306" width="170" height="56" rx="10" fill="rgba(255,255,255,0.045)" stroke="#9db8ff" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="624" cy="334" r="4" fill="#9db8ff"/><text x="638" y="331" fill="#ffffff" font-size="13" font-weight="600">Get Test USDC</text><text x="638" y="348" fill="#a8a8b6" font-size="11.5">for the network fee</text></g><g><rect x="810" y="306" width="170" height="56" rx="10" fill="rgba(255,255,255,0.045)" stroke="#9db8ff" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="824" cy="334" r="4" fill="#9db8ff"/><text x="838" y="331" fill="#ffffff" font-size="13" font-weight="600">Claim</text><text x="838" y="348" fill="#a8a8b6" font-size="11.5">approve in the wallet</text></g><path d="M180 334 H208" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><path d="M380 334 H408" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><path d="M580 334 H608" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><path d="M780 334 H808" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><path d="M895 362 V400" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><g><rect x="810" y="402" width="170" height="56" rx="10" fill="rgba(255,255,255,0.045)" stroke="#9db8ff" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="824" cy="430" r="4" fill="#9db8ff"/><text x="838" y="427" fill="#ffffff" font-size="13" font-weight="600">Pending</text><text x="838" y="444" fill="#a8a8b6" font-size="11.5">waiting for the network</text></g><g><rect x="610" y="402" width="170" height="56" rx="10" fill="rgba(255,255,255,0.045)" stroke="#9db8ff" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="624" cy="430" r="4" fill="#9db8ff"/><text x="638" y="427" fill="#ffffff" font-size="13" font-weight="600">Confirmed</text><text x="638" y="444" fill="#a8a8b6" font-size="11.5">server and chain agree</text></g><g><rect x="410" y="402" width="170" height="56" rx="10" fill="rgba(255,255,255,0.045)" stroke="#9db8ff" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="424" cy="430" r="4" fill="#9db8ff"/><text x="438" y="427" fill="#ffffff" font-size="13" font-weight="600">Egg hatches</text><text x="438" y="444" fill="#a8a8b6" font-size="11.5">Rive animation</text></g><g><rect x="210" y="402" width="170" height="56" rx="10" fill="rgba(255,255,255,0.045)" stroke="#9db8ff" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="224" cy="430" r="4" fill="#9db8ff"/><text x="238" y="427" fill="#ffffff" font-size="13" font-weight="600">Bird revealed</text><text x="238" y="444" fill="#a8a8b6" font-size="11.5">one of 25 Birds</text></g><g><rect x="10" y="402" width="170" height="56" rx="10" fill="rgba(255,255,255,0.045)" stroke="#9db8ff" stroke-opacity="0.75" stroke-width="1.4"/><circle cx="24" cy="430" r="4" fill="#9db8ff"/><text x="38" y="427" fill="#ffffff" font-size="13" font-weight="600">My Bird</text><text x="38" y="444" fill="#a8a8b6" font-size="11.5">a place to come back to</text></g><path d="M810 430 H782" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><path d="M610 430 H582" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><path d="M410 430 H382" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><path d="M210 430 H182" fill="none" stroke="#8c8c98" stroke-width="1.5" marker-end="url(#arr)"/><text x="10" y="492" fill="#a8a8b6" font-size="12.5">Wrong network, no wallet and a rejected request each get their own message and a way forward.</text><text x="10" y="512" fill="#a8a8b6" font-size="12.5">Success is shown only after the server and the blockchain both confirm.</text><circle cx="14" cy="548" r="4" fill="#6bd08a"/><text x="26" y="552" fill="#c4c4d0" font-size="12">Live</text><circle cx="94" cy="548" r="4" fill="#f0cd6e"/><text x="106" y="552" fill="#c4c4d0" font-size="12">In development</text><circle cx="244" cy="548" r="4" fill="#9db8ff"/><text x="256" y="552" fill="#c4c4d0" font-size="12">Planned</text><circle cx="344" cy="548" r="4" fill="#ff8f8f"/><text x="356" y="552" fill="#c4c4d0" font-size="12">Error path</text></svg>
+              </div>
+              <div class="cs-flow-block is-mobile">
+                <div class="cs-footer-label">WHAT HAPPENS WHEN YOU PRESS START ADVENTURE</div>
+                <div class="cs-flow">
+                  <span class="cs-flow-node"><span class="cs-status-dot is-live" aria-hidden="true"></span>Landing page</span><span class="cs-flow-sep" aria-hidden="true">&rarr;</span><span class="cs-flow-node"><span class="cs-status-dot is-dev" aria-hidden="true"></span>Start Adventure</span><span class="cs-flow-sep" aria-hidden="true">&rarr;</span><span class="cs-flow-node"><span class="cs-status-dot is-dev" aria-hidden="true"></span>Scene transition</span><span class="cs-flow-sep" aria-hidden="true">&rarr;</span><span class="cs-flow-node"><span class="cs-status-dot is-dev" aria-hidden="true"></span>Read saved progress</span>
+                </div>
+                <div class="cs-branch">
+                  <div class="cs-branch-row"><span class="cs-branch-if">Nothing saved</span><span class="cs-flow-sep" aria-hidden="true">&rarr;</span><span>Chapter 01 intro with Lumi</span></div>
+                  <div class="cs-branch-row"><span class="cs-branch-if">Progress found</span><span class="cs-flow-sep" aria-hidden="true">&rarr;</span><span>Welcome back, then the saved chapter and step</span></div>
+                  <div class="cs-branch-row"><span class="cs-branch-if">Not open yet</span><span class="cs-flow-sep" aria-hidden="true">&rarr;</span><span>Coming soon page with email signup</span></div>
+                  <div class="cs-branch-row"><span class="cs-branch-if">Cannot read it</span><span class="cs-flow-sep" aria-hidden="true">&rarr;</span><span>Error page. Never treated as a new player, and never deleted.</span></div>
+                </div>
+                <div class="cs-footer-label cs-flow-second">THE JOURNEY AFTER THAT</div>
+                <div class="cs-flow">
+                  <span class="cs-flow-node"><span class="cs-status-dot is-dev" aria-hidden="true"></span>Six chapters</span><span class="cs-flow-sep" aria-hidden="true">&rarr;</span><span class="cs-flow-node"><span class="cs-status-dot is-planned" aria-hidden="true"></span>Reward unlocked</span><span class="cs-flow-sep" aria-hidden="true">&rarr;</span><span class="cs-flow-node"><span class="cs-status-dot is-planned" aria-hidden="true"></span>Connect a wallet</span><span class="cs-flow-sep" aria-hidden="true">&rarr;</span><span class="cs-flow-node"><span class="cs-status-dot is-planned" aria-hidden="true"></span>Claim</span><span class="cs-flow-sep" aria-hidden="true">&rarr;</span><span class="cs-flow-node"><span class="cs-status-dot is-planned" aria-hidden="true"></span>Egg hatches into a Bird</span>
+                </div>
+              </div>
+              <p class="cs-note">One rule I held to: if saved progress cannot be read, the visitor is never treated as new, because that would quietly overwrite their work.</p>
+            </section>
+
+            <!-- 05 Early Drafts -->
+            <section id="cs-sec-05" class="cs-section is-compact">
+              <div class="cs-sec-kicker">05 / EARLY DRAFTS</div>
+              <h3 class="cs-sec-title">Where I started, and what I dropped.</h3>
+              <p class="cs-sec-lead">
+                My first idea was a guided walk-through: connect a wallet, get Test USDC from a faucet,
+                claim the egg, with a guide at every step. The NFT was the centre, and teaching people
+                to use it came second. After more research I turned it around: learning is the
+                centre now, and the Bird is the reward.
+              </p>
+              <div class="cs-gallery">
+                <figure class="cs-decision-media">
+                  <img src="/assets/aistudio/eggoria-cs-draft-a.png" width="1001" height="588" alt="Early draft of the Eggoria hero: Hatch Your Own Bird, with a Connect Wallet button as the main action and a purple crystal egg." loading="lazy" decoding="async" />
+                  <figcaption>Early draft A: wallet first</figcaption>
+                </figure>
+                <figure class="cs-decision-media">
+                  <img src="/assets/aistudio/eggoria-cs-draft-b.png" width="1018" height="727" alt="Early draft of another hero: 5,555 Birds, a golden egg, a price in ETH, and six rarity tiers." loading="lazy" decoding="async" />
+                  <figcaption>Early draft B: mint first</figcaption>
+                </figure>
+              </div>
+              <div class="cs-impact cs-drafts-impact">
+                <div class="cs-impact-row">
+                  <p class="cs-impact-from">The NFT at the centre, with guides for wallet, faucet and claim</p>
+                  <span class="cs-impact-arrow" aria-hidden="true">&rarr;</span>
+                  <p class="cs-impact-to">Learning at the centre. The Bird is the reward.</p>
+                </div>
+                <div class="cs-impact-row">
+                  <p class="cs-impact-from">Connect Wallet as the first button</p>
+                  <span class="cs-impact-arrow" aria-hidden="true">&rarr;</span>
+                  <p class="cs-impact-to">Start Adventure first. A wallet only at the end.</p>
+                </div>
+                <div class="cs-impact-row">
+                  <p class="cs-impact-from">Mint first, with a price and a supply count</p>
+                  <span class="cs-impact-arrow" aria-hidden="true">&rarr;</span>
+                  <p class="cs-impact-to">A free reward for learning, on a testnet.</p>
+                </div>
+                <div class="cs-impact-row">
+                  <p class="cs-impact-from">Check in daily to help the egg hatch</p>
+                  <span class="cs-impact-arrow" aria-hidden="true">&rarr;</span>
+                  <p class="cs-impact-to">No streaks. Finish six chapters to unlock it.</p>
+                </div>
+                <div class="cs-impact-row">
+                  <p class="cs-impact-from">Six rarity tiers</p>
+                  <span class="cs-impact-arrow" aria-hidden="true">&rarr;</span>
+                  <p class="cs-impact-to">No rarity. All 25 Birds are equal.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- 06 Design Decisions -->
+            <section id="cs-sec-06" class="cs-section is-compact">
+              <div class="cs-sec-kicker">06 / DESIGN DECISIONS</div>
               <h3 class="cs-sec-title">Three decisions that shaped Eggoria.</h3>
               <p class="cs-sec-lead">
-                Each one answers a problem above. The first shapes the learning flow, which is in
-                development. The other two are already live.
+                Each one answers something I heard in the interviews or saw in the problem. The first
+                shapes the learning flow, which is in development. The other two are already live.
               </p>
               <div class="cs-decisions">
               <article class="cs-decision">
@@ -7293,8 +8211,9 @@
                   </div>
                   <h4 class="cs-decision-title">Learn first, connect a wallet later.</h4>
                   <dl class="cs-decision-facts">
-                    <div><dt>Because</dt><dd>A wallet prompt can feel like a roadblock before the first lesson.</dd></div>
-                    <div><dt>What I did</dt><dd>The hero tells visitors up front that they can start now and connect a wallet later. In the flow I am building, learning starts as a guest with no sign-in. A wallet is only asked for at the end, to claim the reward.</dd></div>
+                    <div><dt>Because</dt><dd>Three of the five people I interviewed had held back from Web3 because they feared losing money.</dd></div>
+                    <div><dt>Instead of</dt><dd>My first draft made Connect Wallet the main button and asked people to mint before they had learned anything.</dd></div>
+                    <div><dt>What I did</dt><dd>The hero tells visitors up front that they can start now and connect a wallet later. In the flow I am building, learning starts as a guest with no sign-in. A wallet is only asked for at the end, to claim the reward. The reward lives on a testnet, so no real money is involved.</dd></div>
                     <div><dt>Trade-off</dt><dd>Guest progress lives in the visitor&rsquo;s own browser, so it does not follow them to another device until they link an account.</dd></div>
                   </dl>
                 </div>
@@ -7314,8 +8233,8 @@
                   </div>
                   <h4 class="cs-decision-title">One guide, and a world where ideas become places.</h4>
                   <dl class="cs-decision-facts">
-                    <div><dt>Because</dt><dd>New concepts are hard to follow without plain-language examples.</dd></div>
-                    <div><dt>What I did</dt><dd>A single guide, Lumi, leads beginners through six short chapters. Each chapter has a place: five floating Lands, and Eggoria Core for the last one, Web3 Safety. The lessons themselves are still in development.</dd></div>
+                    <div><dt>Because</dt><dd>Two people who already used a wallet could not explain a seed phrase. New ideas stick better with one friendly guide and a place to remember them by.</dd></div>
+                    <div><dt>What I did</dt><dd>A single guide, Lumi, leads beginners through six short chapters. Each chapter has a place: five floating Lands, and Eggoria Core for the last one, Web3 Safety, which covers seed phrases and private keys. The lessons themselves are still in development.</dd></div>
                     <div><dt>Trade-off</dt><dd>More art to produce and keep consistent. The five Lands and the 25 Birds follow one shared style, so the world feels like one place.</dd></div>
                   </dl>
                 </div>
@@ -7345,9 +8264,182 @@
               </div>
             </section>
 
-            <!-- 04 Where It Stands -->
-            <section id="cs-sec-04" class="cs-section is-compact">
-              <div class="cs-sec-kicker">04 / WHERE IT STANDS</div>
+            <!-- 07 World and System -->
+            <section id="cs-sec-07" class="cs-section is-compact">
+              <div class="cs-sec-kicker">07 / WORLD AND SYSTEM</div>
+              <h3 class="cs-sec-title">One guide, one world, one system.</h3>
+              <p class="cs-sec-lead">
+                A storybook look gives a serious topic a friendly face. Warm parchment carries the
+                reading, and deep navy night scenes frame the big moments.
+              </p>
+              <div class="cs-lumi">
+                <img class="cs-lumi-img" src="/assets/aistudio/eggoria-cs-lumi.png" width="520" height="488" alt="Lumi, a small brown and cream bird with gold-rimmed aviator goggles, a leather satchel and open wings." loading="lazy" decoding="async" />
+                <div class="cs-lumi-copy">
+                  <div class="cs-footer-label">THE GUIDE</div>
+                  <h4>Meet Lumi</h4>
+                  <p>A goggled pilot bird who walks beginners through every chapter and belongs to no Land. Lumi keeps the same silhouette, goggles and colors in every pose, so a beginner always knows who is helping.</p>
+                  <p>Lumi is a guide, not a collectible. The Birds below are a separate cast, and one of them hatches as the reward.</p>
+                </div>
+              </div>
+              <div class="cs-birdmap">
+                <div class="cs-footer-label">25 BIRDS ON 5 LANDS</div>
+                <p class="cs-note cs-birdmap-note">Five Birds live on each floating Land, and each Land is where one chapter takes place. A Land only changes the color accents, and there are no rarity tiers, so nobody feels behind.</p>
+                <div class="cs-land">
+                  <div class="cs-land-head">
+                    <img class="cs-land-img" src="/assets/aistudio/eggoria-island-whisper-forest.png" alt="The floating island of Whisper Forest" loading="lazy" decoding="async" />
+                    <div>
+                      <div class="cs-land-num">Land 01</div>
+                      <h4>Whisper Forest</h4>
+                      <p>Chapter 1: Discover Web3</p>
+                    </div>
+                  </div>
+                  <ul class="cs-birds" aria-label="The five Birds of Whisper Forest">
+                    <li><img src="/assets/aistudio/eggoria-bird-whisper-forest-1.png" alt="The Explorer, a Bird of Whisper Forest" loading="lazy" decoding="async" /><span>The Explorer</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-whisper-forest-2.png" alt="The Gardener, a Bird of Whisper Forest" loading="lazy" decoding="async" /><span>The Gardener</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-whisper-forest-3.png" alt="The Ranger, a Bird of Whisper Forest" loading="lazy" decoding="async" /><span>The Ranger</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-whisper-forest-4.png" alt="The Herbalist, a Bird of Whisper Forest" loading="lazy" decoding="async" /><span>The Herbalist</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-whisper-forest-5.png" alt="The Guardian, a Bird of Whisper Forest" loading="lazy" decoding="async" /><span>The Guardian</span></li>
+                  </ul>
+                </div>
+                <div class="cs-land">
+                  <div class="cs-land-head">
+                    <img class="cs-land-img" src="/assets/aistudio/eggoria-island-sky-port.png" alt="The floating island of Sky Port" loading="lazy" decoding="async" />
+                    <div>
+                      <div class="cs-land-num">Land 02</div>
+                      <h4>Sky Port</h4>
+                      <p>Chapter 2: Digital Wallet</p>
+                    </div>
+                  </div>
+                  <ul class="cs-birds" aria-label="The five Birds of Sky Port">
+                    <li><img src="/assets/aistudio/eggoria-bird-sky-port-1.png" alt="The Pilot, a Bird of Sky Port" loading="lazy" decoding="async" /><span>The Pilot</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-sky-port-2.png" alt="The Navigator, a Bird of Sky Port" loading="lazy" decoding="async" /><span>The Navigator</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-sky-port-3.png" alt="The Courier, a Bird of Sky Port" loading="lazy" decoding="async" /><span>The Courier</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-sky-port-4.png" alt="The Mechanic, a Bird of Sky Port" loading="lazy" decoding="async" /><span>The Mechanic</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-sky-port-5.png" alt="The Captain, a Bird of Sky Port" loading="lazy" decoding="async" /><span>The Captain</span></li>
+                  </ul>
+                </div>
+                <div class="cs-land">
+                  <div class="cs-land-head">
+                    <img class="cs-land-img" src="/assets/aistudio/eggoria-island-crystal-academy.png" alt="The floating island of Crystal Academy" loading="lazy" decoding="async" />
+                    <div>
+                      <div class="cs-land-num">Land 03</div>
+                      <h4>Crystal Academy</h4>
+                      <p>Chapter 3: Transactions</p>
+                    </div>
+                  </div>
+                  <ul class="cs-birds" aria-label="The five Birds of Crystal Academy">
+                    <li><img src="/assets/aistudio/eggoria-bird-crystal-academy-1.png" alt="The Apprentice, a Bird of Crystal Academy" loading="lazy" decoding="async" /><span>The Apprentice</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-crystal-academy-2.png" alt="The Scholar, a Bird of Crystal Academy" loading="lazy" decoding="async" /><span>The Scholar</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-crystal-academy-3.png" alt="The Alchemist, a Bird of Crystal Academy" loading="lazy" decoding="async" /><span>The Alchemist</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-crystal-academy-4.png" alt="The Mage, a Bird of Crystal Academy" loading="lazy" decoding="async" /><span>The Mage</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-crystal-academy-5.png" alt="The Oracle, a Bird of Crystal Academy" loading="lazy" decoding="async" /><span>The Oracle</span></li>
+                  </ul>
+                </div>
+                <div class="cs-land">
+                  <div class="cs-land-head">
+                    <img class="cs-land-img" src="/assets/aistudio/eggoria-island-volcano-peak.png" alt="The floating island of Volcano Peak" loading="lazy" decoding="async" />
+                    <div>
+                      <div class="cs-land-num">Land 04</div>
+                      <h4>Volcano Peak</h4>
+                      <p>Chapter 4: Testnet and Gas</p>
+                    </div>
+                  </div>
+                  <ul class="cs-birds" aria-label="The five Birds of Volcano Peak">
+                    <li><img src="/assets/aistudio/eggoria-bird-volcano-peak-1.png" alt="The Lamplighter, a Bird of Volcano Peak" loading="lazy" decoding="async" /><span>The Lamplighter</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-volcano-peak-2.png" alt="The Flame Painter, a Bird of Volcano Peak" loading="lazy" decoding="async" /><span>The Flame Painter</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-volcano-peak-3.png" alt="The Blacksmith, a Bird of Volcano Peak" loading="lazy" decoding="async" /><span>The Blacksmith</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-volcano-peak-4.png" alt="The Tinkerer, a Bird of Volcano Peak" loading="lazy" decoding="async" /><span>The Tinkerer</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-volcano-peak-5.png" alt="The Dragon Warden, a Bird of Volcano Peak" loading="lazy" decoding="async" /><span>The Dragon Warden</span></li>
+                  </ul>
+                </div>
+                <div class="cs-land">
+                  <div class="cs-land-head">
+                    <img class="cs-land-img" src="/assets/aistudio/eggoria-island-golden-castle.png" alt="The floating island of Golden Castle" loading="lazy" decoding="async" />
+                    <div>
+                      <div class="cs-land-num">Land 05</div>
+                      <h4>Golden Castle</h4>
+                      <p>Chapter 5: Understanding NFTs</p>
+                    </div>
+                  </div>
+                  <ul class="cs-birds" aria-label="The five Birds of Golden Castle">
+                    <li><img src="/assets/aistudio/eggoria-bird-golden-castle-1.png" alt="The Herald, a Bird of Golden Castle" loading="lazy" decoding="async" /><span>The Herald</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-golden-castle-2.png" alt="The Bard, a Bird of Golden Castle" loading="lazy" decoding="async" /><span>The Bard</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-golden-castle-3.png" alt="The Knight, a Bird of Golden Castle" loading="lazy" decoding="async" /><span>The Knight</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-golden-castle-4.png" alt="The Sage, a Bird of Golden Castle" loading="lazy" decoding="async" /><span>The Sage</span></li>
+                    <li><img src="/assets/aistudio/eggoria-bird-golden-castle-5.png" alt="The Monarch, a Bird of Golden Castle" loading="lazy" decoding="async" /><span>The Monarch</span></li>
+                  </ul>
+                </div>
+                <div class="cs-land-core">
+                  <span class="cs-land-num">Chapter 6</span>
+                  <p><b>Eggoria Core: Web3 Safety.</b> The last stop is not a Land, so it has no Birds. It is where seed phrases and private keys are explained.</p>
+                </div>
+              </div>
+              <div class="cs-sys">
+                <div class="cs-footer-label">DESIGN SYSTEM, FROM FIGMA TO CODE</div>
+                <div class="cs-swatches">
+                  <div class="cs-swatch"><span class="cs-swatch-chip" style="background:#102b4e"></span><span class="cs-swatch-meta"><b>Navy 900</b>#102B4E</span></div>
+                  <div class="cs-swatch"><span class="cs-swatch-chip" style="background:#fff5e6"></span><span class="cs-swatch-meta"><b>Cream 100</b>#FFF5E6</span></div>
+                  <div class="cs-swatch"><span class="cs-swatch-chip" style="background:#f5cc75"></span><span class="cs-swatch-meta"><b>Gold 500</b>#F5CC75</span></div>
+                  <div class="cs-swatch"><span class="cs-swatch-chip" style="background:#2e78b9"></span><span class="cs-swatch-meta"><b>Blue 600</b>#2E78B9</span></div>
+                  <div class="cs-swatch"><span class="cs-swatch-chip" style="background:#172d47"></span><span class="cs-swatch-meta"><b>Ink 900</b>#172D47</span></div>
+                  <div class="cs-swatch"><span class="cs-swatch-chip" style="background:#f0d4a8"></span><span class="cs-swatch-meta"><b>Tan 200</b>#F0D4A8</span></div>
+                </div>
+                <div class="cs-sys-row">
+                  <div class="cs-btn-demo" aria-hidden="true">
+                    <span class="cs-btn-demo-primary">Start Adventure</span>
+                    <span class="cs-btn-demo-secondary">See How It Works</span>
+                  </div>
+                  <ul class="cs-rules">
+                    <li>Headlines in Fraunces, body text in Inter</li>
+                    <li>Pill buttons: 56px on desktop, 48px on mobile</li>
+                    <li>Tap targets of at least 44px, text never under 13px</li>
+                    <li>One token file feeds the CSS, so nothing is edited twice</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <!-- 08 Final UI -->
+            <section id="cs-sec-08" class="cs-section is-compact">
+              <div class="cs-sec-kicker">08 / FINAL UI</div>
+              <h3 class="cs-sec-title">What visitors see today.</h3>
+              <p class="cs-sec-lead">
+                Screens from the live site, captured at 1440px and 390px.
+              </p>
+              <div class="cs-gallery">
+                <figure class="cs-decision-media is-wide">
+                  <img src="/assets/aistudio/eggoria-cs-hero-desktop.png" width="1280" height="800" alt="The Eggoria hero on desktop: Learn Web3 and Hatch Your Own Bird, with Lumi flying beside a glowing egg on a floating island." loading="lazy" decoding="async" />
+                  <figcaption>Hero, desktop</figcaption>
+                </figure>
+                <figure class="cs-decision-media">
+                  <picture><source media="(max-width: 760px)" srcset="/assets/aistudio/eggoria-cs-how-mobile.png" width="390" height="1120" /><img src="/assets/aistudio/eggoria-cs-how.png" width="1280" height="673" alt="The How It Works section of the Eggoria site." loading="lazy" decoding="async" /></picture>
+                  <figcaption>How it works</figcaption>
+                </figure>
+                <figure class="cs-decision-media">
+                  <picture><source media="(max-width: 760px)" srcset="/assets/aistudio/eggoria-cs-chapters-mobile.png" width="390" height="1120" /><img src="/assets/aistudio/eggoria-cs-chapters.png" width="1280" height="1015" alt="The Chapters section of the Eggoria site: six chapter cards." loading="lazy" decoding="async" /></picture>
+                  <figcaption>Six chapters</figcaption>
+                </figure>
+              </div>
+              <div class="cs-phone-row">
+                <figure class="cs-decision-media cs-phone">
+                  <img src="/assets/aistudio/eggoria-cs-hero-mobile.png" width="390" height="844" alt="The Eggoria hero on a phone, with the two buttons stacked above Lumi and the egg." loading="lazy" decoding="async" />
+                  <figcaption>Hero, 390px</figcaption>
+                </figure>
+                <div class="cs-phone-copy">
+                  <h4>Same story on a phone</h4>
+                  <p>The headline, the two buttons and the reassurance line stay above the egg, so the first screen still answers three questions: what is this, what do I press, and do I need a wallet.</p>
+                  <ul class="cs-rules">
+                    <li>Checked at 1440, 768 and 390px</li>
+                    <li>Reduced-motion support</li>
+                    <li>Full keyboard access and visible focus</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <!-- 09 Where It Stands -->
+            <section id="cs-sec-09" class="cs-section is-compact">
+              <div class="cs-sec-kicker">09 / WHERE IT STANDS</div>
               <h3 class="cs-sec-title">What is live, what I am building, what comes later.</h3>
               <div class="cs-status-grid">
                 <div class="cs-info-card cs-status-card">
@@ -7363,6 +8455,10 @@
                   <ul><li>A reward: a mystery egg that hatches into one of 25 Birds</li><li>Wallet connection at the claim step</li></ul>
                 </div>
               </div>
+              <div class="cs-stat">
+                <span class="cs-stat-num">10</span>
+                <span class="cs-stat-text">people have signed up for launch news on the Coming soon page so far. A small number, and an honest one for a first release.</span>
+              </div>
               <div class="cs-craft">
                 <span class="cs-craft-label">Craft</span>
                 <span class="cs-craft-chip">Design system, from Figma to code</span>
@@ -7370,15 +8466,34 @@
                 <span class="cs-craft-chip">Reduced-motion support</span>
                 <span class="cs-craft-chip">English and Vietnamese</span>
               </div>
+              <div class="cs-craft">
+                <span class="cs-craft-label">Tools</span>
+                <span class="cs-craft-chip">Figma</span>
+                <span class="cs-craft-chip">Claude</span>
+                <span class="cs-craft-chip">ChatGPT</span>
+                <span class="cs-craft-chip">Rive</span>
+                <span class="cs-craft-chip">Affinity</span>
+                <span class="cs-craft-chip">Codex</span>
+              </div>
             </section>
 
-            <!-- 05 What I Learned -->
-            <section id="cs-sec-05" class="cs-section is-last">
-              <div class="cs-sec-kicker">05 / WHAT I LEARNED</div>
+            <!-- 10 What I Learned -->
+            <section id="cs-sec-10" class="cs-section is-last">
+              <div class="cs-sec-kicker">10 / WHAT I LEARNED</div>
               <h3 class="cs-sec-title">What I took from it.</h3>
               <div class="cs-numbered-list">
                 <div class="cs-numbered-row">
                   <div class="cs-row-num">01</div>
+                  <div class="cs-row-body">
+                    <h4 class="cs-row-title">Ask before you draw.</h4>
+                    <p class="cs-row-desc">
+                      Five short conversations shaped two decisions: a testnet reward, and a whole
+                      chapter on seed phrases. I would not have guessed either.
+                    </p>
+                  </div>
+                </div>
+                <div class="cs-numbered-row">
+                  <div class="cs-row-num">02</div>
                   <div class="cs-row-body">
                     <h4 class="cs-row-title">Say what exists.</h4>
                     <p class="cs-row-desc">
@@ -7388,7 +8503,7 @@
                   </div>
                 </div>
                 <div class="cs-numbered-row">
-                  <div class="cs-row-num">02</div>
+                  <div class="cs-row-num">03</div>
                   <div class="cs-row-body">
                     <h4 class="cs-row-title">Remove the first obstacle before adding delight.</h4>
                     <p class="cs-row-desc">
@@ -7397,7 +8512,7 @@
                   </div>
                 </div>
                 <div class="cs-numbered-row">
-                  <div class="cs-row-num">03</div>
+                  <div class="cs-row-num">04</div>
                   <div class="cs-row-body">
                     <h4 class="cs-row-title">Ship the smallest honest version first.</h4>
                     <p class="cs-row-desc">
@@ -7410,7 +8525,7 @@
               <div class="cs-sec-footer">
                 <div class="cs-footer-label">NEXT</div>
                 <p class="cs-footer-statement">
-                  Finish the learning flow, then test it with real beginners.
+                  Finish the learning flow, then test it with more real beginners.
                 </p>
               </div>
             </section>
@@ -7903,7 +9018,7 @@
             ],
             role: 'Product Designer (UI/UX, Gamification, Design System)',
             team: 'Solo Project',
-            duration: 'Aug 2026 – Oct 2026',
+            duration: 'Aug 2026 - Oct 2026',
             caseStudyUrl: '#eggoria-case-study',
             liveDemoUrl: 'https://eggoria.site/',
             tools: ['figma', 'claude', 'chatgpt', 'rive', 'affinity', 'codex'],
@@ -7926,7 +9041,7 @@
             ],
             role: 'UI/UX Designer (Enterprise UX, Design System)',
             team: 'Product & Engineering Squad',
-            duration: 'Oct 2025 – Jul 2026',
+            duration: 'Oct 2025 - Jul 2026',
             caseStudyUrl: null,
             liveDemoUrl: null,
             tools: ['figma', 'figjam', 'notion', 'claude'],
@@ -7949,7 +9064,7 @@
             ],
             role: 'Product Designer (UI/UX, Gamification, Design System)',
             team: 'Cross-functional Team',
-            duration: 'Nov 2025 – Jan 2026',
+            duration: 'Nov 2025 - Jan 2026',
             caseStudyUrl: null,
             liveDemoUrl: 'https://traitimbieton.vn/',
             tools: ['figma', 'chatgpt', 'affinity'],
