@@ -6,15 +6,15 @@
     <!-- Form service URL, filled in from VITE_FORM_ENDPOINT (see .env.example). Empty means "use the visitor's email app". -->
     <meta name="form-endpoint" content="%VITE_FORM_ENDPOINT%" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <title>Nguyen Viet Phong | UI/UX Designer Portfolio</title>
+    <title>Nguyen Viet Phong | Product Designer Portfolio</title>
     <meta
       name="description"
-      content="Portfolio of Nguyen Viet Phong, UI/UX Designer based in Ho Chi Minh City, Vietnam. Designing intuitive experiences for complex digital products."
+      content="Portfolio of Nguyen Viet Phong, Product Designer (Fintech, Web3, B2B) with an active Web3 background since 2021, based in Ho Chi Minh City, Vietnam. Designing intuitive experiences for complex digital products."
     />
-    <meta property="og:title" content="Nguyen Viet Phong | UI/UX Designer Portfolio" />
+    <meta property="og:title" content="Nguyen Viet Phong | Product Designer Portfolio" />
     <meta
       property="og:description"
-      content="Portfolio of Nguyen Viet Phong, UI/UX Designer based in Ho Chi Minh City, Vietnam. Designing intuitive experiences for complex digital products."
+      content="Portfolio of Nguyen Viet Phong, Product Designer (Fintech, Web3, B2B) with an active Web3 background since 2021, based in Ho Chi Minh City, Vietnam. Designing intuitive experiences for complex digital products."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nguyenvietphong.store/" />
@@ -24,7 +24,7 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Nguyen Viet Phong, UI/UX Designer. I design Web3 and enterprise products that people can use without a manual."
+      content="Nguyen Viet Phong, Product Designer. I design Web3 and enterprise products that people can use without a manual."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://nguyenvietphong.store/og-image.png" />
@@ -1250,103 +1250,16 @@
         display: block;
       }
 
-      /* Seamless full-width presentation for Lumina (848x487 inside 848x530) */
-      .work-card-media.is-lumina-ui {
-        background: #d6eef8;
+      .work-card[data-work-index="0"] .work-card-thumb {
+        object-position: center 15%;
       }
 
-      .work-card-media.is-lumina-ui::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4.6%;
-        background-image: url('/assets/aistudio/image_673_1942a103.png');
-        background-size: 100% 3200%;
-        background-position: center top;
-        background-repeat: no-repeat;
-        z-index: 1;
-        pointer-events: none;
+      .work-card[data-work-index="1"] .work-card-thumb {
+        object-position: center 30%;
       }
 
-      .work-card-media.is-lumina-ui .work-card-thumb {
-        position: absolute;
-        top: 4.05%;
-        left: 0;
-        width: 100%;
-        height: 91.9%;
-        object-fit: contain;
-        z-index: 2;
-      }
-
-      .work-card-media.is-lumina-ui::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 4.6%;
-        background-image: url('/assets/aistudio/image_673_1942a103.png');
-        background-size: 100% 540%;
-        background-position: center bottom;
-        background-repeat: no-repeat;
-        transform: scaleY(-1);
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      /* Seamless full-width presentation for Hilo Van (848x384 inside 848x530) */
-      .work-card-media.is-wide-ui {
-        background: linear-gradient(
-          90deg,
-          #ffffff 0%,
-          #ffffff 18.15%,
-          #eef0f4 18.15%,
-          #eef0f4 18.28%,
-          #f8fafc 18.28%,
-          #f8fafc 100%
-        );
-      }
-
-      .work-card-media.is-wide-ui::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4%;
-        background: #ffffff;
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      .work-card-media.is-wide-ui .work-card-thumb {
-        position: absolute;
-        top: 3.6%;
-        left: 0;
-        width: 100%;
-        height: 72.46%;
-        object-fit: contain;
-        z-index: 2;
-      }
-
-      .work-card-media.is-wide-ui::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 18.28%;
-        width: 81.72%;
-        height: 32%;
-        background: linear-gradient(
-          180deg,
-          rgba(248, 250, 252, 0) 0%,
-          rgba(248, 250, 252, 0.92) 24%,
-          #f8fafc 34%,
-          #f8fafc 100%
-        );
-        z-index: 3;
-        pointer-events: none;
+      .work-card[data-work-index="3"] .work-card-thumb {
+        object-position: center 40%;
       }
 
       .work-card[data-work-index="2"] .work-card-thumb {
@@ -2467,7 +2380,7 @@
         background:
           radial-gradient(
             circle at 86% 8%,
-            rgba(128, 96, 168, 0.14) 0%,
+            rgba(240, 205, 110, 0.09) 0%,
             rgba(18, 17, 22, 0) 38%
           ),
           radial-gradient(
@@ -2581,7 +2494,7 @@
         height: calc(480 * var(--u));
         background: radial-gradient(
           circle,
-          rgba(116, 78, 228, 0.24) 0%,
+          rgba(240, 205, 110, 0.12) 0%,
           rgba(6, 6, 8, 0) 70%
         );
         pointer-events: none;
@@ -2630,8 +2543,8 @@
         width: calc(9 * var(--u));
         height: calc(9 * var(--u));
         border-radius: 50%;
-        background: #9482ff;
-        box-shadow: 0 0 calc(10 * var(--u)) rgba(148, 130, 255, 0.68);
+        background: #f0cd6e;
+        box-shadow: 0 0 calc(10 * var(--u)) rgba(240, 205, 110, 0.6);
         flex-shrink: 0;
       }
 
@@ -2682,7 +2595,7 @@
         bottom: calc(10 * var(--u));
         width: calc(3 * var(--u));
         border-radius: calc(3 * var(--u));
-        background: #dcd8ff;
+        background: #f0cd6e;
       }
 
       .cs-nav-num {
@@ -2791,9 +2704,9 @@
         height: calc(30 * var(--u));
         padding: 0 calc(13 * var(--u));
         border-radius: 999px;
-        background: rgba(164, 138, 255, 0.14);
-        border: 1px solid rgba(186, 166, 255, 0.38);
-        color: #dcd0ff;
+        background: rgba(240, 205, 110, 0.14);
+        border: 1px solid rgba(240, 205, 110, 0.4);
+        color: #f6dd9a;
         font-size: calc(12.5 * var(--u));
         font-weight: 600;
         letter-spacing: 0.02em;
@@ -2901,6 +2814,32 @@
       }
 
       /* 4-Column Metadata Strip */
+
+      .cs-tldr {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: calc(28 * var(--u));
+        margin-top: calc(34 * var(--u));
+        padding-top: calc(26 * var(--u));
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .cs-tldr-label {
+        margin-bottom: calc(8 * var(--u));
+        font-size: calc(11.5 * var(--u));
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #f0cd6e;
+      }
+
+      .cs-tldr p {
+        margin: 0;
+        font-size: calc(15.5 * var(--u));
+        line-height: 1.5;
+        color: #d2d2dc;
+      }
+
       .cs-meta-strip {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -3237,7 +3176,7 @@
         font-weight: 600;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: #c48eff;
+        color: #f0cd6e;
       }
 
       .cs-decision-facts dd {
@@ -3443,7 +3382,7 @@
 
       .cs-impact-arrow,
       .cs-flow-sep {
-        color: #c48eff;
+        color: #f0cd6e;
         font-size: calc(18 * var(--u));
         line-height: 1;
       }
@@ -3453,6 +3392,30 @@
         font-weight: 600;
         line-height: 1.35;
         color: #ffffff;
+      }
+
+      .cs-quote-grid {
+        margin-top: calc(14 * var(--u));
+      }
+
+      .cs-quote {
+        margin: 0;
+        padding: calc(18 * var(--u)) calc(22 * var(--u));
+        border-left: 2px solid #f0cd6e;
+        border-radius: 0 calc(12 * var(--u)) calc(12 * var(--u)) 0;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .cs-quote blockquote {
+        margin: 0 0 calc(10 * var(--u));
+        font-size: calc(16 * var(--u));
+        line-height: 1.5;
+        color: #e6e6ee;
+      }
+
+      .cs-quote figcaption {
+        font-size: calc(13 * var(--u));
+        color: #8c8c98;
       }
 
       .cs-note {
@@ -3694,7 +3657,7 @@
         font-weight: 600;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: #c48eff;
+        color: #f0cd6e;
       }
 
       .cs-persona dd {
@@ -3857,7 +3820,7 @@
         font-weight: 600;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: #c48eff;
+        color: #f0cd6e;
       }
 
       .cs-land-head h4 {
@@ -3943,7 +3906,7 @@
         font-weight: 700;
         letter-spacing: 0.13em;
         text-transform: uppercase;
-        color: #c48eff;
+        color: #f0cd6e;
         margin: 0 0 calc(28 * var(--u));
       }
 
@@ -4658,45 +4621,11 @@
         background: #d6eef8;
       }
 
-      .project-modal-stage.is-lumina-ui::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4.6%;
-        background-image: url('/assets/aistudio/image_673_1942a103.png');
-        background-size: 100% 3200%;
-        background-position: center top;
-        background-repeat: no-repeat;
-        z-index: 1;
-        pointer-events: none;
-      }
-
       .project-modal-stage.is-lumina-ui .project-modal-main-img {
-        position: absolute;
-        top: 4.05%;
-        left: 0;
         width: 100%;
-        height: 91.9%;
-        object-fit: contain;
-        z-index: 2;
-      }
-
-      .project-modal-stage.is-lumina-ui::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 4.6%;
-        background-image: url('/assets/aistudio/image_673_1942a103.png');
-        background-size: 100% 540%;
-        background-position: center bottom;
-        background-repeat: no-repeat;
-        transform: scaleY(-1);
-        z-index: 1;
-        pointer-events: none;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 35%;
       }
 
       .project-modal-stage.is-lumina-section .project-modal-main-img {
@@ -5864,6 +5793,17 @@
           margin: 0;
         }
 
+        .cs-tldr {
+          grid-template-columns: minmax(0, 1fr);
+          gap: calc(16 * var(--u));
+          margin-top: calc(26 * var(--u));
+          padding-top: calc(20 * var(--u));
+        }
+
+        .cs-tldr p {
+          font-size: calc(15 * var(--u));
+        }
+
         .cs-meta-strip {
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: calc(18 * var(--u));
@@ -6241,8 +6181,8 @@
           <div class="hero-intro-mobile">
             <div class="hero-name-kicker hero-rise">NGUYEN VIET PHONG</div>
 
-            <h1 class="hero-title" aria-label="UI/UX Designer">
-              <span class="title-mask"><span class="title-line" id="title-line-1">UI/UX</span></span>
+            <h1 class="hero-title" aria-label="Product Designer">
+              <span class="title-mask"><span class="title-line" id="title-line-1">PRODUCT</span></span>
               <span class="title-mask"
                 ><span class="title-line" id="title-line-2">DESIGNER</span></span
               >
@@ -6262,6 +6202,12 @@
                   class="btn-arrow-img"
                   aria-hidden="true"
                 />
+              </a>
+              <a href="/Nguyen-Viet-Phong-CV.pdf" download="Nguyen-Viet-Phong-CV.pdf" class="btn-resume-secondary" id="btn-download-resume">
+                <span>Download Resume</span>
+                <svg class="resume-icon-svg" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M10 3v9.5M6 9l4 4 4-4M4 16.5h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
               </a>
             </div>
           </div>
@@ -6498,7 +6444,61 @@
               </div>
 
               <div class="timeline-items">
-                <!-- Item 1: 2021 – Present -->
+                <!-- Item 1: Aug 2026 - Present -->
+                <div class="timeline-row">
+                  <div class="timeline-date">Aug 2026 - Present</div>
+                  <div class="timeline-axis" aria-hidden="true">
+                    <span class="timeline-dot"></span>
+                  </div>
+                  <div class="timeline-badge is-logo-eggoria" aria-label="Eggoria Logo">
+                    <img src="/assets/aistudio/eggoria-badge.png" alt="Eggoria Logo" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="timeline-content">
+                    <h4 class="timeline-role">Founder &amp; Solo Product Designer</h4>
+                    <div class="timeline-org">Eggoria · Personal project (solo)</div>
+                    <p class="timeline-desc">
+                      Designed a learn-first, connect-wallet-later flow from 5 beginner interviews, and shipped a bilingual (EN/VI) landing page, a Coming soon page and the legal pages.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Item 2: Oct 2025 - Jul 2026 -->
+                <div class="timeline-row">
+                  <div class="timeline-date">Oct 2025 - Jul 2026</div>
+                  <div class="timeline-axis" aria-hidden="true">
+                    <span class="timeline-dot"></span>
+                  </div>
+                  <div class="timeline-badge is-logo-white" aria-label="Hilo Logo">
+                    <img src="/assets/aistudio/image_7788c9be.png" alt="Hilo Van Services JSC logo" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="timeline-content">
+                    <h4 class="timeline-role">UI/UX Designer</h4>
+                    <div class="timeline-org">Hilo Van Services JSC · Onsite</div>
+                    <p class="timeline-desc">
+                      Designed B2B ERP workflows with business analysts, developers and testers, and took part in building the team design system.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Item 3: Nov 2025 - Jan 2026 -->
+                <div class="timeline-row">
+                  <div class="timeline-date">Nov 2025 - Jan 2026</div>
+                  <div class="timeline-axis" aria-hidden="true">
+                    <span class="timeline-dot"></span>
+                  </div>
+                  <div class="timeline-badge is-logo-traitim" aria-label="Trái Tim Biết Ơn Logo">
+                    <img src="/assets/aistudio/image_672_692cd219.png" alt="Trái Tim Biết Ơn Logo" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="timeline-content">
+                    <h4 class="timeline-role">UI/UX Designer</h4>
+                    <div class="timeline-org">Trái Tim Biết Ơn · Freelance</div>
+                    <p class="timeline-desc">
+                      Designed screens, the mascot and design system components for a kids edutainment app and its admin dashboard.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Item 4: 2021 - Present -->
                 <div class="timeline-row">
                   <div class="timeline-date">2021 - Present</div>
                   <div class="timeline-axis" aria-hidden="true">
@@ -6549,64 +6549,10 @@
                     </svg>
                   </div>
                   <div class="timeline-content">
-                    <h4 class="timeline-role">Web3 Research &amp; Product Contributor</h4>
-                    <div class="timeline-org">Independent · Freelance</div>
+                    <h4 class="timeline-role">Web3 Community Contributor &amp; Active User</h4>
+                    <div class="timeline-org">Independent</div>
                     <p class="timeline-desc">
-                      Researching wallet and DeFi experiences, with a focus on onboarding and usability.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Item 2: Aug 2026 - Nov 2026 -->
-                <div class="timeline-row">
-                  <div class="timeline-date">Aug 2026 - Nov 2026</div>
-                  <div class="timeline-axis" aria-hidden="true">
-                    <span class="timeline-dot"></span>
-                  </div>
-                  <div class="timeline-badge is-logo-eggoria" aria-label="Eggoria Logo">
-                    <img src="/assets/aistudio/eggoria-badge.png" alt="Eggoria Logo" loading="lazy" decoding="async" />
-                  </div>
-                  <div class="timeline-content">
-                    <h4 class="timeline-role">Product Designer</h4>
-                    <div class="timeline-org">Eggoria · Personal project (solo)</div>
-                    <p class="timeline-desc">
-                      Designed a learn-first, connect-wallet-later flow, and shipped a bilingual landing page and a Coming soon page.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Item 3: Oct 2025 - Jul 2026 -->
-                <div class="timeline-row">
-                  <div class="timeline-date">2023 - 2026</div>
-                  <div class="timeline-axis" aria-hidden="true">
-                    <span class="timeline-dot"></span>
-                  </div>
-                  <div class="timeline-badge is-logo-white" aria-label="Hilo Logo">
-                    <img src="/assets/aistudio/image_7788c9be.png" alt="Hilo Group Logo" loading="lazy" decoding="async" />
-                  </div>
-                  <div class="timeline-content">
-                    <h4 class="timeline-role">UI/UX Designer</h4>
-                    <div class="timeline-org">Hilo Van Services JSC</div>
-                    <p class="timeline-desc">
-                      Designed ERP and CRM interfaces, and a design system built to scale.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Item 4: Nov 2025 - Jan 2026 -->
-                <div class="timeline-row">
-                  <div class="timeline-date">Nov 2025 - Jan 2026</div>
-                  <div class="timeline-axis" aria-hidden="true">
-                    <span class="timeline-dot"></span>
-                  </div>
-                  <div class="timeline-badge is-logo-traitim" aria-label="Trái Tim Biết Ơn Logo">
-                    <img src="/assets/aistudio/image_672_692cd219.png" alt="Trái Tim Biết Ơn Logo" loading="lazy" decoding="async" />
-                  </div>
-                  <div class="timeline-content">
-                    <h4 class="timeline-role">UI/UX Designer</h4>
-                    <div class="timeline-org">Trái Tim Biết Ơn · Freelance</div>
-                    <p class="timeline-desc">
-                      Designed a gamified learning app for kids, and the admin tools behind it.
+                      Hands-on with wallets, testnets and airdrop campaigns since 2021, so I know where beginners get stuck on onboarding and wallet connection.
                     </p>
                   </div>
                 </div>
@@ -6643,9 +6589,9 @@
               </div>
 
               <div class="timeline-items">
-                <!-- Edu 1: 2023 - 2025 -->
+                <!-- Edu 1: 2024 - 2025 -->
                 <div class="timeline-row">
-                  <div class="timeline-date">2023 - 2025</div>
+                  <div class="timeline-date">2024 - 2025</div>
                   <div class="timeline-axis" aria-hidden="true">
                     <span class="timeline-dot"></span>
                   </div>
@@ -6816,8 +6762,8 @@
               <div class="work-card-media">
                 <span class="work-card-tag">Web3 Product</span>
                 <img loading="lazy" decoding="async"
-                  src="/assets/aistudio/Desktop___Section_01___STATUS__NOT_DESIGNED_92d7dcd3.png"
-                  alt="Eggoria landing page: Learn Web3 and Hatch Your Own Bird"
+                  src="/assets/aistudio/cover-eggoria.png"
+                  alt="Eggoria landing page shown on a laptop: Learn Web3 and Hatch Your Own Bird"
                   class="work-card-thumb" />
               </div>
               <div class="work-card-body">
@@ -6843,28 +6789,28 @@
               </div>
             </article>
 
-            <!-- Work Card 2: Hilo TVan -->
+            <!-- Work Card 2: Hilo Van Services JSC -->
             <article class="work-card" data-work-index="1" data-open-project="1">
-              <div class="work-card-media is-wide-ui">
+              <div class="work-card-media">
                 <span class="work-card-tag">Enterprise UX/UI</span>
                 <img loading="lazy" decoding="async"
-                  src="/assets/aistudio/Screenshot_2026-11-12_200747_1_508ff03b.png"
-                  alt="Hilo TVan enterprise ERP and CRM portal interface"
+                  src="/assets/aistudio/cover-hilo.png"
+                  alt="Hilo Van Services JSC ERP and CRM portal shown on a desktop monitor"
                   class="work-card-thumb" />
               </div>
               <div class="work-card-body">
                 <div class="work-card-info">
-                  <h3 class="work-card-title">Hilo TVan</h3>
+                  <h3 class="work-card-title">Hilo Van Services JSC</h3>
                   <p class="work-card-desc">
-                    ERP and CRM screens plus a design system<br />
-                    for everyday business operations.
+                    ERP and CRM screens, and contributions to the<br />
+                    team design system.
                   </p>
                 </div>
                 <button
                   type="button"
                   class="work-card-arrow"
                   data-open-project="1"
-                  aria-label="See details for Hilo TVan"
+                  aria-label="See details for Hilo Van Services JSC"
                 >
                   <img loading="lazy" decoding="async"
                     src="/assets/aistudio/akar-icons_arrow-up-right_81c89bb4.png"
@@ -6909,11 +6855,11 @@
 
             <!-- Work Card 4: Lumina -->
             <article class="work-card" data-work-index="3" data-open-project="3">
-              <div class="work-card-media is-lumina-ui">
+              <div class="work-card-media">
                 <span class="work-card-tag">Real Estate UX/UI</span>
                 <img loading="lazy" decoding="async"
-                  src="/assets/aistudio/image_673_1942a103.png"
-                  alt="Lumina real estate website: Where luxury is crafted to last forever"
+                  src="/assets/aistudio/cover-lumina.png"
+                  alt="Lumina real estate website shown on a desktop monitor: Where luxury is crafted to last forever"
                   class="work-card-thumb" />
               </div>
               <div class="work-card-body">
@@ -7526,6 +7472,22 @@
             </svg>
           </a>
 
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/nguy%E1%BB%85n-vi%E1%BA%BFt-phong-b9b082253/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-social-btn"
+            aria-label="LinkedIn"
+          >
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path
+                d="M4.4 7.3H1.8V17.5H4.4V7.3ZM3.1 2.5C2.3 2.5 1.6 3.1 1.6 4C1.6 4.9 2.3 5.5 3.1 5.5C3.9 5.5 4.6 4.9 4.6 4C4.6 3.1 3.9 2.5 3.1 2.5ZM17.9 11.6C17.9 9 16.5 7.1 14.3 7.1C13.1 7.1 12.3 7.7 11.9 8.4V7.3H9.3V17.5H11.9V12C11.9 10.9 12.4 9.3 13.7 9.3C15 9.3 15.2 10.6 15.2 11.8V17.5H17.9V11.6Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+
           <!-- 2. Direct Email -->
           <a
             href="mailto:nguyenvietphong13012000@gmail.com"
@@ -7667,7 +7629,7 @@
                   <span>My Role</span>
                 </div>
                 <div class="pm-meta-value" id="pm-role">
-                  Product Designer (UI/UX, Gamification, Design System)
+                  Founder &amp; Solo Product Designer
                 </div>
               </div>
 
@@ -7715,7 +7677,7 @@
                   </svg>
                   <span>Duration</span>
                 </div>
-                <div class="pm-meta-value" id="pm-duration">Aug 2026 - Oct 2026</div>
+                <div class="pm-meta-value" id="pm-duration">Aug 2026 - Present</div>
               </div>
 
               <div class="pm-meta-row">
@@ -7830,10 +7792,14 @@
               </button>
               <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-09">
                 <span class="cs-nav-num">09</span>
-                <span>Where It Stands</span>
+                <span>Testing</span>
               </button>
               <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-10">
                 <span class="cs-nav-num">10</span>
+                <span>Where It Stands</span>
+              </button>
+              <button type="button" class="cs-nav-btn" data-cs-target="cs-sec-11">
+                <span class="cs-nav-num">11</span>
                 <span>What I Learned</span>
               </button>
             </nav>
@@ -7895,6 +7861,21 @@
               </div>
 
               <!-- 4-Column Metadata Strip -->
+              <div class="cs-tldr" aria-label="Summary">
+                <div class="cs-tldr-item">
+                  <div class="cs-tldr-label">The problem</div>
+                  <p>Web3 beginners either fear losing money or use a wallet without knowing what protects it.</p>
+                </div>
+                <div class="cs-tldr-item">
+                  <div class="cs-tldr-label">What I did</div>
+                  <p>Interviewed 5 beginners, then designed a learn-first, connect-wallet-later flow, a guide character and six chapters.</p>
+                </div>
+                <div class="cs-tldr-item">
+                  <div class="cs-tldr-label">The result</div>
+                  <p>A bilingual landing page and Coming soon page are live, with about 10 sign-ups. The learning flow is in development.</p>
+                </div>
+              </div>
+
               <div class="cs-meta-strip">
                 <div class="cs-meta-col">
                   <span class="cs-meta-icon" aria-hidden="true">
@@ -7909,7 +7890,7 @@
                     </svg>
                   </span>
                   <div class="cs-meta-label">My Role</div>
-                  <div class="cs-meta-val">Product Designer &amp;<br />Developer</div>
+                  <div class="cs-meta-val">Founder &amp; Solo<br />Product Designer</div>
                 </div>
 
                 <div class="cs-meta-col">
@@ -7938,7 +7919,7 @@
                     </svg>
                   </span>
                   <div class="cs-meta-label">Project Type</div>
-                  <div class="cs-meta-val">Independent Project,<br />Aug to Oct 2026</div>
+                  <div class="cs-meta-val">Independent Project,<br />Aug 2026 to Present</div>
                 </div>
 
                 <div class="cs-meta-col">
@@ -7985,10 +7966,10 @@
             <!-- 02 Research -->
             <section id="cs-sec-02" class="cs-section is-compact">
               <div class="cs-sec-kicker">02 / RESEARCH</div>
-              <h3 class="cs-sec-title">I asked five people what stops them.</h3>
+              <h3 class="cs-sec-title">Round 1: I asked five people what stops them.</h3>
               <p class="cs-sec-lead">
-                I met five people in person, all between 20 and 30, working in offices, design and
-                business. I asked what they knew about Web3, whether they had tried a wallet, and
+                Before I designed anything, I met five people in person, all between 20 and 30,
+                working in offices, design and business. I asked what they knew about Web3, whether they had tried a wallet, and
                 what they would do if a project asked for their seed phrase or private key.
               </p>
               <div class="cs-find-grid">
@@ -8038,7 +8019,7 @@
                     <p class="cs-impact-to">The last chapter, Web3 Safety, teaches it before it matters.</p>
                   </div>
                 </div>
-                <p class="cs-note">Five people is a small sample, so I treat it as a starting point and not as proof. I plan to test the learning flow with more beginners.</p>
+                <p class="cs-note">Five people is a small sample, so I treat it as a starting point and not as proof. After the pages went live, I ran round 2 with five different people (section 09), and I plan to test the learning flow once it exists.</p>
               </div>
             </section>
 
@@ -8216,7 +8197,7 @@
                   </div>
                   <h4 class="cs-decision-title">Learn first, connect a wallet later.</h4>
                   <dl class="cs-decision-facts">
-                    <div><dt>Because</dt><dd>Three of the five people I interviewed had held back from Web3 because they feared losing money.</dd></div>
+                    <div><dt>Because</dt><dd>Three of the five people I interviewed in round 1 had held back from Web3 because they feared losing money.</dd></div>
                     <div><dt>Instead of</dt><dd>My first draft made Connect Wallet the main button and asked people to mint before they had learned anything.</dd></div>
                     <div><dt>What I did</dt><dd>The hero tells visitors up front that they can start now and connect a wallet later. In the flow I am building, learning starts as a guest with no sign-in. A wallet is only asked for at the end, to claim the reward. The reward lives on a testnet, so no real money is involved.</dd></div>
                     <div><dt>Trade-off</dt><dd>Guest progress lives in the visitor&rsquo;s own browser, so it does not follow them to another device until they link an account.</dd></div>
@@ -8442,9 +8423,92 @@
               </div>
             </section>
 
-            <!-- 09 Where It Stands -->
+            <!-- 09 Testing -->
             <section id="cs-sec-09" class="cs-section is-compact">
-              <div class="cs-sec-kicker">09 / WHERE IT STANDS</div>
+              <div class="cs-sec-kicker">09 / TESTING</div>
+              <h3 class="cs-sec-title">Round 2: five different people tried the live site.</h3>
+              <p class="cs-sec-lead">
+                Round 1 was spoken interviews, before any design. Round 2 was a written test of the
+                finished pages, with a second group. On 18 November 2026 I sent the landing page and
+                the Coming soon page to five people who had not been in round 1, aged 22 to 32: an administrative staff member, a marketing student, a salesperson, a
+                web developer and an English teacher. They answered ten written questions alone, and
+                I was not there to explain anything. I asked them to say what they thought each part
+                meant, so a wrong guess would show up as data.
+              </p>
+              <div class="cs-find-grid">
+                <div class="cs-info-card cs-find-card">
+                  <div class="cs-find-num">5 of 5</div>
+                  <h4>Got the idea and expected no wallet at the start</h4>
+                  <p>All five described it as learning Web3 through a game, and guessed they would not need a wallet to begin. All five wanted to connect one only at the reward, after learning.</p>
+                </div>
+                <div class="cs-info-card cs-find-card">
+                  <div class="cs-find-num">5 of 5</div>
+                  <h4>Paused at Coming soon</h4>
+                  <p>Start Adventure leads to the waiting list. Everyone wanted something first: a launch date, a short demo or a sample lesson.</p>
+                </div>
+                <div class="cs-info-card cs-find-card">
+                  <div class="cs-find-num">3 of 5</div>
+                  <h4>Could not say what a testnet is</h4>
+                  <p>Two of them were also unsure whether Test USDC is real money, even though the FAQ answers it.</p>
+                </div>
+                <div class="cs-info-card cs-find-card">
+                  <div class="cs-find-num">4 of 5</div>
+                  <h4>Tripped on jargon</h4>
+                  <p>Seed phrase, gas, ARC and claim. Two people also stopped at the Roadmap lines &ldquo;$EGG utility&rdquo; and &ldquo;Ecosystem Utility&rdquo;.</p>
+                </div>
+              </div>
+              <div class="cs-sec-footer">
+                <div class="cs-footer-label">IN THEIR WORDS</div>
+                <div class="cs-find-grid cs-quote-grid">
+                  <figure class="cs-quote">
+                    <blockquote>&ldquo;I am afraid of leaking information or clicking the wrong thing and losing money.&rdquo;</blockquote>
+                    <figcaption>Mai, 24, administrative staff</figcaption>
+                  </figure>
+                  <figure class="cs-quote">
+                    <blockquote>&ldquo;I clicked and saw Coming soon, and I felt a bit let down. With a short demo it would be easier to leave my email.&rdquo;</blockquote>
+                    <figcaption>Huy, 22, marketing student</figcaption>
+                  </figure>
+                  <figure class="cs-quote">
+                    <blockquote>&ldquo;Coming soon gives me even less motivation to leave my email.&rdquo;</blockquote>
+                    <figcaption>Linh, 29, sales</figcaption>
+                  </figure>
+                  <figure class="cs-quote">
+                    <blockquote>&ldquo;I could leave my email if the page gave an expected date or sent me a sample lesson.&rdquo;</blockquote>
+                    <figcaption>Thảo, 32, English teacher</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="cs-sec-footer">
+                <div class="cs-footer-label">WHAT I WILL CHANGE</div>
+                <div class="cs-impact">
+                  <div class="cs-impact-row">
+                    <p class="cs-impact-from">Coming soon gives no reason to leave an email</p>
+                    <span class="cs-impact-arrow" aria-hidden="true">&rarr;</span>
+                    <p class="cs-impact-to">Add a launch date and a short sample lesson.</p>
+                  </div>
+                  <div class="cs-impact-row">
+                    <p class="cs-impact-from">&ldquo;Testnet&rdquo; is not understood</p>
+                    <span class="cs-impact-arrow" aria-hidden="true">&rarr;</span>
+                    <p class="cs-impact-to">Say it in one plain line where it appears: a practice network where nothing is real.</p>
+                  </div>
+                  <div class="cs-impact-row">
+                    <p class="cs-impact-from">Seed phrase, gas and claim are not understood</p>
+                    <span class="cs-impact-arrow" aria-hidden="true">&rarr;</span>
+                    <p class="cs-impact-to">Explain each one in place, not only in the FAQ.</p>
+                  </div>
+                  <div class="cs-impact-row">
+                    <p class="cs-impact-from">Roadmap Phase 4 reads as jargon</p>
+                    <span class="cs-impact-arrow" aria-hidden="true">&rarr;</span>
+                    <p class="cs-impact-to">Rewrite it in plain words.</p>
+                  </div>
+                </div>
+                <p class="cs-note">None of these changes are live yet. The sample lesson comes first, because every one of the five paused at Coming soon. Five people is a small sample, and the answers were written and not observed, so I treat them as strong hints and not as proof. Quotes are translated from Vietnamese.</p>
+              </div>
+            </section>
+
+            <!-- 10 Where It Stands -->
+            <section id="cs-sec-10" class="cs-section is-compact">
+              <div class="cs-sec-kicker">10 / WHERE IT STANDS</div>
               <h3 class="cs-sec-title">What is live, what I am building, what comes later.</h3>
               <div class="cs-status-grid">
                 <div class="cs-info-card cs-status-card">
@@ -8483,8 +8547,8 @@
             </section>
 
             <!-- 10 What I Learned -->
-            <section id="cs-sec-10" class="cs-section is-last">
-              <div class="cs-sec-kicker">10 / WHAT I LEARNED</div>
+            <section id="cs-sec-11" class="cs-section is-last">
+              <div class="cs-sec-kicker">11 / WHAT I LEARNED</div>
               <h3 class="cs-sec-title">What I took from it.</h3>
               <div class="cs-numbered-list">
                 <div class="cs-numbered-row">
@@ -8492,8 +8556,9 @@
                   <div class="cs-row-body">
                     <h4 class="cs-row-title">Ask before you draw.</h4>
                     <p class="cs-row-desc">
-                      Five short conversations shaped two decisions: a testnet reward, and a whole
-                      chapter on seed phrases. I would not have guessed either.
+                      Five short conversations in round 1 shaped two decisions: a testnet reward, and a
+                      whole chapter on seed phrases. I would not have guessed either. Round 2, with five
+                      other people, then showed where the finished pages still confuse.
                     </p>
                   </div>
                 </div>
@@ -8774,34 +8839,6 @@
           requestAnimationFrame(updateWorksNavButtons);
         }
 
-        // Download Resume Button Action
-        const resumeBtn = document.getElementById('btn-download-resume');
-        if (resumeBtn) {
-          resumeBtn.addEventListener('click', function () {
-            const resumeContent = [
-              'NGUYEN VIET PHONG | UI/UX DESIGNER',
-              'Location: Ho Chi Minh City, Vietnam',
-              'Status: Open to Work (Design x Technology)',
-              '',
-              'SUMMARY',
-              'Designing intuitive experiences for complex digital products.',
-              '',
-              'FEATURED PROJECT',
-              'Eggoria | Web3 Product, Gamified Learning',
-              '- Designed onboarding, six chapters with quizzes, and the design system for a gamified Web3 learning platform.',
-            ].join('\n');
-            const blob = new Blob([resumeContent], { type: 'text/plain;charset=utf-8' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Nguyen-Viet-Phong-UIUX-Resume.txt';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-          });
-        }
-
         // Shared by both forms. Nothing is posted to a server, so "send" opens the visitor's own email app
         // with the message filled in, and the status text says exactly that instead of claiming it was sent.
         const contactMailLink = document.querySelector('.contact-direct-email');
@@ -9021,9 +9058,9 @@
               { icon: 'layers', line1: '6 Chapters', line2: '+ Quizzes' },
               { icon: 'gamepad', line1: 'Gamified', line2: 'Learning' },
             ],
-            role: 'Product Designer (UI/UX, Gamification, Design System)',
+            role: 'Founder & Solo Product Designer',
             team: 'Solo Project',
-            duration: 'Aug 2026 - Oct 2026',
+            duration: 'Aug 2026 - Present',
             caseStudyUrl: '#eggoria-case-study',
             liveDemoUrl: 'https://eggoria.site/',
             tools: ['figma', 'claude', 'chatgpt', 'rive', 'affinity', 'codex'],
@@ -9037,15 +9074,15 @@
           },
           {
             category: 'Enterprise UX/UI',
-            title: 'Hilo TVan',
-            desc: 'A web platform for ERP and CRM, with a design system that scales, made to simplify logistics, billing, and multi-branch work.',
+            title: 'Hilo Van Services JSC',
+            desc: 'A web platform for ERP and CRM that simplifies logistics, billing, and multi-branch work. I designed its workflows and contributed to the team design system.',
             highlights: [
               { icon: 'users', line1: 'Multi-Role', line2: 'ERP & CRM' },
-              { icon: 'layers', line1: 'Scalable', line2: 'Design System' },
+              { icon: 'layers', line1: 'Design System', line2: 'Contributor' },
               { icon: 'chart', line1: 'Live Data', line2: 'Workflows' },
             ],
-            role: 'UI/UX Designer (Enterprise UX, Design System)',
-            team: 'Product & Engineering Squad',
+            role: 'UI/UX Designer (B2B ERP, Design System contributor)',
+            team: '3 designers, with BAs, developers and testers',
             duration: 'Oct 2025 - Jul 2026',
             caseStudyUrl: null,
             liveDemoUrl: null,
@@ -9067,8 +9104,8 @@
               { icon: 'layers', line1: 'Mobile App', line2: '+ Admin CMS' },
               { icon: 'gamepad', line1: '3D Mascot', line2: '& Daily Quests' },
             ],
-            role: 'Product Designer (UI/UX, Gamification, Design System)',
-            team: 'Cross-functional Team',
+            role: 'UI/UX Designer (Screens, Mascot, Design System components)',
+            team: 'Design lead and developers',
             duration: 'Nov 2025 - Jan 2026',
             caseStudyUrl: null,
             liveDemoUrl: 'https://traitimbieton.vn/',
